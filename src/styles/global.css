@@ -107,6 +107,7 @@ code {
   background: #3c3c41;
   padding: 3px;
   border-radius: 5px;
+  font-family: var(--font-monospace);
 }
 
 .icon {
