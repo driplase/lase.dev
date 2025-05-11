@@ -1,0 +1,6 @@
+---
+const { title } = Astro.props;
+const sitename = 'lase.dev'
+---
+<title>{ title ? `${title} - ${sitename}` : sitename }</title>
+<meta property="og:title" content={ title ? `${title} - ${sitename}` : sitename } />

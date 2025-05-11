@@ -1,0 +1,129 @@
+@import './fonts.css';
+@import './effects.css';
+
+:root {
+  --font-primary: 'Encode Sans', 'Open Sans', 'M PLUS 2', 'Noto Sans', 'Noto Sans Japanese';
+  --font-monospace: 'Ubuntu Sans Mono', 'Noto Sans Mono', 'M PLUS 1 Code', monospace;
+  
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+
+  --color-background: #111222;
+  --color-text: white;
+  --color-text-link: #2862ff;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: var(--font-primary);
+  font-size: 16px;
+  background: var(--color-background);
+  color: var(--color-text);
+  margin: 0;
+}
+
+.monospace {
+  font-family: var(--font-monospace);
+}
+
+main {
+  text-align: center;
+  margin: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  font-size: 3rem;
+  padding: 12px;
+}
+
+a {
+  color: var(--color-text-link);
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  width: max-content;
+}
+
+.tooltip {
+  cursor: help;
+  border-bottom: 1px dotted white;
+}
+.tooltip,
+.hover-title {
+  display: inline-block;
+}
+.hover-title::before {
+  content: attr(htitle);
+}
+.tooltip::before {
+  content: attr(tip);
+  top: -1.8em;
+}
+.hover-title::before,
+.tooltip::before {
+  position: absolute;
+  display: none;
+  left: 50%;
+  width: auto;
+  height: auto;
+  font-size: 14px !important;
+  padding: 1.6px 3.6px;
+  white-space: pre;
+  background: #252525c7;
+  backdrop-filter: blur(1.2px);
+  border-radius: 3.6px;
+  transform: translateX(-50%);
+  font-size: smaller;
+  color: var(--color-text);
+}
+.hover-title:hover::before,
+.tooltip:hover::before {
+  display: block;
+}
+.tooltip::after {
+  content: "?";
+  position: relative;
+  padding: 0 .12em;
+  vertical-align: super;
+  font-size: smaller;
+  color: var(--color-text);
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+code {
+  background: #3c3c41;
+  padding: 3px;
+  border-radius: 5px;
+}
+
+.icon {
+  width: 1em;
+  height: 1em;
+  margin: 0 .05em 0 .1em;
+  vertical-align: -0.1em;
+  user-select: none;
+  font-style: normal;
+  text-decoration: none;
+}
+
+.eclyera {
+  font-family: Eclyera;
+  font-size: 1.2em;
+}
+
+.eclyera.icon {
+  font-size: 1.6em;
+}

@@ -1,0 +1,54 @@
+---
+---
+<header>
+  <nav>
+    <div class="nav-brand">
+      <a class="inline-block wiggle woosh rainbow flash" href="/">lase.dev</a>
+    </div>
+    <div class="nav-container">
+      <div class="nav-burger">
+        <a class="nav-link wiggle-woosh wg-text wsh-text glow" href="/works">works</a>
+        <a class="nav-link wiggle-woosh wg-text wsh-text glow" href="/blog">blog</a>
+        <a class="nav-link wiggle-woosh wg-text wsh-text glow" href="/links">links</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<style scoped>
+  nav {
+    width: 100dvw;
+    padding: 5px;
+    font-size: 18px;
+    background: #06060fbf;
+    border-bottom: 1px solid #8080809f;
+    box-shadow: 0 0 8px #80808080;
+    backdrop-filter: blur(8px);
+    position: sticky;
+    top: 0;
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .nav-brand {
+    font-size: 28px;
+    margin: 0 32px;
+    user-select: none;
+    padding: 3px;
+    font-family: var(--font-monospace);
+    font-style: italic;
+    font-weight: 500;
+    text-shadow: 0 0 8px #e9eeff;
+    justify-content: start;
+    display: inline-block;
+  }
+  .nav-container {
+    text-align: center;
+    justify-content: center;
+  }
+  .nav-link {
+    padding: 3px 32px;
+    display: inline-block;
+    color: var(--color-text);
+    text-decoration: none;
+  }
+</style>
