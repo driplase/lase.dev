@@ -4,9 +4,15 @@ import Default from '../layouts/default.astro';
 <Default title="404">
   <div class="wiggle woosh flash error-content">
     <div class="error-code rainbow-fast">404</div>
-    <div class="error-message">Page not found: <code>{ Astro.url.pathname }</code></div>
+    <div class="error-message">Page not found: <code id="url">{ Astro.url.pathname }</code></div>
   </div>
 </Default>
+<script>
+  const urlElement = document.getElementById('url');
+  if (urlElement) {
+    urlElement.textContent = location.pathname;
+  }
+</script>
 <style scoped>
   .error-content {
     text-align: center;
