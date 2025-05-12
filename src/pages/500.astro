@@ -7,7 +7,6 @@ interface Props {
 
 const { error } = Astro.props;
 ---
-<div>{error instanceof Error ? error.message : "Unknown error"}</div>
 <Default title="500">
   <div class="wiggle woosh flash error-content">
     <div class="error-code rainbow-fast">500</div>
