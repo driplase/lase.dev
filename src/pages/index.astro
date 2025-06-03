@@ -1,5 +1,7 @@
 ---
 import Default from '../layouts/default.astro';
+import { getLocale } from '../scripts/i18n';
+const locale = await getLocale(Astro);
 ---
 <Default title="Home">
   <p>i sometimes program, i sometimes make motion graphics, i rarely make song.</p>

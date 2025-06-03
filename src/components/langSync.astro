@@ -1,0 +1,12 @@
+<script>
+  const preferredLang = localStorage.getItem('lang');
+  if (preferredLang && !document.cookie.includes('lang=')) {
+    document.cookie = `lang=${preferredLang}; path=/; max-age=31536000`;
+    location.reload();
+  }
+  window.setLanguage = function(lang) {
+    localStorage.setItem('lang', lang);
+    document.cookie = `lang=${lang}; path=/; max-age=31536000`;
+    location.reload();
+  }
+</script>

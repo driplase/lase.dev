@@ -1,8 +1,4 @@
 ---
-import { links } from '../data/headerLinks';
-
-const currentPath = Astro.url.pathname.replace(/\/$/, '');
-const navbarLinks = links.map(i => { return { ...i, current: i.url === currentPath }});
 ---
 <header>
   <nav>
@@ -11,15 +7,9 @@ const navbarLinks = links.map(i => { return { ...i, current: i.url === currentPa
     </div>
     <div class="nav-container">
       <div class="nav-burger">
-        {navbarLinks.map((item) => (
-          <a 
-            class={
-              "nav-link wiggle-woosh wg-text wsh-text glow "+
-              (item.current ? 'bold ' : '')
-            }
-            href={item.url}
-          >{item.title}</a>
-        ))}
+        <a class="nav-link wiggle-woosh wg-text wsh-text glow" href="/works">works</a>
+        <a class="nav-link wiggle-woosh wg-text wsh-text glow" href="/blog">blog</a>
+        <a class="nav-link wiggle-woosh wg-text wsh-text glow" href="/links">links</a>
       </div>
     </div>
   </nav>
