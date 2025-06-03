@@ -1,6 +1,6 @@
 const locales = {
   en: () => import("../locales/en.js"),
-  ja: () => import("../locales/ja.json"),
+  ja: () => import("../locales/ja.js"),
 };
 
 export async function loadLocale(lang) {
