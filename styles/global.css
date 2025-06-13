@@ -1,0 +1,182 @@
+@import './fonts.css';
+@import './effects.css';
+
+:root {
+  --font-primary: 'Encode Sans', 'Open Sans', 'M PLUS 2', 'Noto Sans', 'Noto Sans Japanese';
+  --font-monospace: 'Ubuntu Sans Mono', 'Noto Sans Mono', 'M PLUS 1 Code', monospace;
+  
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+
+  --color-background: #111222;
+  --color-text: white;
+  --color-text-link: #2862ff;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: var(--font-primary);
+  font-size: 16px;
+  background: var(--color-background);
+  color: var(--color-text);
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.monospace {
+  font-family: var(--font-monospace);
+}
+
+main {
+  text-align: center;
+  margin: 16px 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  font-size: 3rem;
+  padding: 12px 0;
+}
+h2 {
+  font-size: 2.5rem;
+  padding: 8px 0;
+}
+h3 {
+  font-size: 2rem;
+  padding: 6px 0;
+}
+
+a {
+  color: var(--color-text-link);
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  width: max-content;
+}
+
+.tooltip {
+  cursor: help;
+  border-bottom: 1px dotted white;
+}
+.tooltip,
+.hover-title {
+  display: inline-block;
+}
+.hover-title::before {
+  content: attr(htitle);
+}
+.tooltip::before {
+  content: attr(tip);
+  top: -1.8em;
+}
+.hover-title::before,
+.tooltip::before {
+  position: absolute;
+  display: none;
+  left: 50%;
+  width: auto;
+  height: auto;
+  font-size: 14px !important;
+  padding: 1.6px 3.6px;
+  white-space: pre;
+  background: #252525c7;
+  backdrop-filter: blur(1.2px);
+  border-radius: 3.6px;
+  transform: translateX(-50%);
+  font-size: smaller;
+  color: var(--color-text);
+}
+.hover-title:hover::before,
+.tooltip:hover::before {
+  display: block;
+}
+.tooltip::after {
+  content: "?";
+  position: relative;
+  padding: 0 .12em;
+  vertical-align: super;
+  font-size: smaller;
+  color: var(--color-text);
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+code:not(pre code),
+pre:has(code) {
+  background: #3c3c41;
+  padding: 3px;
+  border-radius: 5px;
+}
+pre, code {
+  font-family: var(--font-monospace);
+}
+
+pre {
+  display: inline-block;
+}
+
+.icon {
+  width: 1em;
+  height: 1em;
+  margin: 0 .05em 0 .1em;
+  vertical-align: -0.1em;
+  user-select: none;
+  font-style: normal;
+  text-decoration: none;
+}
+
+.eclyera {
+  font-family: Eclyera;
+  font-size: 1.2em;
+}
+
+.eclyera.icon {
+  font-size: 1.6em;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+summary {
+  padding: 6px;
+}
+
+.blue {
+  color: #0072de;
+}
+
+a.no-ul {
+  text-decoration: none;
+}
+
+.lase-color {
+  background: #0072de;
+  background: linear-gradient(170deg, rgba(17, 18, 34, 1) 0%, rgba(0, 114, 222, 1) 100%);
+}
+
+.bg-text-clip {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dropmenu {
+  background: rgba(4, 2, 31, 0.6);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgb(123, 127, 129);
+  box-shadow: 0 0 4px rgb(123, 127, 129);
+  border-radius: 5px;
+  padding: 6px 8px;
+}
