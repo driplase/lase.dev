@@ -1,5 +1,6 @@
 @import './fonts.css';
 @import './effects.css';
+@import './responsive.css';
 
 :root {
   --font-primary: 'Encode Sans', 'Open Sans', 'M PLUS 2', 'Noto Sans', 'Noto Sans Japanese';
@@ -28,6 +29,14 @@ body {
   color: var(--color-text);
   margin: 0;
   overflow-x: hidden;
+}
+
+body {
+  height: 100vh;
+}
+
+#__nuxt {
+  min-height: 100vh;
 }
 
 .monospace {
@@ -179,4 +188,8 @@ a.no-ul {
   box-shadow: 0 0 4px rgb(123, 127, 129);
   border-radius: 5px;
   padding: 6px 8px;
+}
+
+.opacity-50 {
+  opacity: .5;
 }

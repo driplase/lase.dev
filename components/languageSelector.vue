@@ -29,6 +29,7 @@ function toggle() {
 <style scoped>
 .root {
   position: relative;
+  height: 32px;
 }
 button {
   background: transparent;
@@ -44,6 +45,7 @@ button {
   inset: auto 0px auto auto;
   width: fit-content;
   padding-left: 24px;
+  z-index: 16;
 }
 ul {
   font-size: 1.1rem;

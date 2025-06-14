@@ -1,13 +1,29 @@
 <script setup>
 const props = defineProps({
   title: String,
+  url: String,
+  external: Boolean,
 })
+
+let isURLvalid = true;
+try {
+  new URL(props.url);
+} catch {
+  isURLvalid = false;
+}
 </script>
 <template>
-  <div class="card">
-    <h3>{{ props.title }}</h3>
-    <slot />
-  </div>
+  <NuxtLink
+    class="root-link"
+    :to="props.url" 
+    :target="props.external ? '_blank' : '_self'">
+    <div :class="
+      `card ${isURLvalid ? 'flash' : ''}`
+    ">
+      <h3>{{ props.title }}</h3>
+      <slot />
+    </div>
+  </NuxtLink>
 </template>
 <style scoped>
 .card {
@@ -20,5 +36,9 @@ const props = defineProps({
   border: 1px solid rgb(123, 127, 129);
   box-shadow: 0 0 8px rgba(123, 127, 129, 0.63);
   width: 100%;
+}
+.root-link {
+  color: var(--color-text);
+  text-decoration: none;
 }
 </style>

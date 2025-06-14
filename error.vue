@@ -9,9 +9,11 @@ const props = defineProps({
 
 let route = useRoute();
 
+useHead({
+})
 </script>
 <template>
-  <Default :title="error?.statusCode.toString()">
+  <Default :title="error?.statusCode.toString()" :description="error?.statusMessage">
     <div class="error-content">
       <div class="wiggle woosh flash ">
         <div class="error-code rainbow-fast">{{ error?.statusCode }}</div>

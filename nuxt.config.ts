@@ -2,7 +2,12 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-05-15',
   devtools: { enabled: true },
-  modules: ['@nuxtjs/sitemap', '@nuxtjs/i18n', '@nuxt/icon'],
+  modules: [
+    '@nuxtjs/sitemap',
+    '@nuxtjs/i18n',
+    '@nuxt/icon',
+    '@nuxtjs/robots'
+  ],
   plugins: [
     '~/plugins/effects.client.js'
   ],
@@ -10,10 +15,14 @@ export default defineNuxtConfig({
   i18n: {
     defaultLocale: 'en',
     locales: [
-      { code: 'en', name: 'English', file: 'en.js' },
+      { code: 'en', name: 'english', file: 'en.js' },
       { code: 'ja', name: '日本語', file: 'ja.js' }
     ],
     lazy: true,
     strategy: "no_prefix",
   },
+  site: {
+    url: 'https://lase.dev',
+    name: 'lase.dev',
+  }
 })

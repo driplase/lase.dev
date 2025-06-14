@@ -14,6 +14,9 @@ importers:
       '@nuxtjs/i18n':
         specifier: ^9.5.5
         version: 9.5.5(@vue/compiler-dom@3.5.16)(eslint@9.28.0(jiti@2.4.2))(magicast@0.3.5)(rollup@4.43.0)(vue@3.5.16(typescript@5.8.3))
+      '@nuxtjs/robots':
+        specifier: 5.2.10
+        version: 5.2.10(magicast@0.3.5)(vue@3.5.16(typescript@5.8.3))
       '@nuxtjs/sitemap':
         specifier: 7.3.1
         version: 7.3.1(h3@1.15.3)(magicast@0.3.5)(vite@6.3.5(@types/node@24.0.1)(jiti@2.4.2)(terser@5.42.0)(yaml@2.8.0))(vue@3.5.16(typescript@5.8.3))
@@ -630,6 +633,9 @@ packages:
   '@nuxtjs/i18n@9.5.5':
     resolution: {integrity: sha512-c3zuH9JCslzRGbe5OVq7FFF4BFQuTUvHncaIk6gROf0uFbc7uqAL3h+MQSV7kQj9bRsbBoccppYqITTuKb3dvg==}
     engines: {node: '>=18.12.0'}
+
+  '@nuxtjs/robots@5.2.10':
+    resolution: {integrity: sha512-WiO+VA8UwDgVLy7JCrGTrAmSNNw397OuNseKOG051ixswEDd0QhNw4cUtgNd2RkSIL7WlkfwkizdJFCd9y9iXw==}
 
   '@nuxtjs/sitemap@7.3.1':
     resolution: {integrity: sha512-HvVMg0MGdyOQi6gx2Gz9gWxxHywZqXH8FygWoMIaTsnw9yRRbQT52V47KAWoi5mJaL7y59dBKIy1gMY3WL9law==}
@@ -4878,6 +4884,21 @@ snapshots:
       - petite-vue-i18n
       - rollup
       - supports-color
+      - vue
+
+  '@nuxtjs/robots@5.2.10(magicast@0.3.5)(vue@3.5.16(typescript@5.8.3))':
+    dependencies:
+      '@nuxt/kit': 3.17.5(magicast@0.3.5)
+      consola: 3.4.2
+      defu: 6.1.4
+      nuxt-site-config: 3.2.0(magicast@0.3.5)(vue@3.5.16(typescript@5.8.3))
+      pathe: 2.0.3
+      pkg-types: 2.1.0
+      sirv: 3.0.1
+      std-env: 3.9.0
+      ufo: 1.6.1
+    transitivePeerDependencies:
+      - magicast
       - vue
 
   '@nuxtjs/sitemap@7.3.1(h3@1.15.3)(magicast@0.3.5)(vite@6.3.5(@types/node@24.0.1)(jiti@2.4.2)(terser@5.42.0)(yaml@2.8.0))(vue@3.5.16(typescript@5.8.3))':

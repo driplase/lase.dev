@@ -1,6 +1,4 @@
 export default {
-  "lang": "日本語",
-  
   home: "ホーム",
   "home_aboutme": `たまにプログラミングしたり、モーショングラフィックス作ったり、曲を作ったり...
   このサイトはまだ開発中です...`,
@@ -20,4 +18,5 @@ export default {
   select_language: "言語を選択",
   
   "works.eclyera.description": "私がはじめて作ったフォントであり、いちばんひどいものでもあります。",
+  "works.j0si.description": "シンプルなURL短縮ツール。新バージョン開発中...",
 }
