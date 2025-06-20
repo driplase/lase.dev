@@ -11,13 +11,13 @@ const burgerMenu = ref(true);
 let currentMenuTransition;
 
 function toggleBurger(which, onlyWhenBurgerExists) {
-  if (typeof which === "boolean") {
-    burgerMenu.value = which;
-  } else {
-    burgerMenu.value = !burgerMenu.value
-  }
-
   if (!onlyWhenBurgerExists || (onlyWhenBurgerExists && window.innerWidth < 1024)) {
+    if (typeof which === "boolean") {
+      burgerMenu.value = which;
+    } else {
+      burgerMenu.value = !burgerMenu.value
+    }
+
     const show = {
       right: 0,
       opacity: 1,

@@ -19,4 +19,6 @@ this website is still in development...`,
 
   "works.eclyera.description": "This is my first and worst font I've ever made.",
   "works.j0si.description": "A simple url shortener. new version is in development...",
+  "works.lixeld.description": "A pixel font that is inspired by Mojangles (Minecraft font). originally made for",
+  "works.lixeld.description.extend": "",
 }
