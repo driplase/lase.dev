@@ -2,7 +2,7 @@
 const { locale } = useI18n()
 const dayjs = useDayjs()
 
-const expiresAt = dayjs('2025-7-10');
+const expiresAt = dayjs('2025-6-23');
 const expireEta = ref(expiresAt.fromNow(true));
 
 watch(locale, (newLocale) => {
