@@ -47,6 +47,9 @@ function changeRoleStyle(style) {
 }
 
 function changeColor(value) {
+  // discord doesn't let us change holographic colors
+  if (colorStyle.value === 'holographic') return;
+
   resultColor.value[0] = value
   if (value === "#000000" && colorStyle.value === "solid") resultColor.value[0] = null;
 }
