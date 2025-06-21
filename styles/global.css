@@ -212,3 +212,7 @@ a.no-ul {
   flex-direction: row;
   align-items: end;
 }
+
+.hidden {
+  display: none;
+}

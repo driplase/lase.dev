@@ -6,11 +6,11 @@ import { gsap } from 'gsap';
 const route = useRoute();
 const error = useError(); // Nuxt 3 composable
 
-const burgerMenu = ref(true);
+const burgerMenu = ref(false);
 
 let currentMenuTransition;
 
-function toggleBurger(which, onlyWhenBurgerExists) {
+function toggleBurger(which, onlyWhenBurgerExists, disableTransition) {
   if (!onlyWhenBurgerExists || (onlyWhenBurgerExists && window.innerWidth < 1024)) {
     if (typeof which === "boolean") {
       burgerMenu.value = which;
@@ -37,14 +37,14 @@ function toggleBurger(which, onlyWhenBurgerExists) {
       currentMenuTransition = gsap.to('.menu-contents', {
         ...show,
         ease: "expo.out",
-        duration: .5,
+        duration: .5 * !disableTransition,
       })
     } else {
       gsap.set('.menu-contents', show)
       currentMenuTransition = gsap.to('.menu-contents', {
         ...hide,
         ease: "power4.out",
-        duration: .8
+        duration: .8 * !disableTransition
       })
     }
   }
@@ -59,14 +59,14 @@ const navbarLinks = links.map(i => ({
 onMounted(() => {
   let previousWindowWidth = window.innerWidth;
 
-  if (window.innerWidth < 1024) toggleBurger(false)
+  if (window.innerWidth >= 1024) toggleBurger(true, false, true)
 
   window.addEventListener('resize', event => {
     if (window.innerWidth >= 1024) {
-      toggleBurger(true)
+      toggleBurger(true, false, true)
     } else {
       if (previousWindowWidth >= 1024) {
-        toggleBurger(false)
+        toggleBurger(false, false, true)
       }
     }
     previousWindowWidth = window.innerWidth;
@@ -79,6 +79,7 @@ onMounted(() => {
       <NuxtLink class="inline-block wiggle woosh flash no-ul lase-color bg-text-clip" href="/">lase.dev</NuxtLink>
     </div>
     <nav class="nav-container">
+      <Icon name="tabler:x" size="24" class="hidden"/>
       <div class="nav-burger">
         <a href="#" @click="toggleBurger()" class="wiggle woosh inline-block burger-mode">
           <div class="">
