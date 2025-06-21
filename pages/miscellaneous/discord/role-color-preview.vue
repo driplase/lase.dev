@@ -33,14 +33,22 @@ const colorStyle = ref('solid');
 const resultColor = ref([null, null, null]);
 
 function changeRoleStyle(style) {
+  if (colorStyle.value === "solid" && style === 'gradient') {
+    if (resultColor.value[0] === null) resultColor.value[0] =　"#000000";
+    
+    resultColor.value[1] = resultColor.value[0];
+  }
+  
   colorStyle.value = style;
+  
+  if (resultColor.value[0] === "#000000" && colorStyle.value === 'solid') resultColor.value[0] =　null;
 
   if (style === "holographic") resultColor.value = holographic;
 }
 
 function changeColor(value) {
   resultColor.value[0] = value
-  if (value === "#000000") resultColor.value[0] = null;
+  if (value === "#000000" && colorStyle.value === "solid") resultColor.value[0] = null;
 }
 </script>
 <template>

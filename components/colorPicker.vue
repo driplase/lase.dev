@@ -19,52 +19,79 @@ const huerCursorPos = ref(hue.value / 360 * 220);
 const satCursorPosX = ref(saturation.value * 220);
 const satCursorPosY = ref(150 - value.value * 150);
 
-function handleHuerMove(event) {
+function getRelativeOffset(e, target) {
+  const rect = target.getBoundingClientRect();
+  let clientX, clientY;
+  if (e.touches) {
+    clientX = e.touches[0].clientX;
+    clientY = e.touches[0].clientY;
+  } else {
+    clientX = e.clientX;
+    clientY = e.clientY;
+  }
+  return {
+    offsetX: clientX - rect.left,
+    offsetY: clientY - rect.top
+  };
+}
+
+function handleHuerMove({ offsetX }) {
   const width = 220;
-  hue.value = Math.max(0, Math.min(360, event.offsetX / width * 360));
-  huerCursorPos.value = Math.max(0, Math.min(width, event.offsetX));
+  hue.value = Math.max(0, Math.min(360, offsetX / width * 360));
+  huerCursorPos.value = Math.max(0, Math.min(width, offsetX));
+  getColor();
 }
 function huerDrag(event) {
-  handleHuerMove(event);
+  const target = event.target;
+  const { offsetX } = getRelativeOffset(event, target);
+  handleHuerMove({ offsetX });
 
   function onMove(e) {
-    const rect = event.target.getBoundingClientRect();
-    const offsetX = e.clientX - rect.left;
+    e.preventDefault();
+    const { offsetX } = getRelativeOffset(e, target);
     handleHuerMove({ offsetX });
-    getColor();
   }
   function onUp() {
     window.removeEventListener('mousemove', onMove);
     window.removeEventListener('mouseup', onUp);
+    window.removeEventListener('touchmove', onMove);
+    window.removeEventListener('touchend', onUp);
   }
   window.addEventListener('mousemove', onMove);
   window.addEventListener('mouseup', onUp);
+  window.addEventListener('touchmove', onMove, { passive: false });
+  window.addEventListener('touchend', onUp);
 }
 
-function handleSatMove(event) {
+function handleSatMove({ offsetX, offsetY }) {
   const width = 220;
   const height = 150;
-  saturation.value = Math.max(0, Math.min(1, event.offsetX / width));
-  value.value = Math.max(0, Math.min(1, (height - event.offsetY) / height));
-  satCursorPosX.value = Math.max(0, Math.min(width, event.offsetX));
-  satCursorPosY.value = Math.max(0, Math.min(height, event.offsetY));
+  saturation.value = Math.max(0, Math.min(1, offsetX / width));
+  value.value = Math.max(0, Math.min(1, (height - offsetY) / height));
+  satCursorPosX.value = Math.max(0, Math.min(width, offsetX));
+  satCursorPosY.value = Math.max(0, Math.min(height, offsetY));
+  getColor();
 }
 function satDrag(event) {
-  handleSatMove(event);
+  const target = event.target;
+  const { offsetX, offsetY } = getRelativeOffset(event, target);
+  handleSatMove({ offsetX, offsetY });
 
   function onMove(e) {
-    const rect = event.target.getBoundingClientRect();
-    const offsetX = e.clientX - rect.left;
-    const offsetY = e.clientY - rect.top;
+    e.preventDefault();
+    const { offsetX, offsetY } = getRelativeOffset(e, target);
     handleSatMove({ offsetX, offsetY });
-    getColor();
   }
   function onUp() {
     window.removeEventListener('mousemove', onMove);
     window.removeEventListener('mouseup', onUp);
+    window.removeEventListener('touchmove', onMove);
+    window.removeEventListener('touchend', onUp);
   }
   window.addEventListener('mousemove', onMove);
   window.addEventListener('mouseup', onUp);
+  window.addEventListener('touchmove', onMove, { passive: false });
+  window.addEventListener('touchend', onUp);
 }
 
 function getColor() {
@@ -85,7 +112,8 @@ getColor();
 <template>
   <div class="dropmenu">
     <div class="sat-base"
-      @mousedown="satDrag" 
+      @mousedown="satDrag"
+      @touchstart="satDrag"
       :style="{
         background: `hsl(${hue}deg, 100%, 50%)`
       }">
@@ -96,7 +124,9 @@ getColor();
         top:  `${satCursorPosY}px`,
       }"></div>
     </div>
-    <div class="huer" @mousedown="huerDrag">
+    <div class="huer"
+      @mousedown="huerDrag"
+      @touchstart="huerDrag">
       <div class="huer-thumb" :style="{
         left: `${huerCursorPos}px`
       }"></div>

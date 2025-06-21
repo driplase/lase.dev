@@ -11,7 +11,6 @@ export default defineNuxtConfig({
     '@nuxtjs/robots',
     'dayjs-nuxt'
   ],
-  css: ['~/styles/global.css'],
   plugins: [
     '~/plugins/effects.client.js',
   ],
