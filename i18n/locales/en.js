@@ -1,4 +1,6 @@
 export default {
+  id: "en",
+
   home: "Home",
   "home_aboutme": `i sometimes program, i sometimes make motion graphics, i rarely make song.
 this website is still in development...`,
@@ -21,4 +23,8 @@ this website is still in development...`,
   "works.j0si.description": "A simple url shortener. new version is in development...",
   "works.lixeld.description": "A pixel font that is inspired by Mojangles (Minecraft font). originally made for",
   "works.lixeld.description.extend": "",
+
+  "misc.domains.expire.1": "is going to expire in",
+  "misc.domains.expire.2": ".",
+  "misc.domains.expire.3": "and i'm not going to renew it because there is no reason to keep it.",
 }

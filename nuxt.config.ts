@@ -6,12 +6,19 @@ export default defineNuxtConfig({
     '@nuxtjs/sitemap',
     '@nuxtjs/i18n',
     '@nuxt/icon',
-    '@nuxtjs/robots'
+    '@nuxtjs/robots',
+    'dayjs-nuxt'
   ],
   plugins: [
-    '~/plugins/effects.client.js'
+    '~/plugins/effects.client.js',
   ],
   ssr: true,
+  dayjs: {
+    locales: ['en', 'ja'],
+    plugins: ['relativeTime', 'utc', 'timezone'],
+    defaultLocale: 'en',
+    defaultTimezone: 'Asia/Tokyo',
+  },
   i18n: {
     defaultLocale: 'en',
     locales: [

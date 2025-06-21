@@ -1,8 +1,8 @@
 <script setup>
 import '@/styles/global.css';
-// import '@/scripts/effects';
 
-useHead({
+useHead(() => ({
+  htmlAttrs: {},
   title: 'lase.dev',
   link: [
     {
@@ -51,7 +51,7 @@ useHead({
       content: "telephone=no,address=no"
     },
   ]
-})
+}));
 </script>
 <template>
   <NuxtPage />
