@@ -163,6 +163,14 @@ pre {
   display: inline-block;
 }
 
+input {
+  background: rgb(56, 64, 77);
+  padding: 1.2px 3px;
+  border-radius: 5px;
+  border: 1px solid rgb(119, 119, 119);
+  box-shadow: 0 0 4px rgb(119, 119, 119);
+}
+
 .icon {
   width: 1em;
   height: 1em;

@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "build": "nuxt build",
-    "dev": "nuxt dev",
+    "dev": "set NITRO_PORT=3453 && nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
@@ -15,6 +15,7 @@
     "@nuxtjs/robots": "5.2.10",
     "@nuxtjs/sitemap": "7.3.1",
     "@tailwindcss/vite": "^4.1.10",
+    "color": "^5.0.0",
     "dayjs": "^1.11.13",
     "dayjs-nuxt": "2.1.11",
     "gsap": "^3.13.0",

@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="js">
 const backgroundColors = [
   { 
     background: "#36373e", 
@@ -22,21 +22,27 @@ const backgroundColors = [
   }
 ]
 
-const holographic = [0xA9C9FF, 0xFFBBEC, 0xFFC3A0];
+const holographic = ["#A9C9FF", "#FFBBEC", "#FFC3A0"];
 // can't change colors in holographic
+
+const gradientDefault = ["#0142b3", "#0072de"];
+
+const displayName = ref('John Doe');
 
 const colorStyle = ref('solid');
 const resultColor = ref([null, null, null]);
 
-function changeRoleStyle() {
-  
+function changeRoleStyle(style) {
+  colorStyle.value = style;
+
+  if (style === "holographic") resultColor.value = holographic;
 }
 </script>
 <template>
   <NuxtLayout 
     name="default" 
     title="Discord Role Color Preview"
-    :description="useNuxtApp().$i18n.t('misc.rcp.description')"
+    :description="useNuxtApp().$i18n.t('misc.list.rcp.description')"
     align="center">
     <div class="container">
       <div class="preview">
@@ -48,15 +54,18 @@ function changeRoleStyle() {
                   <div class="avatar-placeholder lase-color"></div>
                 </div>
                 <h2 class="name-header" :style="{ color: col.nameColor }">
-                  <span class="name" :style="{
-                      '--color-1': resultColor[0],
-                      '--color-2': resultColor[1],
-                      '--color-3': resultColor[2],
+                  <div
+                    :data-text="displayName"
+                    :class="`name ${colorStyle !== 'solid' ? 'name-gradient' : ''} ${colorStyle === 'holographic' ? 'name-holographic' : ''}`" 
+                    :style="{
+                      '--color-1': resultColor?.at(0),
+                      '--color-2': resultColor?.at(1),
+                      '--color-3': resultColor?.at(2) || resultColor?.at(0),
                     }">
-                    {{ displayName || "John Doe" }}
-                  </span>
+                    {{ displayName }}
+                  </div>
                   <span class="timestamp">
-                    {{ new Date().toString().match(/\d{2}:\d{2}/)[0] }}
+                    {{ new Date().toString().match(/\d{2}:\d{2}/)?.at(0) }}
                   </span>
                 </h2>
                 <div :style="{ color: col.messageColor }">{{ $t('misc.rcp.text') }}</div>
@@ -69,10 +78,13 @@ function changeRoleStyle() {
       <div class="setting">
         <h4>{{ $t('misc.rcp.role_style') }}</h4>
         <div class="grid grid-cols-3">
-          <button>{{ $t('misc.rcp.role_style.solid') }}</button>
-          <button>{{ $t('misc.rcp.role_style.gradient') }}</button>
-          <button>{{ $t('misc.rcp.role_style.holographic') }}</button>
+          <button @click="changeRoleStyle('solid')">{{ $t('misc.rcp.role_style.solid') }}</button>
+          <button @click="changeRoleStyle('gradient')">{{ $t('misc.rcp.role_style.gradient') }}</button>
+          <button @click="changeRoleStyle('holographic')">{{ $t('misc.rcp.role_style.holographic') }}</button>
         </div>
+        <div class="color-picker">
+        </div>
+        <ColorPicker />
       </div>
     </div>
   </NuxtLayout>
@@ -90,7 +102,8 @@ function changeRoleStyle() {
   border: 1px solid gray;
   box-shadow: 0 0 8px gray;
   border-radius: 8px;
-  font-family: 'Ubuntu Sans', 'Noto Sans', sans-serif;
+  font-family: 'Ubuntu Sans', 'Noto Sans', 'Noto Sans JP', sans-serif;
+  height: fit-content;
 
   & > .bg:first-child {
     border-top-left-radius: 8px;
@@ -138,13 +151,13 @@ function changeRoleStyle() {
   position: relative;
   white-space: break-spaces;
   word-wrap: pre-wrap;
-  overflow: hidden;
   font-size: 100%;
   padding: 0;
 }
 .name {
   display: inline;
   font-weight: 600;
+  color: var(--color-1);
 }
 .timestamp {
   color: color-mix(in oklab, hsl(234 calc(1*4.274%) 45.882% /1) 100%, #000 0%);
@@ -152,5 +165,57 @@ function changeRoleStyle() {
   margin-left: .25rem;
   font-weight: 500;
   font-family: 'Ubuntu Sans', Ubuntu 'Noto Sans', sans-serif;
+}
+.color-picker {
+  margin: 4px;
+  border-radius: 8px;
+  border: 1px solid gray;
+  box-shadow: 0 0 5px gray;
+  height: 48px;
+}
+
+.name-gradient {
+  background: linear-gradient(to right,
+    var(--color-1),
+    var(--color-2),
+    var(--color-1)
+  );
+  background-size: 100px auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientUsernameAnimation 1.5s linear infinite;
+  font-weight: 600;
+  position: relative;
+
+  & > .name-holographic {
+    background: linear-gradient(to right,
+      var(--color-1),
+      var(--color-2),
+      var(--color-3),
+      var(--color-1)
+    );
+  }
+  &::after {
+    background: inherit;
+    background-size: 100px auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientUsernameAnimation 1.5s linear infinite;
+    content: attr(data-text) / "";
+    position: absolute;
+    inset: 0;
+    opacity: .7;
+    filter: blur(4px);
+  }
+}
+@keyframes gradientUsernameAnimation {
+  0% {
+    background-position: 0;
+  }
+  100% {
+    background-position: 100px;
+  }
 }
 </style>
