@@ -2,7 +2,7 @@
 const { locale } = useI18n()
 const dayjs = useDayjs()
 
-const expiresAt = dayjs('2025-6-23');
+const expiresAt = dayjs('2025-6-23  23:59');
 const expireEta = ref(expiresAt.fromNow(true));
 
 watch(locale, (newLocale) => {
@@ -29,6 +29,10 @@ onMounted(() => {
         <h1 class="flash wiggle">{{ expireEta }}</h1>
         <h4 class="fw-normal after-format">{{ $t('misc.domains.expire.2') }}</h4>
       </div>
+      <p class="monospace">
+        <small><i>({{ expiresAt.format(LL) }})</i></small>
+      </p>
+      <br>
       <small class="opacity-50">
         {{ $t('misc.domains.expire.3') }}
       </small>

@@ -2,7 +2,7 @@
 const { locale } = useI18n()
 const dayjs = useDayjs()
 
-const expiresAt = dayjs('2025-7-10 23:59');
+const expiresAt = dayjs('2025-7-30  23:59');
 const expireEta = ref(expiresAt.fromNow(true));
 
 watch(locale, (newLocale) => {
@@ -23,7 +23,7 @@ onMounted(() => {
 <template>
   <NuxtLayout name="default" title="2wj.site" align="center">
     <div class="container">
-      <h1 class="monospace woosh flash name">lesip.xyz</h1>
+      <h1 class="monospace woosh flash name">driplase.shop</h1>
       <p>{{ $t('misc.domains.expire.1') }}</p>
       <div class="flex-row">
         <h1 class="flash wiggle">{{ expireEta }}</h1>
