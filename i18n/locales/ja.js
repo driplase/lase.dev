@@ -25,6 +25,6 @@ export default {
   "works.lixeld.description.extend": "のために作られました",
 
   "misc.domains.expire.1": "はあと",
-  "misc.domains.expire.2": "で期限が切れます",
-  "misc.domains.expire.3": "and i'm not going to renew it because there is no reason to keep it.",
+  "misc.domains.expire.2": "で期限が切れます。",
+  "misc.domains.expire.3": "このドメインを保持する理由がないので、更新するつもりはありません。",
 }

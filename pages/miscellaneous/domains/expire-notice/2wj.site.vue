@@ -2,11 +2,23 @@
 const { locale } = useI18n()
 const dayjs = useDayjs()
 
+const expiresAt = dayjs('2025-7-10');
+const expireEta = ref(expiresAt.fromNow(true));
+
 watch(locale, (newLocale) => {
   dayjs.locale(newLocale)
+  if (expireEta) {
+    expireEta.value = expiresAt.locale(newLocale).fromNow(true)
+  }
 }, { immediate: true })
 
-const expiresAt = dayjs('2025-7-10');
+onMounted(() => {
+  setTimeout(() => {
+    setInterval(() => {
+      expireEta.value = expiresAt.locale(locale.value).fromNow(true)
+    }, 1e3)
+  }, 1e3 - dayjs().millisecond)
+})
 </script>
 <template>
   <NuxtLayout name="default" title="2wj.site" align="center">
@@ -14,7 +26,7 @@ const expiresAt = dayjs('2025-7-10');
       <h1 class="monospace woosh flash name">2wj.site</h1>
       <p>{{ $t('misc.domains.expire.1') }}</p>
       <div class="flex-row">
-        <h2 class="flash wiggle">{{ expiresAt.fromNow(true) }}</h2>
+        <h1 class="flash wiggle">{{ expireEta }}</h1>
         <h4 class="fw-normal after-format">{{ $t('misc.domains.expire.2') }}</h4>
       </div>
       <small class="opacity-50">
@@ -35,11 +47,12 @@ const expiresAt = dayjs('2025-7-10');
   padding: auto;
 }
 .name {
-  padding: 2rem
+  padding: .8rem;
+  font-size: 5rem;
 }
 .after-format {
   padding: 5px;
-  padding-bottom: .54rem;
+  padding-bottom: 1.2rem;
 }
 a {
   text-decoration: none;
