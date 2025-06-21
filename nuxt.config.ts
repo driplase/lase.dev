@@ -1,3 +1,5 @@
+import tailwindcss from "@tailwindcss/vite";
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2025-05-15',
@@ -9,6 +11,7 @@ export default defineNuxtConfig({
     '@nuxtjs/robots',
     'dayjs-nuxt'
   ],
+  css: ['~/styles/global.css'],
   plugins: [
     '~/plugins/effects.client.js',
   ],
@@ -31,5 +34,10 @@ export default defineNuxtConfig({
   site: {
     url: 'https://lase.dev',
     name: 'lase.dev',
-  }
+  },
+  vite: {
+    plugins: [
+      tailwindcss(),
+    ],
+  },
 })

@@ -112,7 +112,6 @@ onMounted(() => {
 <style scoped>
 header {
   width: 100dvw;
-  padding: 5px;
   font-size: 18px;
   background: #06060fbf;
   border-bottom: 1px solid #8080809f;
@@ -137,6 +136,10 @@ header {
   text-shadow: 0 0 8px #0072de;
   justify-content: start;
   display: inline-block;
+
+  & > a {
+    padding: 0 .32rem;
+  }
 }
 nav {
   text-align: center;

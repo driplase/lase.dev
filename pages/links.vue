@@ -2,7 +2,7 @@
 </script>
 <template>
   <NuxtLayout name="default" :title="$t('links')" align="start">
-    <h1 class="flash woosh">{{ $t('socials') }}</h1>
+    <h1 class="flash woosh font-bold">{{ $t('socials') }}</h1>
     <div class="socials">
       <p class="wiggle woosh wg-text wsh-text flash links">
         <NuxtLink href="https://youtube.com/@driplase" target="_blank" rel="noopener noreferrer">YouTube</NuxtLink>
@@ -20,7 +20,7 @@
       </p>
     </div>
     <br>
-    <h1 class="flash woosh">{{ $t('mutual_links') }}</h1>
+    <h1 class="flash woosh font-bold">{{ $t('mutual_links') }}</h1>
     <div class="socials">
       <p class="wiggle woosh wg-text wsh-text flash links">
         <NuxtLink href="https://furamen.kokkosoft.com" target="_blank" rel="noopener noreferrer">

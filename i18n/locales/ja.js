@@ -23,8 +23,16 @@ export default {
   "works.j0si.description": "シンプルなURL短縮ツール。新バージョン開発中...",
   "works.lixeld.description": "Mojangles (マイクラのフォント)にインスパイアされたピクセルフォント。もともとは ",
   "works.lixeld.description.extend": "のために作られました",
+  
+  "misc.list.rcp.description": "Discordのロールカラーをプレビューできるシンプルなツール。ロールのスタイル（強化）にも対応！",
+  "misc.rcp.text": "岩はかなり古い",
 
   "misc.domains.expire.1": "はあと",
   "misc.domains.expire.2": "で期限が切れます。",
   "misc.domains.expire.3": "このドメインを保持する理由がないので、更新するつもりはありません。",
+  
+  "misc.rcp.role_style": "ロールスタイル",
+  "misc.rcp.role_style.solid": "ソリッド",
+  "misc.rcp.role_style.gradient": "グラデーション",
+  "misc.rcp.role_style.holographic": "ホログラフィック",
 }

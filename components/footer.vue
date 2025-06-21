@@ -12,7 +12,7 @@
 <style scoped>
   footer {
     justify-items: center;
-    margin: 1.6rem 0;
+    margin-top: 1.6rem;
   }
   hr {
     width: 100dvw;
@@ -33,6 +33,10 @@
     text-shadow: 0 0 8px #e9eeff;
     justify-content: start;
     display: inline-block;
+
+    & > a {
+      padding: 0 .32rem;
+    }
   }
   .small-text {
     font-size: smaller;

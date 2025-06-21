@@ -37,12 +37,14 @@ button {
   color: white;
   width : 32px;
   height: 32px;
+  margin: 0;
+  box-shadow: none;
 }
 .dropmenu {
   position: absolute;
   display: block;
   list-style: none;
-  inset: auto 0px auto auto;
+  inset: 36px 0px auto auto;
   width: fit-content;
   padding-left: 24px;
   z-index: 16;

@@ -1,6 +1,4 @@
 <script setup>
-import '@/styles/global.css';
-
 useHead(() => ({
   htmlAttrs: {},
   title: 'lase.dev',

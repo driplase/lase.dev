@@ -18,7 +18,7 @@ try {
     :to="props.url" 
     :target="props.external ? '_blank' : '_self'">
     <div :class="
-      `card ${isURLvalid ? 'flash' : ''}`
+      `card ${(isURLvalid || !external) ? 'flash' : ''}`
     ">
       <h3>{{ props.title }}</h3>
       <slot />

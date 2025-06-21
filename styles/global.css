@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 @import './fonts.css';
 @import './effects.css';
 @import './responsive.css';
@@ -54,19 +56,25 @@ main {
 
 h1 {
   font-size: 3rem;
-  padding: 12px 0;
+  font-weight: 700;
+  /* padding: 12px 0; */
 }
 h2 {
+  font-weight: 600;
   font-size: 2.1rem;
-  padding: 8px 0;
+  /* padding: 8px 0; */
 }
 h3 {
   font-size: 1.8rem;
-  padding: 6px 0;
+  /* padding: 6px 0; */
 }
 h4 {
   font-size: 1.3rem;
-  padding: 5px 0;
+  /* padding: 5px 0; */
+}
+
+h3, h4, h5, h6 {  
+  font-weight: 500;
 }
 
 a {
@@ -75,6 +83,21 @@ a {
 
 h1, h2, h3, h4, h5, h6, p {
   width: max-content;
+}
+
+button {
+  background: rgb(106, 121, 148);
+  border-radius: 8px;
+  margin: 4px;
+  border: 1px solid rgb(190, 190, 190);
+  box-shadow: 0 0 5px rgb(190, 190, 190);
+
+  &:hover {
+    background: rgb(135, 151, 182);
+  }
+  &:active {
+    background: rgb(94, 103, 122);
+  }
 }
 
 .tooltip {
