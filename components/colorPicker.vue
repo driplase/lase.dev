@@ -6,6 +6,7 @@ const model = defineModel()
 const props = defineProps({
   value: String,
 })
+const emit = defineEmits(['update'])
 
 const hue = ref(0);
 const saturation = ref(0);
@@ -75,7 +76,8 @@ function getColor() {
 
   hexn.value = col.rgbNumber();
   hex.value = col.hex().toLowerCase();
-  model.value = hexn.value;
+  model.value = hex.value;
+  emit('update', hex.value);
 }
 
 getColor();

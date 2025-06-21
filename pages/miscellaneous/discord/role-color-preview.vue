@@ -37,6 +37,11 @@ function changeRoleStyle(style) {
 
   if (style === "holographic") resultColor.value = holographic;
 }
+
+function changeColor(value) {
+  resultColor.value[0] = value
+  if (value === "#000000") resultColor.value[0] = null;
+}
 </script>
 <template>
   <NuxtLayout 
@@ -82,9 +87,15 @@ function changeRoleStyle(style) {
           <button @click="changeRoleStyle('gradient')">{{ $t('misc.rcp.role_style.gradient') }}</button>
           <button @click="changeRoleStyle('holographic')">{{ $t('misc.rcp.role_style.holographic') }}</button>
         </div>
-        <div class="color-picker">
+        <div
+          :class="`color-preview prev-${colorStyle}`" 
+          :style="{
+            '--color-1': resultColor?.at(0),
+            '--color-2': resultColor?.at(1),
+            '--color-3': resultColor?.at(2) || resultColor?.at(0),
+          }">
         </div>
-        <ColorPicker />
+        <ColorPicker @update="changeColor" />
       </div>
     </div>
   </NuxtLayout>
@@ -166,7 +177,7 @@ function changeRoleStyle(style) {
   font-weight: 500;
   font-family: 'Ubuntu Sans', Ubuntu 'Noto Sans', sans-serif;
 }
-.color-picker {
+.color-preview {
   margin: 4px;
   border-radius: 8px;
   border: 1px solid gray;
@@ -217,5 +228,22 @@ function changeRoleStyle(style) {
   100% {
     background-position: 100px;
   }
+}
+
+.prev-solid {
+  background: var(--color-1);
+}
+.prev-gradient {
+  background: linear-gradient(to right,
+    var(--color-1),
+    var(--color-2)
+  );
+}
+.prev-holographic {
+  background: linear-gradient(to right,
+    var(--color-1),
+    var(--color-2),
+    var(--color-3)
+  );
 }
 </style>
