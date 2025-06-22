@@ -25,14 +25,15 @@ this website is still in development...`,
   "works.lixeld.description.extend": "",
 
   "misc.list.rcp.description": "A simple tool that lets you preview Discord role colors. Enhanced Role Styles are supported!",
-  "misc.rcp.text": "rocks are really old",
-
+  
   "misc.domains.expire.1": "is going to expire in",
   "misc.domains.expire.2": ".",
   "misc.domains.expire.3": "and i'm not going to renew it because there is no reason to keep it.",
-
+  
+  "misc.rcp.text": "rocks are really old",
   "misc.rcp.role_style": "Role Style",
   "misc.rcp.role_style.solid": "Solid",
   "misc.rcp.role_style.gradient": "Gradient",
   "misc.rcp.role_style.holographic": "Holographic",
+  "misc.rcp.role_color": "Role Color",
 }

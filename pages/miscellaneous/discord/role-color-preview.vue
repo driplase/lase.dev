@@ -30,28 +30,31 @@ const gradientDefault = ["#0142b3", "#0072de"];
 const displayName = ref('John Doe');
 
 const colorStyle = ref('solid');
+const roleColor = ref([null, null, null]);
 const resultColor = ref([null, null, null]);
 
 function changeRoleStyle(style) {
   if (colorStyle.value === "solid" && style === 'gradient') {
-    if (resultColor.value[0] === null) resultColor.value[0] =　"#000000";
+    if (roleColor.value[0] === null) roleColor.value[0] =　"#000000";
     
-    resultColor.value[1] = resultColor.value[0];
+    roleColor.value[1] = roleColor.value[0];
   }
   
   colorStyle.value = style;
   
-  if (resultColor.value[0] === "#000000" && colorStyle.value === 'solid') resultColor.value[0] =　null;
+  if (roleColor.value[0] === "#000000" && colorStyle.value === 'solid') roleColor.value[0] =　null;
 
-  if (style === "holographic") resultColor.value = holographic;
+  resultColor.value = roleColor.value;
+  if (colorStyle.value === 'holographic') resultColor.value = holographic.slice();
 }
 
 function changeColor(value) {
   // discord doesn't let us change holographic colors
   if (colorStyle.value === 'holographic') return;
 
-  resultColor.value[0] = value
-  if (value === "#000000" && colorStyle.value === "solid") resultColor.value[0] = null;
+  roleColor.value[0] = value
+  if (value === "#000000" && colorStyle.value === "solid") roleColor.value[0] = null;
+  resultColor.value = roleColor.value;
 }
 </script>
 <template>
@@ -60,6 +63,7 @@ function changeColor(value) {
     title="Discord Role Color Preview"
     :description="useNuxtApp().$i18n.t('misc.list.rcp.description')"
     align="center">
+    <h2 class="font-bold">Discord Role Color Preview</h2>
     <div class="container">
       <div class="preview">
         <div class="bg" v-for="col in backgroundColors" :style="{ background: col.background }">
@@ -93,11 +97,12 @@ function changeColor(value) {
 
       <div class="setting">
         <h4>{{ $t('misc.rcp.role_style') }}</h4>
-        <div class="grid grid-cols-3">
+        <div class="grid grid-cols-3 buttons">
           <button @click="changeRoleStyle('solid')">{{ $t('misc.rcp.role_style.solid') }}</button>
           <button @click="changeRoleStyle('gradient')">{{ $t('misc.rcp.role_style.gradient') }}</button>
           <button @click="changeRoleStyle('holographic')">{{ $t('misc.rcp.role_style.holographic') }}</button>
         </div>
+        <h4 class="mt-px">{{ $t('misc.rcp.role_color') }}</h4>
         <div
           :class="`color-preview prev-${colorStyle}`" 
           :style="{
@@ -105,8 +110,13 @@ function changeColor(value) {
             '--color-2': resultColor?.at(1),
             '--color-3': resultColor?.at(2) || resultColor?.at(0),
           }">
+          <div class="color-pick">
+            <Icon class="color-pick-icon" name="tabler:color-picker" size="22"/>
+          </div>
         </div>
-        <ColorPicker @update="changeColor" />
+        <ColorPicker 
+          @update="changeColor"
+          :value="''" />
       </div>
     </div>
   </NuxtLayout>
@@ -188,13 +198,6 @@ function changeColor(value) {
   font-weight: 500;
   font-family: 'Ubuntu Sans', Ubuntu 'Noto Sans', sans-serif;
 }
-.color-preview {
-  margin: 4px;
-  border-radius: 8px;
-  border: 1px solid gray;
-  box-shadow: 0 0 5px gray;
-  height: 48px;
-}
 
 .name-gradient {
   background: linear-gradient(to right,
@@ -256,5 +259,41 @@ function changeColor(value) {
     var(--color-2),
     var(--color-3)
   );
+}
+.color-preview {
+  margin: 4px;
+  border-radius: 8px;
+  border: 1px solid gray;
+  box-shadow: 0 0 5px gray;
+  height: 48px;
+  display: grid;
+  align-items: center;
+  padding: 7px;
+}
+.color-pick {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width:  32px;
+  height: 32px;
+  border: 1px solid white;
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.8),
+    0 0 4px rgba(255, 255, 255, 0.5) inset;
+  position: relative;
+  background: rgba(0, 0, 0, 0.404);
+}
+.color-pick:after {
+  content: '';
+  filter: blur(4px);
+  mask-image: inherit;
+  mask-repeat: no-repeat;
+  mask-size: 100% 100%;
+  background-color: black;
+}
+.color-pick-icon-shadow {
+  position: absolute;
+  inset: 4px;
+  filter: blur(4px);
 }
 </style>

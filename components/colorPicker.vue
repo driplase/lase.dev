@@ -5,6 +5,7 @@ import InputItem from './InputItem.vue';
 const model = defineModel()
 const props = defineProps({
   value: String,
+  alpha: Boolean,
 })
 const emit = defineEmits(['update'])
 
@@ -39,9 +40,10 @@ function handleHuerMove({ offsetX }) {
   const width = 220;
   hue.value = Math.max(0, Math.min(360, offsetX / width * 360));
   huerCursorPos.value = Math.max(0, Math.min(width, offsetX));
-  getColor();
+  setColor();
 }
 function huerDrag(event) {
+  event.preventDefault();
   const target = event.target;
   const { offsetX } = getRelativeOffset(event, target);
   handleHuerMove({ offsetX });
@@ -70,9 +72,10 @@ function handleSatMove({ offsetX, offsetY }) {
   value.value = Math.max(0, Math.min(1, (height - offsetY) / height));
   satCursorPosX.value = Math.max(0, Math.min(width, offsetX));
   satCursorPosY.value = Math.max(0, Math.min(height, offsetY));
-  getColor();
+  setColor();
 }
 function satDrag(event) {
+  event.preventDefault();
   const target = event.target;
   const { offsetX, offsetY } = getRelativeOffset(event, target);
   handleSatMove({ offsetX, offsetY });
@@ -94,26 +97,71 @@ function satDrag(event) {
   window.addEventListener('touchend', onUp);
 }
 
-function getColor() {
+function setColor(isTextInput) {
   const col = Color.hsv(
     hue.value,
     saturation.value * 100,
     value.value * 100,
   )
 
+  if (isTextInput) {
+    huerCursorPos.value = hue.value / 360 * 220;
+    satCursorPosX.value = saturation.value * 220;
+    satCursorPosY.value = 150 - value.value * 150;
+  }
+
   hexn.value = col.rgbNumber();
-  hex.value = col.hex().toLowerCase();
-  model.value = hex.value;
-  emit('update', hex.value);
+  const hexL = col.hex().toLowerCase();
+  if (!isTextInput) hex.value = hexL;
+  model.value = hexL;
+  emit('update', hexL);
 }
 
-getColor();
+async function userTextInput(event) {
+  if (!hex.value.startsWith('#')) {
+    const selectionStart = event.target.selectionStart;
+    const selectionEnd = event.target.selectionEnd;
+    
+    hex.value = '#' + hex.value;
+    await nextTick()
+    event.target.selectionStart = selectionStart + 1
+    event.target.selectionEnd = selectionEnd + 1
+  }
+
+  if (/^#([0-9a-f]{6}|[0-9a-f]{3})$/i.test(hex.value)
+    || (/^#([0-9a-f]{8}|[0-9a-f]{4})$/i.test(hex.value) && props.alpha)) {
+  
+    const inputColor = Color(hex.value).hsv().object();
+  
+    hue.value =        inputColor.h;
+    saturation.value = inputColor.s / 100;
+    value.value =      inputColor.v / 100;
+
+    await nextTick();
+    setColor(true);
+  }
+}
+
+
+if (props.value) {
+  if (/^#([0-9a-f]{6}|[0-9a-f]{3})$/i.test(props.value)
+    || (/^#([0-9a-f]{8}|[0-9a-f]{4})$/i.test(props.value) && props.alpha)) {
+    const inputColor = Color(props.value).hsv().object();
+      
+    hue.value =        inputColor.h;
+    saturation.value = inputColor.s / 100;
+    value.value =      inputColor.v / 100;
+  }
+}
+
+setColor();
 </script>
 <template>
   <div class="dropmenu">
     <div class="sat-base"
       @mousedown="satDrag"
       @touchstart="satDrag"
+      @contextmenu="e => e.preventDefault()"
       :style="{
         background: `hsl(${hue}deg, 100%, 50%)`
       }">
@@ -122,16 +170,23 @@ getColor();
       <div class="sat-cursor" :style="{
         left: `${satCursorPosX}px`,
         top:  `${satCursorPosY}px`,
+        background: hex,
       }"></div>
     </div>
     <div class="huer"
       @mousedown="huerDrag"
-      @touchstart="huerDrag">
+      @touchstart="huerDrag"
+      @contextmenu="e => e.preventDefault()">
       <div class="huer-thumb" :style="{
         left: `${huerCursorPos}px`
       }"></div>
     </div>
-    <InputItem type="text" v-model="hex" class="monospace" />
+    <InputItem 
+      type="text" 
+      v-model="hex" 
+      class="monospace" 
+      maxlength="9"
+      @input="userTextInput"/>
   </div>
 </template>
 <style scoped>
@@ -163,8 +218,8 @@ getColor();
 }
 .huer {
   width: calc(240px - 20px);
-  height: 8px;
-  border-radius: 4px;
+  height: 12px;
+  border-radius: 6px;
   background: linear-gradient(90deg, #f00, #ff0, #0f0, #0ff, #00f, #f0f, #f00);
   position: relative;
   margin-bottom: 8px;
@@ -186,7 +241,7 @@ getColor();
   box-shadow: 0 0 4px black;
   height: 16px;
   width: 7.5px;
-  transform: translate(-3.75px, -4px);
+  transform: translate(-3.75px, -2px);
   border-radius: 3.75px;
   position: absolute;
   pointer-events: none;
