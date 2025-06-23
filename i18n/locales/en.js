@@ -30,6 +30,7 @@ this website is still in development...`,
   "misc.domains.expire.2": ".",
   "misc.domains.expire.3": "and i'm not going to renew it because there is no reason to keep it.",
   
+  "misc.rcp.title": "Discord Role Color Preview",
   "misc.rcp.text": "rocks are really old",
   "misc.rcp.role_style": "Role Style",
   "misc.rcp.role_style.solid": "Solid",

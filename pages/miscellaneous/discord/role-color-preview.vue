@@ -97,10 +97,10 @@ async function showColorPicker(event, col) {
 <template>
   <NuxtLayout 
     name="default" 
-    title="Discord Role Color Preview"
+    :title="useNuxtApp().$i18n.t('misc.rcp.title')"
     :description="useNuxtApp().$i18n.t('misc.list.rcp.description')"
     align="center">
-    <h2 class="font-bold">Discord Role Color Preview</h2>
+    <h2 class="font-bold">{{ $t('misc.rcp.title') }}</h2>
     <div class="container">
       <div class="preview">
         <div class="bg" v-for="col in backgroundColors" :style="{ background: col.background }">
