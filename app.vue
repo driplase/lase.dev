@@ -12,11 +12,20 @@ useHead(() => ({
     {
       rel: "sitemap",
       href: "/sitemap.xml"
-    }
+    },
+    {
+      rel: "preconnect",
+      href: "https://fonts.googleapis.com"
+    },
+    {
+      rel: "preconnect",
+      href: "https://fonts.gstatic.com",
+      crossorigin: true,
+    },
   ],
   meta: [
     {
-      charset: "utf-8"
+      charset: "utf-8",
     },
     {
       name: "viewport",

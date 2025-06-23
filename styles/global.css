@@ -1,6 +1,5 @@
-@import "tailwindcss";
-
 @import './fonts.css';
+@import "tailwindcss";
 @import './effects.css';
 @import './responsive.css';
 
@@ -13,6 +12,11 @@
   --color-background: #111222;
   --color-text: white;
   --color-text-link: #2862ff;
+}
+
+@theme {
+  --font-sans: var(--font-primary);
+  --font-mono: var(--font-monospace);
 }
 
 *,

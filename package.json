@@ -3,10 +3,11 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "start": "set NITRO_PORT=3453 && node ./.output/server/index.mjs",
     "build": "nuxt build",
     "dev": "set NITRO_PORT=3453 && nuxt dev",
     "generate": "nuxt generate",
-    "preview": "nuxt preview",
+    "preview": "set NITRO_PORT=3453 && nuxt preview",
     "postinstall": "nuxt prepare"
   },
   "dependencies": {

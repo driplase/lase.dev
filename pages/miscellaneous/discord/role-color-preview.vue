@@ -33,6 +33,16 @@ const colorStyle = ref('solid');
 const roleColor = ref([null, null, null]);
 const resultColor = ref([null, null, null]);
 
+const activeColorPickerMenu = ref(-1);
+const customizableColors = {
+  solid: [0],
+  gradient: [0, 1],
+  holographic: [],
+}
+
+const picker = useTemplateRef('picker')
+const pickerDefaultValue = ref('');
+
 function changeRoleStyle(style) {
   if (colorStyle.value === "solid" && style === 'gradient') {
     if (roleColor.value[0] === null) roleColor.value[0] =　"#000000";
@@ -52,9 +62,36 @@ function changeColor(value) {
   // discord doesn't let us change holographic colors
   if (colorStyle.value === 'holographic') return;
 
-  roleColor.value[0] = value
-  if (value === "#000000" && colorStyle.value === "solid") roleColor.value[0] = null;
+  roleColor.value[activeColorPickerMenu.value] = value
+  if (value === "#000000" && colorStyle.value === "solid") roleColor.value[activeColorPickerMenu.value] = null;
   resultColor.value = roleColor.value;
+}
+async function showColorPicker(event, col) {
+  activeColorPickerMenu.value = col;
+  pickerDefaultValue.value = roleColor.value[activeColorPickerMenu.value]
+  await nextTick();
+
+  const bounding = picker.value.getBoundingClientRect();
+
+  let x = event.clientX;
+  let y = event.clientY;
+  if (event.clientX + bounding.width > window.innerWidth) x = event.clientX - bounding.width
+  if (event.clientY + bounding.height > window.innerHeight) y = event.clientY - bounding.height
+
+  picker.value.style.left = x + 'px';
+  picker.value.style.top =  y + 'px';
+
+  picker.value.focus();
+
+  function onBlur(event) {
+    // Only close if focus moves outside the picker menu
+    if (!picker.value.contains(event.relatedTarget)) {
+      activeColorPickerMenu.value = -1;
+      picker.value.removeEventListener('blur', onBlur, true);
+    }
+  }
+
+  picker.value.addEventListener('blur', onBlur, true);
 }
 </script>
 <template>
@@ -102,21 +139,38 @@ function changeColor(value) {
           <button @click="changeRoleStyle('gradient')">{{ $t('misc.rcp.role_style.gradient') }}</button>
           <button @click="changeRoleStyle('holographic')">{{ $t('misc.rcp.role_style.holographic') }}</button>
         </div>
-        <h4 class="mt-px">{{ $t('misc.rcp.role_color') }}</h4>
+        <h4>{{ $t('misc.rcp.role_color') }}</h4>
         <div
           :class="`color-preview prev-${colorStyle}`" 
           :style="{
-            '--color-1': resultColor?.at(0),
+            '--color-1': resultColor?.at(0) || '#99aab5',
             '--color-2': resultColor?.at(1),
             '--color-3': resultColor?.at(2) || resultColor?.at(0),
           }">
-          <div class="color-pick">
-            <Icon class="color-pick-icon" name="tabler:color-picker" size="22"/>
-          </div>
+          <div class="pickers">
+            <div 
+              v-for="col in customizableColors[colorStyle]"
+              class="color-pick" 
+              v-if="colorStyle !== 'holographic'"
+              @click="e => showColorPicker(e, col)">
+              <Icon 
+                class="color-pick-icon" 
+                name="tabler:color-picker" 
+                size="22"/>
+              </div>
+            </div>
+            <div 
+              class="picker-menu"
+              ref="picker"
+              :style="{
+                display: activeColorPickerMenu >= 0 ? 'block' : 'none',
+              }"
+              tabindex="0">
+              <ColorPicker
+                @update="changeColor"
+                v-model="pickerDefaultValue" />
+            </div>
         </div>
-        <ColorPicker 
-          @update="changeColor"
-          :value="''" />
       </div>
     </div>
   </NuxtLayout>
@@ -282,6 +336,7 @@ function changeColor(value) {
     0 0 4px rgba(255, 255, 255, 0.5) inset;
   position: relative;
   background: rgba(0, 0, 0, 0.404);
+  cursor: pointer;
 }
 .color-pick:after {
   content: '';
@@ -295,5 +350,17 @@ function changeColor(value) {
   position: absolute;
   inset: 4px;
   filter: blur(4px);
+}
+.pickers {
+  display: flex;
+  justify-content: space-between;
+}
+.picker-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  display: none;
+  outline: 0;
 }
 </style>

@@ -97,7 +97,7 @@ function satDrag(event) {
   window.addEventListener('touchend', onUp);
 }
 
-function setColor(isTextInput) {
+function setColor(isTextInput, doNotSetValue) {
   const col = Color.hsv(
     hue.value,
     saturation.value * 100,
@@ -112,8 +112,7 @@ function setColor(isTextInput) {
 
   hexn.value = col.rgbNumber();
   const hexL = col.hex().toLowerCase();
-  if (!isTextInput) hex.value = hexL;
-  model.value = hexL;
+  if (!doNotSetValue) hex.value = hexL;
   emit('update', hexL);
 }
 
@@ -138,23 +137,31 @@ async function userTextInput(event) {
     value.value =      inputColor.v / 100;
 
     await nextTick();
-    setColor(true);
+    setColor(true, false);
   }
 }
 
-
-if (props.value) {
-  if (/^#([0-9a-f]{6}|[0-9a-f]{3})$/i.test(props.value)
-    || (/^#([0-9a-f]{8}|[0-9a-f]{4})$/i.test(props.value) && props.alpha)) {
-    const inputColor = Color(props.value).hsv().object();
+function setColorFrom(newColor) {
+  if (/^#([0-9a-f]{6}|[0-9a-f]{3})$/i.test(newColor)
+    || (/^#([0-9a-f]{8}|[0-9a-f]{4})$/i.test(newColor) && props.alpha)) {
+    const inputColor = Color(newColor).hsv().object();
       
     hue.value =        inputColor.h;
     saturation.value = inputColor.s / 100;
     value.value =      inputColor.v / 100;
+
+    setColor(true, false);
   }
+  
 }
 
+if (props.value) setColorFrom(props.value);
+
 setColor();
+
+watch(model, (newColor) => {
+  setColorFrom(newColor)
+});
 </script>
 <template>
   <div class="dropmenu">
