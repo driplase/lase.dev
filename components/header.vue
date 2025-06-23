@@ -97,7 +97,8 @@ onMounted(() => {
             :href="item.url"
             @click="toggleBurger(false, true)"
             :style="{
-              pointerEvents: burgerMenu ? 'auto' : 'none'
+              pointerEvents: burgerMenu ? 'auto' : 'none',
+              touchAction: burgerMenu ? 'manipulation' : 'none',
             }"
             :tabindex="burgerMenu - 1"
           >{{ $t(item.title) }}</NuxtLink>

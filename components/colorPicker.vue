@@ -35,6 +35,7 @@ function getRelativeOffset(e, target) {
     offsetY: clientY - rect.top
   };
 }
+let originalBodyOverflow = null;
 
 function handleHuerMove({ offsetX }) {
   const width = 220;
@@ -58,11 +59,23 @@ function huerDrag(event) {
     window.removeEventListener('mouseup', onUp);
     window.removeEventListener('touchmove', onMove);
     window.removeEventListener('touchend', onUp);
+    if (originalBodyOverflow !== null) {
+      document.body.style.overflow = originalBodyOverflow;
+      originalBodyOverflow = null;
+    }
   }
   window.addEventListener('mousemove', onMove);
   window.addEventListener('mouseup', onUp);
   window.addEventListener('touchmove', onMove, { passive: false });
   window.addEventListener('touchend', onUp);
+
+  // Disable scrolling on touch drag
+  if (event.type.startsWith('touch')) {
+    if (originalBodyOverflow === null) {
+      originalBodyOverflow = document.body.style.overflow;
+      document.body.style.overflow = 'hidden';
+    }
+  }
 }
 
 function handleSatMove({ offsetX, offsetY }) {
@@ -90,11 +103,23 @@ function satDrag(event) {
     window.removeEventListener('mouseup', onUp);
     window.removeEventListener('touchmove', onMove);
     window.removeEventListener('touchend', onUp);
+    if (originalBodyOverflow !== null) {
+      document.body.style.overflow = originalBodyOverflow;
+      originalBodyOverflow = null;
+    }
   }
   window.addEventListener('mousemove', onMove);
   window.addEventListener('mouseup', onUp);
   window.addEventListener('touchmove', onMove, { passive: false });
   window.addEventListener('touchend', onUp);
+
+  // Disable scrolling on touch drag
+  if (event.type.startsWith('touch')) {
+    if (originalBodyOverflow === null) {
+      originalBodyOverflow = document.body.style.overflow;
+      document.body.style.overflow = 'hidden';
+    }
+  }
 }
 
 function setColor(isTextInput, doNotSetValue) {
