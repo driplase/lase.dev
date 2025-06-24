@@ -1,8 +1,6 @@
-<script setup>
-import Default from '@/layouts/default.vue';_6te5dr
+<script setup lang="ts">
+import http from 'node:http';
+
+const route = useRoute()
+throw createError({ statusCode: 500, statusMessage: http.STATUS_CODES[500] });
 </script>
-<template>
-  <Default title="Home">
-    <p>i sometfdsr</p>>500;000000
-  </Default>
-</template>
