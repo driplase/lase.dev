@@ -257,6 +257,17 @@ async function showColorPicker(event, col) {
     var(--color-2),
     var(--color-1)
   );
+}
+.name-holographic {
+  background: linear-gradient(to right,
+    var(--color-1),
+    var(--color-2),
+    var(--color-3),
+    var(--color-1)
+  );
+}
+.name-gradient,
+.name-holographic {
   background-size: 100px auto;
   background-clip: text;
   -webkit-background-clip: text;
@@ -264,15 +275,6 @@ async function showColorPicker(event, col) {
   animation: gradientUsernameAnimation 1.5s linear infinite;
   font-weight: 600;
   position: relative;
-
-  & > .name-holographic {
-    background: linear-gradient(to right,
-      var(--color-1),
-      var(--color-2),
-      var(--color-3),
-      var(--color-1)
-    );
-  }
   &::after {
     background: inherit;
     background-size: 100px auto;
