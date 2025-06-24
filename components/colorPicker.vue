@@ -162,7 +162,7 @@ async function userTextInput(event) {
     value.value =      inputColor.v / 100;
 
     await nextTick();
-    setColor(true, false);
+    setColor(true, true);
   }
 }
 

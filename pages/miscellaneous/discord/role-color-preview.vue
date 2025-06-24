@@ -25,8 +25,6 @@ const backgroundColors = [
 const holographic = ["#A9C9FF", "#FFBBEC", "#FFC3A0"];
 // can't change colors in holographic
 
-const gradientDefault = ["#0142b3", "#0072de"];
-
 const displayName = ref('John Doe');
 
 const colorStyle = ref('solid');
