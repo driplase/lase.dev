@@ -14,7 +14,7 @@ import WorksCards from '~/components/worksCards.vue';
       <WorksCards title="Eclyera" class="eclyera">
         {{ $t('works.eclyera.description') }}
       </WorksCards>
-      <WorksCards title="Lixeld">
+      <WorksCards title="Lixeld" class="lixeld">
         {{ $t('works.lixeld.description') }}
         <NuxtLink class="inline-block wiggle wg-text woosh wsh-text flash" target="_blank" to="https://github.com/ScratchJP/MCmap">ScratchJP/MCmap</NuxtLink>
         {{ $t('works.lixeld.description.extend') }}
