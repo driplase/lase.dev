@@ -38,4 +38,6 @@ this website is still in development...`,
   "misc.rcp.role_style.gradient": "Gradient",
   "misc.rcp.role_style.holographic": "Holographic",
   "misc.rcp.role_color": "Role Color",
+
+  show_more: 'Show more',
 }

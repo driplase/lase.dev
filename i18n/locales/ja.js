@@ -39,4 +39,6 @@ export default {
   "misc.rcp.role_style.gradient": "グラデーション",
   "misc.rcp.role_style.holographic": "ホログラフィック",
   "misc.rcp.role_color": "ロールカラー",
+  
+  show_more: 'もっと表示',
 }

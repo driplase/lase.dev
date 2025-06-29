@@ -60,7 +60,7 @@ main {
 
 @media screen and (max-width: 720px) {
   main {
-    margin: 16px;
+    margin: 24px;
   }
 }
 
@@ -182,6 +182,7 @@ input {
 }
 
 .icon {
+  display: inline-block;
   width: 1em;
   height: 1em;
   margin: 0 .05em 0 .1em;
@@ -189,6 +190,10 @@ input {
   user-select: none;
   font-style: normal;
   text-decoration: none;
+}
+.eclyera.icon {
+  width: unset;
+  margin-top: -.6em;
 }
 
 .fw-normal {
