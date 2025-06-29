@@ -13,7 +13,8 @@ this website is still in development...`,
   
   "socials": "socials",
   "socials.x": "(f.k.a Twitter)",
-  "mutual_links": "mutual links",
+  "mutual_links": "mutual/reciprocal links",
+  "links.mutual.desc": "",
 
   "miscellaneous": "miscellaneous",
 

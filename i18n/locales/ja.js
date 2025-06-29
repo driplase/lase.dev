@@ -14,6 +14,8 @@ export default {
   "socials": "SNS",
   "socials.x": "(旧Twitter)",
   "mutual_links": "相互リンク",
+  "links.mutual.desc": "載せてほしかったらおしえてください\n載せてくれたらたぶん載せます",
+
 
   "miscellaneous": "いろいろ",
   
