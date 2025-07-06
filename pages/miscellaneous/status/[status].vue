@@ -62,7 +62,9 @@ const STATUS_CODES: { [key: string]: string } = {
   '508': 'Loop Detected',
   '509': 'Bandwidth Limit Exceeded',
   '510': 'Not Extended',
-  '511': 'Network Authentication Required'
+  '511': 'Network Authentication Required',
+
+  '999': '503: SERVICE_UNAVAILABLE',
 }
 
 const route = useRoute()
@@ -73,8 +75,14 @@ const statusMessage = STATUS_CODES[statusCode.toString()] ||
 if (statusCode === 418) navigateTo('/418');
 
 const reqEvent = useRequestEvent();
-if (reqEvent && !/^1\d{2}$/.test(statusCode.toString())) {
-  setResponseStatus(reqEvent, statusCode)
+if (reqEvent) {
+  if (!/^(1\d{2}|999)$/.test(statusCode.toString())) {
+    setResponseStatus(reqEvent, statusCode)
+  }
+  if (statusCode === 999) {
+    // vercel returned 503 when 999, why?
+    setResponseStatus(reqEvent, 503); 
+  }
 }
 </script>
 <template>
@@ -90,6 +98,13 @@ if (reqEvent && !/^1\d{2}$/.test(statusCode.toString())) {
         <details v-if="/^1\d{2}$/.test(statusCode.toString())">
           <summary>show error data</summary>
           <pre><code>i'm actually returning 200, xd</code></pre>
+        </details>
+        <details v-if="statusCode === 999">
+          <summary>show error data</summary>
+          <pre><code>Code: `INTERNAL_FUNCTION_SERVICE_UNAVAILABLE`
+
+this error message is not real, but Vercel actually returned this error
+when my website was returning real 999 status code.</code></pre>
         </details>
       </div>
     </div>
