@@ -21,7 +21,7 @@ onMounted(() => {
 })
 </script>
 <template>
-  <NuxtLayout name="default" title="2wj.site" align="center">
+  <NuxtLayout name="default" title="mcscr.site" align="center">
     <div class="container">
       <h1 class="monospace woosh flash name">mcscr.site</h1>
       <p>{{ $t('misc.domains.expire.1') }}</p>
