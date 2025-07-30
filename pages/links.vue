@@ -2,7 +2,9 @@
 </script>
 <template>
   <NuxtLayout name="default" :title="$t('links')" align="start">
-    <h1 class="flash woosh font-bold">{{ $t('socials') }}</h1>
+    <h1 class="flash woosh font-bold origin-left">{{ $t('links') }}</h1>
+
+    <h2 class="flash woosh font-bold origin-left">{{ $t('socials') }}</h2>
     <div class="socials grid grid-cols-2 max-[320px]:grid-cols-1 min-[480px]:grid-cols-3 sm:grid-cols-4">
       <p class="wiggle woosh wg-text wsh-text flash links">
         <NuxtLink href="https://youtube.com/@driplase" target="_blank" rel="noopener noreferrer">YouTube</NuxtLink>
@@ -43,15 +45,74 @@
         <NuxtLink href="http://discord.com/users/959034815766728714" target="_blank" rel="noopener noreferrer">Discord <small class="monospace opacity-64">@driplase</small></NuxtLink>
       </p>
     </div>
-    <br>
-    <h1 class="flash woosh font-bold">{{ $t('mutual_links') }}</h1>
+
+    <h2 class="flash woosh font-bold origin-left">{{ $t('mutual_links') }}</h2>
     <div class="socials">
       <p class="wiggle woosh wg-text wsh-text flash links">
         <NuxtLink href="https://furamen.kokkosoft.com" target="_blank" rel="noopener noreferrer">
           <i class="eclyera icon">&#xf806;</i> ふらめんのホームページ
         </NuxtLink>
       </p>
-      <small class="opacity-72 whitespace-pre text-xs">&#xFEFF;{{ $t('links.mutual.desc') }}</small>
+      <small class="opacity-72 whitespace-pre text-xs mb-1">{{ $t('links.mutual.desc') }}</small>
+    </div>
+
+    <h2 class="flash woosh font-bold origin-left">{{ $t('links.others') }}</h2>
+    <div class="socials">
+      <small class="opacity-72 whitespace-pre text-xs mb-1">{{ $t('links.others.desc') }}</small>
+      
+      <p class="wiggle woosh wg-text wsh-text flash links">
+        <NuxtLink href="https://vuejs.org/" target="_blank" rel="noopener noreferrer">
+          Vue.js - The Progressive JavaScript Framework
+        </NuxtLink>
+      </p>
+      
+      <p class="wiggle woosh wg-text wsh-text flash links">
+        <NuxtLink href="https://nuxt.com" target="_blank" rel="noopener noreferrer">
+          Nuxt - The Progressive Web Framework
+        </NuxtLink>
+      </p>
+      
+      <p class="wiggle woosh wg-text wsh-text flash links">
+        <NuxtLink href="https://gsap.com" target="_blank" rel="noopener noreferrer">
+          GSAP
+        </NuxtLink>
+      </p>
+      
+      <p class="wiggle woosh wg-text wsh-text flash links">
+        <NuxtLink href="https://scratchjp.notion.site/Scratch-JP-4cf67387576f4fccb9c8a3eb8ca53a0a" target="_blank" rel="noopener noreferrer">
+          Scratch JP (Notion)
+        </NuxtLink>
+      </p>
+      
+      <p class="wiggle woosh wg-text wsh-text flash links">
+        <NuxtLink href="https://mcscr.jp" target="_blank" rel="noopener noreferrer">
+          ScJPMCマイクラ鯖
+        </NuxtLink>
+      </p>
+
+      <p class="wiggle woosh wg-text wsh-text flash links">
+        <NuxtLink href="https://kokkosoft.com/" target="_blank" rel="noopener noreferrer">
+          <i class="eclyera icon">&#xf807;</i> KokkoSoft OfficialPage
+        </NuxtLink>
+      </p>
+
+      <p class="wiggle woosh wg-text wsh-text flash links">
+        <NuxtLink href="https://j0.si/" target="_blank" rel="noopener noreferrer">
+          j0.si
+        </NuxtLink>
+      </p>
+
+      <p class="wiggle woosh wg-text wsh-text flash links">
+        <NuxtLink href="https://iseebi.kokkosoft.com/" target="_blank" rel="noopener noreferrer">
+          いせえびのホームページ
+        </NuxtLink>
+      </p>
+
+      <p class="wiggle woosh wg-text wsh-text flash links">
+        <NuxtLink href="https://treron.jp/" target="_blank" rel="noopener noreferrer">
+          Treron.jp
+        </NuxtLink>
+      </p>
     </div>
   </NuxtLayout>
 </template>

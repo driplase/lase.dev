@@ -14,7 +14,9 @@ export default {
   "socials": "SNS",
   "socials.x": "(旧Twitter)",
   "mutual_links": "相互リンク",
-  "links.mutual.desc": "載せてほしかったらおしえてください\n載せてくれたらたぶん載せます",
+  "links.mutual.desc": "載せてほしかったらおしえてください\nそっちの方でも載せてくれたら相互リンクとしてたぶん載せますし、載せてくれないのであればその他枠に載せておきます",
+  "links.others": "その他",
+  "links.others.desc": "このサイトに無関係なリンクがあるかもしれません。",
 
 
   "miscellaneous": "いろいろ",
@@ -25,6 +27,7 @@ export default {
   "works.j0si.description": "シンプルなURL短縮ツール。新バージョン開発中...",
   "works.lixeld.description": "Mojangles (マイクラのフォント)にインスパイアされたピクセルフォント。もともとは ",
   "works.lixeld.description.extend": "のために作られました",
+  "works.treron_icons.description": "アイコンパック。気まぐれで更新します",
   
   "misc.list.rcp.description": "Discordのロールカラーをプレビューできるシンプルなツール。ロールのスタイル（強化）にも対応！",
   "misc.rcp.text": "岩はかなり古い",

@@ -13,8 +13,10 @@ this website is still in development...`,
   
   "socials": "socials",
   "socials.x": "(f.k.a Twitter)",
-  "mutual_links": "mutual/reciprocal links",
+  "mutual_links": "reciprocal links",
   "links.mutual.desc": "",
+  "links.others": "other links",
+  "links.others.desc": "may contain links that are not related to this website.",
 
   "miscellaneous": "miscellaneous",
 
@@ -24,6 +26,7 @@ this website is still in development...`,
   "works.j0si.description": "A simple url shortener. new version is in development...",
   "works.lixeld.description": "A pixel font that is inspired by Mojangles (Minecraft font). originally made for",
   "works.lixeld.description.extend": "",
+  "works.treron_icons.description": "An icon pack. will update on a whim",
 
   "misc.list.rcp.description": "A simple tool that lets you preview Discord role colors. Enhanced Role Styles are supported!",
   
