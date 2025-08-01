@@ -50,7 +50,12 @@
     <div class="socials">
       <p class="wiggle woosh wg-text wsh-text flash links">
         <NuxtLink href="https://furamen.kokkosoft.com" target="_blank" rel="noopener noreferrer">
-          <i class="eclyera icon">&#xf806;</i> ふらめんのホームページ
+          <i class="eclyera icon">&#xf806;</i>
+          ふらめんのホームページ
+          <Icon
+            name="tabler:external-link" 
+            class="icon"
+          />
         </NuxtLink>
       </p>
       <small class="opacity-72 whitespace-pre-wrap text-xs mb-1">{{ $t('links.mutual.desc') }}</small>
@@ -62,86 +67,153 @@
       
       <p class="wiggle woosh wg-text wsh-text flash links">
         <NuxtLink href="https://vuejs.org/" target="_blank" rel="noopener noreferrer">
+          <Icon
+            name="logos:vue" 
+            class="icon"
+          />
           Vue.js - The Progressive JavaScript Framework
+          <Icon
+            name="tabler:external-link" 
+            class="icon"
+          />
         </NuxtLink>
       </p>
       
       <p class="wiggle woosh wg-text wsh-text flash links">
         <NuxtLink href="https://nuxt.com" target="_blank" rel="noopener noreferrer">
+          <Icon
+            name="logos:nuxt-icon" 
+            class="icon"
+          />
           Nuxt - The Progressive Web Framework
+          <Icon
+            name="tabler:external-link" 
+            class="icon"
+          />
         </NuxtLink>
       </p>
       
       <p class="wiggle woosh wg-text wsh-text flash links">
         <NuxtLink href="https://gsap.com" target="_blank" rel="noopener noreferrer">
-          GSAP
+          GSAP - A wildly robust JavaScript animation library
+          <Icon
+            name="tabler:external-link" 
+            class="icon"
+          />
         </NuxtLink>
       </p>
       
       <p class="wiggle woosh wg-text wsh-text flash links">
         <NuxtLink href="https://scratchjp.notion.site/Scratch-JP-4cf67387576f4fccb9c8a3eb8ca53a0a" target="_blank" rel="noopener noreferrer">
           Scratch JP (Notion)
+          <Icon
+            name="tabler:external-link" 
+            class="icon"
+          />
         </NuxtLink>
       </p>
       
       <p class="wiggle woosh wg-text wsh-text flash links">
         <NuxtLink href="https://mcscr.jp" target="_blank" rel="noopener noreferrer">
+          <img
+            class="icon"
+            src="https://map.mcscr.jp/logo/64x64.webp"
+            decoding="async"
+          />
           ScJPMCマイクラ鯖
+          <Icon
+            name="tabler:external-link" 
+            class="icon"
+          />
         </NuxtLink>
       </p>
       
       <p class="wiggle woosh wg-text wsh-text flash links">
         <NuxtLink href="https://spacer4719.f5.si" target="_blank" rel="noopener noreferrer">
-          spacer4719's site
+          <img
+            class="link-header"
+            src="https://spacer4719.f5.si/Site%20Header.png" 
+            alt="spacer4719's site"
+            decoding="async"
+          />
         </NuxtLink>
       </p>
       
       <p class="wiggle woosh wg-text wsh-text flash links">
         <NuxtLink href="https://rampo.f5.si" target="_blank" rel="noopener noreferrer">
           ランポっちのホームページ
+          <Icon
+            name="tabler:external-link" 
+            class="icon"
+          />
         </NuxtLink>
       </p>
 
       <p class="wiggle woosh wg-text wsh-text flash links">
         <NuxtLink href="https://kokkosoft.com/" target="_blank" rel="noopener noreferrer">
-          <i class="eclyera icon">&#xf807;</i> KokkoSoft OfficialPage
+          <i class="eclyera icon">&#xf807;</i>
+          KokkoSoft OfficialPage
+          <Icon
+            name="tabler:external-link" 
+            class="icon"
+          />
         </NuxtLink>
       </p>
 
       <p class="wiggle woosh wg-text wsh-text flash links">
         <NuxtLink href="https://iseebi.kokkosoft.com/" target="_blank" rel="noopener noreferrer">
           いせえびのホームページ
+            <Icon
+              name="tabler:external-link" 
+              class="icon"
+            />
         </NuxtLink>
       </p>
       
       <p class="wiggle woosh wg-text wsh-text flash links">
         <NuxtLink href="https://j0.si/" target="_blank" rel="noopener noreferrer">
           j0.si
+          <Icon
+            name="tabler:external-link" 
+            class="icon"
+          />
         </NuxtLink>
       </p>
 
       <p class="wiggle woosh wg-text wsh-text flash links">
         <NuxtLink href="https://treron.jp/" target="_blank" rel="noopener noreferrer">
           Treron.jp
+          <Icon
+            name="tabler:external-link" 
+            class="icon"
+          />
         </NuxtLink>
       </p>
     </div>
   </NuxtLayout>
 </template>
 <style scoped>
-  .socials {
-    display: grid;
-    font-size: 1.2rem;
-    margin-left: 1.6rem;
+.socials {
+  display: grid;
+  font-size: 1.2rem;
+  margin-left: 1.6rem;
 
-    @media screen and (max-width: 40rem) {
-      font-size: 1rem;
-    }
+  @media screen and (max-width: 40rem) {
+    font-size: 1rem;
   }
-  .links {
-    padding: 6px;
-  }
-  a {
-    text-decoration: none;
-  }
+}
+
+.links {
+  padding: 6px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.link-header {
+  pointer-events: none;
+  height: 96px;
+  border-radius: 8px;
+}
 </style>
