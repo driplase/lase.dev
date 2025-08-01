@@ -58,6 +58,19 @@
           />
         </NuxtLink>
       </p>
+
+      <p class="wiggle woosh wg-text wsh-text flash links">
+        <NuxtLink href="https://spacer4719.f5.si" target="_blank" rel="noopener noreferrer">
+          <img
+            class="link-header"
+            src="https://spacer4719.f5.si/Site%20Header.png" 
+            alt="spacer4719's site"
+            decoding="async"
+          />
+        </NuxtLink>
+      </p>
+
+      
       <small class="opacity-72 whitespace-pre-wrap text-xs mb-1">{{ $t('links.mutual.desc') }}</small>
     </div>
 
@@ -124,17 +137,6 @@
           <Icon
             name="tabler:external-link" 
             class="icon"
-          />
-        </NuxtLink>
-      </p>
-      
-      <p class="wiggle woosh wg-text wsh-text flash links">
-        <NuxtLink href="https://spacer4719.f5.si" target="_blank" rel="noopener noreferrer">
-          <img
-            class="link-header"
-            src="https://spacer4719.f5.si/Site%20Header.png" 
-            alt="spacer4719's site"
-            decoding="async"
           />
         </NuxtLink>
       </p>
