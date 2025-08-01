@@ -1,3 +1,17 @@
+main {
+  text-align: center;
+  margin: 16px 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media screen and (max-width: 720px) {
+  main {
+    margin: 24px;
+  }
+}
+
 @media screen and (max-width: 1023px) {
   main {
     margin: 16px 3rem;

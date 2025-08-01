@@ -53,7 +53,7 @@
           <i class="eclyera icon">&#xf806;</i> ふらめんのホームページ
         </NuxtLink>
       </p>
-      <small class="opacity-72 whitespace-pre text-xs mb-1">{{ $t('links.mutual.desc') }}</small>
+      <small class="opacity-72 whitespace-pre-wrap text-xs mb-1">{{ $t('links.mutual.desc') }}</small>
     </div>
 
     <h2 class="flash woosh font-bold origin-left">{{ $t('links.others') }}</h2>
@@ -89,6 +89,18 @@
           ScJPMCマイクラ鯖
         </NuxtLink>
       </p>
+      
+      <p class="wiggle woosh wg-text wsh-text flash links">
+        <NuxtLink href="https://spacer4719.f5.si" target="_blank" rel="noopener noreferrer">
+          spacer4719's site
+        </NuxtLink>
+      </p>
+      
+      <p class="wiggle woosh wg-text wsh-text flash links">
+        <NuxtLink href="https://rampo.f5.si" target="_blank" rel="noopener noreferrer">
+          ランポっちのホームページ
+        </NuxtLink>
+      </p>
 
       <p class="wiggle woosh wg-text wsh-text flash links">
         <NuxtLink href="https://kokkosoft.com/" target="_blank" rel="noopener noreferrer">
@@ -97,14 +109,14 @@
       </p>
 
       <p class="wiggle woosh wg-text wsh-text flash links">
-        <NuxtLink href="https://j0.si/" target="_blank" rel="noopener noreferrer">
-          j0.si
-        </NuxtLink>
-      </p>
-
-      <p class="wiggle woosh wg-text wsh-text flash links">
         <NuxtLink href="https://iseebi.kokkosoft.com/" target="_blank" rel="noopener noreferrer">
           いせえびのホームページ
+        </NuxtLink>
+      </p>
+      
+      <p class="wiggle woosh wg-text wsh-text flash links">
+        <NuxtLink href="https://j0.si/" target="_blank" rel="noopener noreferrer">
+          j0.si
         </NuxtLink>
       </p>
 
