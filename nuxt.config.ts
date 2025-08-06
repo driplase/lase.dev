@@ -30,6 +30,10 @@ export default defineNuxtConfig({
     lazy: true,
     strategy: "no_prefix",
   },
+  routeRules: {
+    // Don't add any /secret/** URLs to the sitemap.xml
+    '/test/**': { robots: false },
+  },
   site: {
     url: 'https://lase.dev',
     name: 'lase.dev',
