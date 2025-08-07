@@ -159,6 +159,6 @@ onMounted(() => {
     title="Embedding Minecraft Skin with Three.js"
     align="center"
   >
-    <div class="mcskin-embed curosr-move" ref="mcskinEmbed"></div>
+    <div class="mcskin-embed cursor-move" ref="mcskinEmbed"></div>
   </NuxtLayout>
 </template>
