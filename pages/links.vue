@@ -150,6 +150,16 @@
           />
         </NuxtLink>
       </p>
+      
+      <p class="wiggle woosh wg-text wsh-text flash links">
+        <NuxtLink href="https://kouhei.f5.si" target="_blank" rel="noopener noreferrer">
+          Kouheiのホームページ
+          <Icon
+            name="tabler:external-link" 
+            class="icon"
+          />
+        </NuxtLink>
+      </p>
 
       <p class="wiggle woosh wg-text wsh-text flash links">
         <NuxtLink href="https://kokkosoft.com/" target="_blank" rel="noopener noreferrer">
