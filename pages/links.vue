@@ -63,7 +63,7 @@
         <NuxtLink href="https://spacer4719.f5.si" target="_blank" rel="noopener noreferrer">
           <img
             class="link-header"
-            src="https://spacer4719.f5.si/Site%20Header.png" 
+            src="https://spacer4719.f5.si/images/NewSiteHeader.png" 
             alt="spacer4719's site"
             decoding="async"
           />
