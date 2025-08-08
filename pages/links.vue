@@ -4,7 +4,7 @@
   <NuxtLayout name="default" :title="$t('links')" align="start">
     <h1 class="flash woosh font-bold origin-left">{{ $t('links') }}</h1>
 
-    <h2 class="flash woosh font-bold origin-left">{{ $t('socials') }}</h2>
+    <h2 class="flash woosh font-bold origin-left" id="socials">{{ $t('socials') }}</h2>
     <div class="socials grid grid-cols-2 max-[320px]:grid-cols-1 min-[480px]:grid-cols-3 sm:grid-cols-4">
       <p class="wiggle woosh wg-text wsh-text flash links">
         <NuxtLink href="https://youtube.com/@driplase" target="_blank" rel="noopener noreferrer">YouTube</NuxtLink>
@@ -46,7 +46,7 @@
       </p>
     </div>
 
-    <h2 class="flash woosh font-bold origin-left">{{ $t('mutual_links') }}</h2>
+    <h2 class="flash woosh font-bold origin-left" id="reciprocal">{{ $t('mutual_links') }}</h2>
     <div class="socials">
       <p class="wiggle woosh wg-text wsh-text flash links">
         <NuxtLink href="https://furamen.kokkosoft.com" target="_blank" rel="noopener noreferrer">
@@ -74,7 +74,7 @@
       <small class="opacity-72 whitespace-pre-wrap text-xs mb-1">{{ $t('links.mutual.desc') }}</small>
     </div>
 
-    <h2 class="flash woosh font-bold origin-left">{{ $t('links.others') }}</h2>
+    <h2 class="flash woosh font-bold origin-left" id="others">{{ $t('links.others') }}</h2>
     <div class="socials">
       <small class="opacity-72 whitespace-pre text-xs mb-1">{{ $t('links.others.desc') }}</small>
       
