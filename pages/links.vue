@@ -63,7 +63,7 @@
         <NuxtLink href="https://spacer4719.f5.si" target="_blank" rel="noopener noreferrer">
           <img
             class="link-header"
-            src="https://spacer4719.f5.si/images/NewSiteHeader.png" 
+            src="https://spacer4719.f5.si/images/NSH.png" 
             alt="spacer4719's site"
             decoding="async"
           />
@@ -143,10 +143,11 @@
       
       <p class="wiggle woosh wg-text wsh-text flash links">
         <NuxtLink href="https://rampo.f5.si" target="_blank" rel="noopener noreferrer">
-          ランポっちのホームページ
-          <Icon
-            name="tabler:external-link" 
-            class="icon"
+          <img
+            class="link-header"
+            src="https://cdn.rampo.f5.si/logo.png" 
+            alt="ランポっちのホームページ"
+            decoding="async"
           />
         </NuxtLink>
       </p>
