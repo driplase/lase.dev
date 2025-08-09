@@ -79,6 +79,16 @@
       <small class="opacity-72 whitespace-pre text-xs mb-1">{{ $t('links.others.desc') }}</small>
       
       <p class="wiggle woosh wg-text wsh-text flash links">
+        <NuxtLink href="https://github.com/driplase/lase.dev" target="_blank" rel="noopener noreferrer">
+          driplase/lase.dev (Source Code)
+          <Icon
+            name="tabler:external-link" 
+            class="icon"
+          />
+        </NuxtLink>
+      </p>
+      
+      <p class="wiggle woosh wg-text wsh-text flash links">
         <NuxtLink href="https://vuejs.org/" target="_blank" rel="noopener noreferrer">
           <Icon
             name="logos:vue" 
