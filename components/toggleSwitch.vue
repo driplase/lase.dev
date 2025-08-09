@@ -1,6 +1,5 @@
 <script setup lang="ts">
 const props = defineProps({
-  id: String,
   checked: Boolean,
 })
 
@@ -15,6 +14,7 @@ const model = defineModel()
         class="toggle-switch-checkbox"
         type="checkbox"
         v-model="model"
+        :checked="checked"
       >
   
       <div
