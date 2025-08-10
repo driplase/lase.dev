@@ -66,6 +66,7 @@
             src="https://spacer4719.f5.si/images/NSH.png" 
             alt="spacer4719's site"
             decoding="async"
+            draggable="false"
           />
         </NuxtLink>
       </p>
@@ -158,6 +159,7 @@
             src="https://cdn.rampo.f5.si/logo.png" 
             alt="ランポっちのホームページ"
             decoding="async"
+            draggable="false"
           />
         </NuxtLink>
       </p>
