@@ -207,6 +207,11 @@ a.no-ul {
   display: none;
 }
 
+section, article {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
 article.blog {
 
   h1, h2, h3, h4, h5, h6 {
@@ -215,6 +220,7 @@ article.blog {
 
   p {
     color: rgb(245, 245, 245);
+    margin: .25rem 0;
   }
 
 }

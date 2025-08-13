@@ -81,14 +81,12 @@ onMounted(() => {
     <nav class="nav-container">
       <Icon name="tabler:x" size="24" class="hidden"/>
       <div class="nav-burger">
-        <a href="#" @click="toggleBurger()" class="wiggle woosh inline-block burger-mode">
-          <div class="">
-            <div style="width: 24px; height: 24px;">
-              <Icon name="tabler:x" size="24" v-if="burgerMenu"/>
-              <Icon name="tabler:menu-2" size="24" v-else />
-            </div>
+        <button @click="toggleBurger()" class="wiggle woosh burger-mode">
+          <div style="width: 24px; height: 24px;">
+            <Icon name="tabler:x" size="24" v-if="burgerMenu"/>
+            <Icon name="tabler:menu-2" size="24" v-else />
           </div>
-        </a>
+        </button>
         <div class="menu-contents">
           <NuxtLink v-for="item in navbarLinks"
             :class="'nav-link wiggle-woosh wg-text wsh-text glow ' +
@@ -164,6 +162,11 @@ nav {
   padding: 6px;
   border-radius: 8px;
   color: var(--color-text);
+
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  display: inline-block;
 }
 @media screen and (max-width: 1023px) {
   header {

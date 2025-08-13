@@ -10,7 +10,6 @@ export default defineNuxtConfig({
     '@nuxt/icon',
     '@nuxtjs/robots',
     'dayjs-nuxt',
-    //'@nuxtjs/mdc',
     '@nuxt/content',
   ],
   content: {
