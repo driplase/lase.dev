@@ -36,7 +36,6 @@ const description = page.value?.description;
       <hr />
 
       <section class="main-section">
-        <p>khgdaskhljdfsgkahljfkshljatgjkhlsrkhljgtykrhljsdytgkljrskljtgrkhljsekuljtgherkjtherkjhtkerhktljrhkwjthkwejhrkwlhkrwere<br />aekhljuyrk5n4ywuiktghkrntkjw34j5hkrtrhet</p>
         <ContentRenderer :value="page" />
       </section>
 
