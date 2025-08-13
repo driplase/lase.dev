@@ -52,10 +52,6 @@ body {
   color: var(--color-text-link);
 }
 
-h1, h2, h3, h4, h5, h6, p {
-  width: max-content;
-}
-
 button {
   background: rgb(106, 121, 148);
   border-radius: 8px;
@@ -114,10 +110,6 @@ button {
   vertical-align: super;
   font-size: smaller;
   color: var(--color-text);
-}
-
-.inline-block {
-  display: inline-block;
 }
 
 code:not(pre code),
@@ -213,4 +205,16 @@ a.no-ul {
 
 .hidden {
   display: none;
+}
+
+article.blog {
+
+  h1, h2, h3, h4, h5, h6 {
+    & > a { color: white; }
+  }
+
+  p {
+    color: rgb(245, 245, 245);
+  }
+
 }

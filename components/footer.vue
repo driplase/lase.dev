@@ -17,6 +17,7 @@
   hr {
     width: 100dvw;
     margin-bottom: 1.3rem;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
   }
   .footer-container {
     display: flex;

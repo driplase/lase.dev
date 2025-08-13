@@ -43,7 +43,9 @@ useHead({
     textAlign: mainAlign,
     alignItems: mainAlign,
   }">
+  
     <slot />
+
   </main>
 
   <Footer />

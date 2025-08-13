@@ -9,8 +9,15 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     '@nuxt/icon',
     '@nuxtjs/robots',
-    'dayjs-nuxt'
+    'dayjs-nuxt',
+    //'@nuxtjs/mdc',
+    '@nuxt/content',
   ],
+  content: {
+    experimental: {
+      sqliteConnector: 'native' 
+    },
+  },
   plugins: [
     '~/plugins/effects.client.js',
   ],
@@ -22,6 +29,9 @@ export default defineNuxtConfig({
     defaultTimezone: 'Asia/Tokyo',
   },
   i18n: {
+    bundle: {
+      optimizeTranslationDirective: false,
+    },
     defaultLocale: 'en',
     locales: [
       { code: 'en', name: 'english', file: 'en.js' },
@@ -33,6 +43,11 @@ export default defineNuxtConfig({
   routeRules: {
     // Don't add any /secret/** URLs to the sitemap.xml
     '/test/**': { robots: false },
+  },
+  robots: {
+    disallow: [
+      '/test/**'
+    ]
   },
   site: {
     url: 'https://lase.dev',
