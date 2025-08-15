@@ -42,7 +42,7 @@ const picker = useTemplateRef('picker')
 const pickerDefaultValue = ref('');
 
 function changeRoleStyle(style) {
-  if (colorStyle.value === "solid" && style === 'gradient') {
+  if (colorStyle.value !== "gradient" && style === 'gradient') {
     if (roleColor.value[0] === null) roleColor.value[0] =　"#000000";
     
     roleColor.value[1] = roleColor.value[0];
