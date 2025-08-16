@@ -67,6 +67,7 @@
             alt="spacer4719's site"
             decoding="async"
             draggable="false"
+            fetchpriority="high"
           />
         </NuxtLink>
       </p>

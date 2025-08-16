@@ -29,6 +29,8 @@ html,
 body {
   font-family: var(--font-primary);
   font-size: 16px;
+  font-display: swap;
+
   background: var(--color-background);
   color: var(--color-text);
   margin: 0;

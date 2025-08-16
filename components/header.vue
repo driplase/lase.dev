@@ -81,7 +81,11 @@ onMounted(() => {
     <nav class="nav-container">
       <Icon name="tabler:x" size="24" class="hidden"/>
       <div class="nav-burger">
-        <button @click="toggleBurger()" class="wiggle woosh burger-mode">
+        <button
+          @click="toggleBurger()" 
+          class="wiggle woosh burger-mode"
+          aria-label="Menu"
+        >
           <div style="width: 24px; height: 24px;">
             <Icon name="tabler:x" size="24" v-if="burgerMenu"/>
             <Icon name="tabler:menu-2" size="24" v-else />
