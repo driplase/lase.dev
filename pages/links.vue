@@ -205,6 +205,16 @@
           />
         </NuxtLink>
       </p>
+      
+      <p class="wiggle woosh wg-text wsh-text flash links">
+        <NuxtLink href="https://9a.si/" target="_blank" rel="noopener noreferrer">
+          9a.si
+          <Icon
+            name="tabler:external-link" 
+            class="icon"
+          />
+        </NuxtLink>
+      </p>
 
       <p class="wiggle woosh wg-text wsh-text flash links">
         <NuxtLink href="https://treron.jp/" target="_blank" rel="noopener noreferrer">
@@ -221,6 +231,8 @@
 <style scoped>
 .socials {
   display: grid;
+  justify-items: start;
+
   font-size: 1.2rem;
   margin-left: 1.6rem;
 

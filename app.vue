@@ -22,6 +22,11 @@ useHead(() => ({
       href: "https://fonts.gstatic.com",
       crossorigin: true,
     },
+    {
+      rel: "preconnect",
+      href: "https://cdn.jsdelivr.net",
+      crossorigin: true,
+    },
   ],
   meta: [
     {

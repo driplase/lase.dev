@@ -8,6 +8,8 @@ export default {
   "works": "作品",
 
   "blog": "ブログ",
+  "blog.description": "思ったことを書いていくところ。",
+  "blog.description.wip": "(このページはまだ開発中です。)",
 
   "links": "リンク集",
   

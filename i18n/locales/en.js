@@ -8,6 +8,8 @@ this website is still in development...`,
   "works": "works",
 
   "blog": "blog",
+  "blog.description": "where I write what I think.",
+  "blog.description.wip": "(this page is still under development.)",
 
   "links": "links",
   

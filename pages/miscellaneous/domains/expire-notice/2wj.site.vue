@@ -22,6 +22,8 @@ onMounted(() => {
 </script>
 <template>
   <NuxtLayout name="default" title="2wj.site" align="center">
+
+    <!--
     <div class="container">
       <h1 class="monospace woosh flash name">2wj.site</h1>
       <p>{{ $t('misc.domains.expire.1') }}</p>
@@ -36,6 +38,11 @@ onMounted(() => {
       <small class="opacity-50">
         {{ $t('misc.domains.expire.3') }}
       </small>
+    </div>
+    -->
+
+    <div class="container">
+      <h2>GGs, the domain name is already expired XD</h2>
     </div>
   </NuxtLayout>
 </template>

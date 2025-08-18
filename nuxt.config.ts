@@ -11,11 +11,28 @@ export default defineNuxtConfig({
     '@nuxtjs/robots',
     'dayjs-nuxt',
     '@nuxt/content',
+    '@nuxt/fonts',
   ],
   content: {
     experimental: {
       sqliteConnector: 'native' 
     },
+  },
+  fonts: {
+    defaults: {
+      weights: ['400 700'],
+      styles: ['normal', 'italic'],
+      subsets: [
+        'cyrillic-ext', 
+        'cyrillic', 
+        'greek-ext', 
+        'greek', 
+        'vietnamese', 
+        'latin-ext', 
+        'latin',
+        'japanese',
+      ],
+    }
   },
   plugins: [
     '~/plugins/effects.client.js',
