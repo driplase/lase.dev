@@ -30,7 +30,7 @@ h3, h4, h5, h6 {
 
 @media screen and (max-width: 720px) {
   main {
-    margin: 24px;
+    padding: 24px;
   }
 
   h1 {
@@ -49,6 +49,6 @@ h3, h4, h5, h6 {
 
 @media screen and (max-width: 1023px) {
   main {
-    margin: 16px 3rem;
+    padding: 16px 3rem;
   }
 }
