@@ -4,8 +4,6 @@ createdAt: 2025-08-19
 title: Another Test Blog.
 ---
 
-# Another Test Blog.
-
 I tried using [Nuxt Studio](https://nuxt.studio).
 
 Normally, I can just use VSCode to write blogs like this. But, there is a tool by Nuxt, and I thought it's kinda interesting.
