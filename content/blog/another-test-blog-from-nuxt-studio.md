@@ -1,6 +1,7 @@
 ---
 description: Test blog, from Nuxt Studio.
 createdAt: 2025-08-19
+title: Another Test Blog.
 ---
 
 # Another Test Blog.
@@ -31,4 +32,4 @@ But maybe, I might use it again sometime.
 
 idk, i'm kinda comfortable with english for most sentences.
 
-maybe i'll write blogs in japanese when i want to use japanese, when i want to write something i can only write in japanese, when i want my friends [(they're mostly japanese)]{.text-gray-400.text-sm} to read my blogs, or when i just need to write in [japanese].
+maybe i'll write blogs in japanese when i want to use japanese, when i want to write something i can only write in japanese, when i want my friends [(they're mostly japanese)]{.text-gray-400.text-sm} to read my blogs, or when i just need to write in [japanese] .
