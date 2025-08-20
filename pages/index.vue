@@ -329,7 +329,7 @@ onMounted(async () => {
 
           </div>
 
-          <div class="from-spacer after-lase-dev absolute inset-0 grid justify-center items-center font-mono italic text-[8vmin] text-shadow-[0_0_1.325vmin_rgb(255,255,255)]">
+          <div class="from-spacer after-lase-dev absolute inset-0 grid justify-center items-center font-mono italic text-[8vmin] text-shadow-[0_0_1.325vmin_rgb(255,255,255)] font-medium">
             lase.dev
           </div>
 
