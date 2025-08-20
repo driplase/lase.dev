@@ -1,8 +1,12 @@
 <script setup>
 import './styles/global.css';
 
+const { locale } = useI18n()
+
 useHead(() => ({
-  htmlAttrs: {},
+  htmlAttrs: {
+    lang: locale,
+  },
   title: 'lase.dev',
   link: [
     {
