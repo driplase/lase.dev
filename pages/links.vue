@@ -72,6 +72,15 @@
         </NuxtLink>
       </p>
 
+      <p class="wiggle woosh wg-text wsh-text flash links">
+        <NuxtLink href="https://kntnkmr.f5.si" target="_blank" rel="noopener noreferrer">
+          Kntnkmr
+          <Icon
+            name="tabler:external-link" 
+            class="icon"
+          />
+        </NuxtLink>
+      </p>
       
       <small class="opacity-72 whitespace-pre-wrap text-xs mb-1">{{ $t('links.mutual.desc') }}</small>
     </div>
@@ -121,6 +130,16 @@
       <p class="wiggle woosh wg-text wsh-text flash links">
         <NuxtLink href="https://gsap.com" target="_blank" rel="noopener noreferrer">
           GSAP - A wildly robust JavaScript animation library
+          <Icon
+            name="tabler:external-link" 
+            class="icon"
+          />
+        </NuxtLink>
+      </p>
+      
+      <p class="wiggle woosh wg-text wsh-text flash links">
+        <NuxtLink href="https://laselxt.vercel.app" target="_blank" rel="noopener noreferrer">
+          Laselxt
           <Icon
             name="tabler:external-link" 
             class="icon"
