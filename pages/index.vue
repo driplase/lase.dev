@@ -411,6 +411,7 @@ section {
   width: 100%;
   height: 100%;
   background: radial-gradient(circle,
-      var(--color-background) 0%, color-mix(in srgb, var(--color-background), transparent calc(100% - var(--bg-size))) var(--bg-size));
+    var(--color-background) 0%, 
+    color-mix(in srgb, var(--color-background), transparent calc(100% - var(--bg-size))) var(--bg-size));
 }
 </style>
