@@ -2,8 +2,7 @@ export default {
   id: "en",
 
   home: "Home",
-  "home_aboutme": `i sometimes program, i sometimes make motion graphics, i rarely make song.
-this website is still in development...`,
+  "home.description": `A driplase's personal website.`,
 
   "works": "works",
 

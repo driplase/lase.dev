@@ -264,7 +264,7 @@ onMounted(async () => {
 })
 </script>
 <template>
-  <NuxtLayout name="default" :title="$t('home')" align="center">
+  <NuxtLayout name="default" :title="$t('home')" :description="$t('home.description')" align="center">
 
     <section class="beginning grid justify-center">
 

@@ -2,8 +2,7 @@ export default {
   id: "ja",
 
   home: "ホーム",
-  "home_aboutme": `たまにプログラミングしたり、モーショングラフィックス作ったり、曲を作ったり...
-  このサイトはまだ開発中です...`,
+  "home.description": `driplaseの個人サイトです。`,
 
   "works": "作品",
 
