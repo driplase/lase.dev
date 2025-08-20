@@ -45,7 +45,7 @@
         <NuxtLink href="http://discord.com/users/959034815766728714" target="_blank" rel="noopener noreferrer">Discord <small class="monospace opacity-64">@driplase</small></NuxtLink>
       </p>
     </div>
-
+    
     <h2 class="flash woosh font-bold origin-left" id="reciprocal">{{ $t('mutual_links') }}</h2>
     <div class="socials">
       <p class="wiggle woosh wg-text wsh-text flash links">
@@ -53,36 +53,46 @@
           <i class="eclyera icon">&#xf806;</i>
           ふらめんのホームページ
           <Icon
-            name="tabler:external-link" 
-            class="icon"
-          />
-        </NuxtLink>
-      </p>
-
-      <p class="wiggle woosh wg-text wsh-text flash links">
-        <NuxtLink href="https://spacer4719.f5.si" target="_blank" rel="noopener noreferrer">
-          <img
-            class="link-header"
-            src="https://spacer4719.f5.si/images/NSH.png" 
-            alt="spacer4719's site"
-            decoding="async"
-            draggable="false"
-            fetchpriority="high"
-          />
-        </NuxtLink>
-      </p>
-
-      <p class="wiggle woosh wg-text wsh-text flash links">
-        <NuxtLink href="https://kntnkmr.f5.si" target="_blank" rel="noopener noreferrer">
-          Kntnkmr
-          <Icon
-            name="tabler:external-link" 
-            class="icon"
+          name="tabler:external-link" 
+          class="icon"
           />
         </NuxtLink>
       </p>
       
-      <small class="opacity-72 whitespace-pre-wrap text-xs mb-1">{{ $t('links.mutual.desc') }}</small>
+      <p class="wiggle woosh wg-text wsh-text flash links">
+        <NuxtLink href="https://spacer4719.f5.si" target="_blank" rel="noopener noreferrer">
+          <img
+          class="link-header"
+          src="https://spacer4719.f5.si/images/NSH.png" 
+          alt="spacer4719's site"
+            decoding="async"
+            draggable="false"
+            fetchpriority="high"
+            />
+          </NuxtLink>
+        </p>
+        
+        <p class="wiggle woosh wg-text wsh-text flash links">
+          <NuxtLink href="https://kntnkmr.f5.si" target="_blank" rel="noopener noreferrer">
+            Kntnkmr
+            <Icon
+            name="tabler:external-link" 
+            class="icon"
+            />
+          </NuxtLink>
+        </p>
+        
+        <p class="wiggle woosh wg-text wsh-text flash links">
+          <NuxtLink href="https://9a.si/" target="_blank" rel="noopener noreferrer">
+            9a.si
+            <Icon
+              name="tabler:external-link" 
+              class="icon"
+            />
+          </NuxtLink>
+        </p>
+        
+        <small class="opacity-72 whitespace-pre-wrap text-xs mb-1">{{ $t('links.mutual.desc') }}</small>
     </div>
 
     <h2 class="flash woosh font-bold origin-left" id="others">{{ $t('links.others') }}</h2>
@@ -225,15 +235,6 @@
         </NuxtLink>
       </p>
       
-      <p class="wiggle woosh wg-text wsh-text flash links">
-        <NuxtLink href="https://9a.si/" target="_blank" rel="noopener noreferrer">
-          9a.si
-          <Icon
-            name="tabler:external-link" 
-            class="icon"
-          />
-        </NuxtLink>
-      </p>
 
       <p class="wiggle woosh wg-text wsh-text flash links">
         <NuxtLink href="https://treron.jp/" target="_blank" rel="noopener noreferrer">
