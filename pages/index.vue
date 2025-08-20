@@ -289,7 +289,7 @@ onMounted(async () => {
     <section>
 
       <h2>Hi! I'm driplase.</h2>
-      <p class="text-gray-500 text-sm font-mono">{{ $t('blog.description.wip') }}</p>
+      <p class="text-gray-400 text-sm font-mono">{{ $t('blog.description.wip') }}</p>
 
     </section>
 
