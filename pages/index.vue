@@ -242,7 +242,7 @@ function fromSpacer() {
       opacity: 0,
 
       ease: "power2.inout",
-      duration: .5,
+      duration: 1,
     }, .5)
 
     tl2.play()
