@@ -93,7 +93,7 @@ onMounted(() => {
         </button>
         <div class="menu-contents">
           <NuxtLink v-for="item in navbarLinks"
-            :class="'nav-link wiggle-woosh wg-text wsh-text glow ' +
+            :class="'nav-link wiggle woosh wg-text wsh-text glow ' +
               (item.current ? 'bold ' : '')
             "
             :href="item.url"

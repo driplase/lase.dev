@@ -1,5 +1,5 @@
-@import './fonts.css';
 @import "tailwindcss";
+@import './fonts.css';
 @import './effects.css';
 @import './responsive.css';
 

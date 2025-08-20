@@ -1,15 +1,14 @@
 import { gsap } from "gsap";
 import { SplitText } from "gsap/SplitText";
+import { GSDevTools } from "gsap/GSDevTools";
 import { useRouter } from "#app";
 
 gsap.registerPlugin(SplitText);
+gsap.registerPlugin(GSDevTools);
 
 export default defineNuxtPlugin((nuxtApp) => {
   const applyEffects = () => {
-    document.querySelectorAll(".wiggle-woosh").forEach(element => {
-      element.classList.add("wiggle")
-      element.classList.add("woosh")
-    })
+
     document.querySelectorAll(".wiggle").forEach(wiggle => {
       const isTextWg = wiggle.classList.contains("wg-text")
       let f = {
@@ -55,6 +54,7 @@ export default defineNuxtPlugin((nuxtApp) => {
       wiggle.addEventListener('mouseenter', animate)
       wiggle.addEventListener('click', animate)
     })
+
     document.querySelectorAll(".woosh").forEach(woosh => {
       const isTextWsh = woosh.classList.contains("wsh-text");
       let f = {
@@ -80,6 +80,7 @@ export default defineNuxtPlugin((nuxtApp) => {
       woosh.addEventListener('mouseenter', animate);
       woosh.addEventListener('click', animate);
     });
+    
     document.querySelectorAll('.flash').forEach(element => {
       let tl = gsap.timeline({ paused: true });
       

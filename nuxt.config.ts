@@ -12,6 +12,7 @@ export default defineNuxtConfig({
     'dayjs-nuxt',
     '@nuxt/content',
     '@nuxt/fonts',
+    '@nuxt/image',
   ],
   content: {
     experimental: {
@@ -33,6 +34,12 @@ export default defineNuxtConfig({
         'japanese',
       ],
     }
+  },
+  image: {
+    domains: [
+      'lase.dev',
+      'map.mcscr.jp',
+    ]
   },
   plugins: [
     '~/plugins/effects.client.js',
