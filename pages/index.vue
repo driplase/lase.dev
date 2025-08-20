@@ -196,6 +196,7 @@ function fromSpacer() {
   
   tl.to('.from-spacer.parent', {
     opacity: 0,
+    pointerEvents: "none",
 
     ease: "power2.inout",
     duration: 1,
@@ -240,6 +241,7 @@ function fromSpacer() {
     
     tl2.to('.from-spacer.parent', {
       opacity: 0,
+      pointerEvents: "none",
 
       ease: "power2.inout",
       duration: 1,
