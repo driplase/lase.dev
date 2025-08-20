@@ -1,7 +1,5 @@
 <script setup>
 import { gsap } from "gsap";
-import { SplitText } from "gsap/SplitText";
-import { GSDevTools } from "gsap/GSDevTools";
 
 const route = useRoute();
 
@@ -275,6 +273,7 @@ onMounted(async () => {
           class="invert logo-img" 
           src="/assets/d_256x256.png" 
           draggable="false" 
+          fetchpriority="high"
         />
         <NuxtImg 
           class="logo-img logo-shadow" 
@@ -314,11 +313,13 @@ onMounted(async () => {
               class="invert logo-img" 
               src="/assets/d_256x256.png" 
               draggable="false" 
+              alt="driplase logo"
             />
             <NuxtImg 
               class="logo-img logo-shadow" 
               src="/assets/d_256x256.png" 
               draggable="false" 
+              alt="driplase logo"
             />
   
             <div class="from-spacer logo-glow glow-1"></div>
