@@ -1,4 +1,7 @@
 <script setup>
+useSeoMeta({
+  robots: "noindex, nofollow"
+})
 </script>
 <template>
   <NuxtLayout name="default" :title="$t('links')" align="start">
@@ -91,7 +94,7 @@
             />
           </NuxtLink>
         </p>
-        
+
         <small class="opacity-72 whitespace-pre-wrap text-xs mb-1">{{ $t('links.mutual.desc') }}</small>
     </div>
 
