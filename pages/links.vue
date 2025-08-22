@@ -85,7 +85,7 @@ useSeoMeta({
           </NuxtLink>
         </p>
         
-        <p class="wiggle woosh wg-text wsh-text flash links">
+        <p class="wiggle woosh wg-text wsh-text flash links zen-maru-gothic">
           <NuxtLink href="https://9a.si/" target="_blank" rel="noopener noreferrer">
             9a.si
             <Icon
@@ -189,7 +189,7 @@ useSeoMeta({
         <NuxtLink href="https://rampo.f5.si" target="_blank" rel="noopener noreferrer">
           <img
             class="link-header"
-            src="https://cdn.rampo.f5.si/logo.png" 
+            src="https://rampo.f5.si/img/logo.webp"
             alt="ランポっちのホームページ"
             decoding="async"
             draggable="false"
@@ -276,5 +276,9 @@ a {
   pointer-events: none;
   height: 96px;
   border-radius: 8px;
+}
+
+.zen-maru-gothic {
+  font-family: "Zen Maru Gothic", sans-serif;
 }
 </style>

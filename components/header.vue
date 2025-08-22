@@ -79,7 +79,9 @@ onMounted(() => {
       <NuxtLink class="inline-block wiggle woosh flash no-ul lase-color bg-text-clip" href="/">lase.dev</NuxtLink>
     </div>
     <nav class="nav-container">
+      <!-- prefetch x icon -->
       <Icon name="tabler:x" size="24" class="hidden"/>
+
       <div class="nav-burger">
         <button
           @click="toggleBurger()" 
