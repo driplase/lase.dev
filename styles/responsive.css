@@ -52,3 +52,9 @@ h3, h4, h5, h6 {
     padding: 16px 3rem;
   }
 }
+
+@media screen and (max-width: 480px) {
+  main {
+    padding: 4px 3rem;
+  }
+}
