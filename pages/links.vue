@@ -53,8 +53,34 @@ useSeoMeta({
     <div class="socials">
       <p class="wiggle woosh wg-text wsh-text flash links">
         <NuxtLink href="https://furamen.kokkosoft.com" target="_blank" rel="noopener noreferrer">
-          <i class="eclyera icon">&#xf806;</i>
-          ふらめんのホームページ
+          <!-- <i class="eclyera icon">&#xf806;</i> -->
+          <NuxtImg
+            class="link-header"
+            src="https://7xf.j0.si/banners/furamen.webp" 
+            alt="ふらめんのホームページ"
+            decoding="async"
+            draggable="false"
+            fetchpriority="high"
+          />
+        </NuxtLink>
+      </p>
+      
+      <p class="wiggle woosh wg-text wsh-text flash links">
+        <NuxtLink href="https://spacer4719.f5.si" target="_blank" rel="noopener noreferrer">
+          <NuxtImg
+            class="link-header"
+            src="https://spacer4719.f5.si/images/NSH.png" 
+            alt="spacer4719's site"
+            decoding="async"
+            draggable="false"
+            fetchpriority="high"
+          />
+        </NuxtLink>
+      </p>
+      
+      <p class="wiggle woosh wg-text wsh-text flash links">
+        <NuxtLink href="https://kntnkmr.f5.si" target="_blank" rel="noopener noreferrer">
+          Kntnkmr
           <Icon
           name="tabler:external-link" 
           class="icon"
@@ -62,40 +88,17 @@ useSeoMeta({
         </NuxtLink>
       </p>
       
-      <p class="wiggle woosh wg-text wsh-text flash links">
-        <NuxtLink href="https://spacer4719.f5.si" target="_blank" rel="noopener noreferrer">
-          <img
-          class="link-header"
-          src="https://spacer4719.f5.si/images/NSH.png" 
-          alt="spacer4719's site"
-            decoding="async"
-            draggable="false"
-            fetchpriority="high"
-            />
-          </NuxtLink>
-        </p>
-        
-        <p class="wiggle woosh wg-text wsh-text flash links">
-          <NuxtLink href="https://kntnkmr.f5.si" target="_blank" rel="noopener noreferrer">
-            Kntnkmr
-            <Icon
+      <p class="wiggle woosh wg-text wsh-text flash links zen-maru-gothic">
+        <NuxtLink href="https://9a.si/" target="_blank" rel="noopener noreferrer">
+          9a.si
+          <Icon
             name="tabler:external-link" 
             class="icon"
-            />
-          </NuxtLink>
-        </p>
-        
-        <p class="wiggle woosh wg-text wsh-text flash links zen-maru-gothic">
-          <NuxtLink href="https://9a.si/" target="_blank" rel="noopener noreferrer">
-            9a.si
-            <Icon
-              name="tabler:external-link" 
-              class="icon"
-            />
-          </NuxtLink>
-        </p>
+          />
+        </NuxtLink>
+      </p>
 
-        <small class="opacity-72 whitespace-pre-wrap text-xs mb-1">{{ $t('links.mutual.desc') }}</small>
+      <small class="opacity-72 whitespace-pre-wrap text-xs mb-1">{{ $t('links.mutual.desc') }}</small>
     </div>
 
     <h2 class="flash woosh font-bold origin-left" id="others">{{ $t('links.others') }}</h2>
@@ -115,26 +118,26 @@ useSeoMeta({
       <p class="wiggle woosh wg-text wsh-text flash links">
         <NuxtLink href="https://vuejs.org/" target="_blank" rel="noopener noreferrer">
           <Icon
-            name="logos:vue" 
-            class="icon"
+          name="logos:vue" 
+          class="icon"
           />
           Vue.js - The Progressive JavaScript Framework
           <Icon
             name="tabler:external-link" 
             class="icon"
-          />
-        </NuxtLink>
-      </p>
-      
-      <p class="wiggle woosh wg-text wsh-text flash links">
-        <NuxtLink href="https://nuxt.com" target="_blank" rel="noopener noreferrer">
-          <Icon
+            />
+          </NuxtLink>
+        </p>
+        
+        <p class="wiggle woosh wg-text wsh-text flash links">
+          <NuxtLink href="https://nuxt.com" target="_blank" rel="noopener noreferrer">
+            <Icon
             name="logos:nuxt-icon" 
             class="icon"
-          />
+            />
           Nuxt - The Progressive Web Framework
           <Icon
-            name="tabler:external-link" 
+          name="tabler:external-link" 
             class="icon"
           />
         </NuxtLink>
@@ -151,13 +154,23 @@ useSeoMeta({
       </p>
       
       <p class="wiggle woosh wg-text wsh-text flash links">
-        <NuxtLink href="https://laselxt.vercel.app" target="_blank" rel="noopener noreferrer">
-          Laselxt
+        <NuxtLink href="https://j0.si/" target="_blank" rel="noopener noreferrer">
+          j0.si
           <Icon
             name="tabler:external-link" 
             class="icon"
           />
         </NuxtLink>
+      </p>
+      
+      <p class="wiggle woosh wg-text wsh-text flash links">
+        <NuxtLink href="https://laselxt.vercel.app" target="_blank" rel="noopener noreferrer">
+          Laselxt
+          <Icon
+            name="tabler:external-link" 
+            class="icon"
+            />
+          </NuxtLink>
       </p>
       
       <p class="wiggle woosh wg-text wsh-text flash links">
@@ -172,7 +185,7 @@ useSeoMeta({
       
       <p class="wiggle woosh wg-text wsh-text flash links">
         <NuxtLink href="https://mcscr.jp" target="_blank" rel="noopener noreferrer">
-          <img
+          <NuxtImg
             class="icon"
             src="https://map.mcscr.jp/logo/64x64.webp"
             decoding="async"
@@ -187,7 +200,7 @@ useSeoMeta({
       
       <p class="wiggle woosh wg-text wsh-text flash links">
         <NuxtLink href="https://rampo.f5.si" target="_blank" rel="noopener noreferrer">
-          <img
+          <NuxtImg
             class="link-header"
             src="https://rampo.f5.si/img/logo.webp"
             alt="ランポっちのホームページ"
@@ -227,17 +240,6 @@ useSeoMeta({
             />
         </NuxtLink>
       </p>
-      
-      <p class="wiggle woosh wg-text wsh-text flash links">
-        <NuxtLink href="https://j0.si/" target="_blank" rel="noopener noreferrer">
-          j0.si
-          <Icon
-            name="tabler:external-link" 
-            class="icon"
-          />
-        </NuxtLink>
-      </p>
-      
 
       <p class="wiggle woosh wg-text wsh-text flash links">
         <NuxtLink href="https://treron.jp/" target="_blank" rel="noopener noreferrer">
