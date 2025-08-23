@@ -52,7 +52,7 @@ useSeoMeta({
     <h2 class="flash woosh font-bold origin-left" id="reciprocal">{{ $t('mutual_links') }}</h2>
     <div class="socials">
       <p class="wiggle woosh wg-text wsh-text flash links">
-        <NuxtLink href="https://furamen.kokkosoft.com" target="_blank" rel="noopener noreferrer">
+        <NuxtLink class="" href="https://furamen.kokkosoft.com" target="_blank" rel="noopener noreferrer">
           <!-- <i class="eclyera icon">&#xf806;</i> -->
           <NuxtImg
             class="link-header"
@@ -70,6 +70,7 @@ useSeoMeta({
           <NuxtImg
             class="link-header"
             src="https://spacer4719.f5.si/images/NSH.png" 
+            format="webp"
             alt="spacer4719's site"
             decoding="async"
             draggable="false"
@@ -188,6 +189,7 @@ useSeoMeta({
           <NuxtImg
             class="icon"
             src="https://map.mcscr.jp/logo/64x64.webp"
+            alt="ScJPMC"
             decoding="async"
           />
           ScJPMCマイクラ鯖
