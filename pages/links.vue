@@ -18,6 +18,15 @@ useSeoMeta({
         </NuxtLink>
       </p>
       <p class="wiggle woosh wg-text wsh-text flash links">
+        <NuxtLink href="https://bsky.app/profile/driplase.bsky.social" target="_blank" rel="noopener noreferrer">Bluesky</NuxtLink>
+      </p>
+      <p class="wiggle woosh wg-text wsh-text flash links">
+        <NuxtLink href="https://misskey.04.si/@driplase" target="_blank" rel="noopener noreferrer">Misskey</NuxtLink>
+      </p>
+      <p class="wiggle woosh wg-text wsh-text flash links">
+        <NuxtLink href="https://duolingo.com/profile/driplase" target="_blank" rel="noopener noreferrer">Duolingo</NuxtLink>
+      </p>
+      <p class="wiggle woosh wg-text wsh-text flash links">
         <NuxtLink href="https://github.com/driplase" target="_blank" rel="noopener noreferrer">GitHub</NuxtLink>
       </p>
       <p class="wiggle woosh wg-text wsh-text flash links">
@@ -27,16 +36,22 @@ useSeoMeta({
         <NuxtLink href="https://driplase.newgrounds.com/" target="_blank" rel="noopener noreferrer">Newgrounds</NuxtLink>
       </p>
       <p class="wiggle woosh wg-text wsh-text flash links">
+        <NuxtLink href="https://driplase.newgrounds.com/" target="_blank" rel="noopener noreferrer">pixiv</NuxtLink>
+      </p>
+      <p class="wiggle woosh wg-text wsh-text flash links">
         <NuxtLink href="https://www.reddit.com/user/Driplase/" target="_blank" rel="noopener noreferrer">Reddit</NuxtLink>
       </p>
       <p class="wiggle woosh wg-text wsh-text flash links">
         <NuxtLink href="https://www.threads.com/@driplase" target="_blank" rel="me noopener noreferrer">Threads</NuxtLink>
       </p>
       <p class="wiggle woosh wg-text wsh-text flash links">
-        <NuxtLink href="https://www.twitch.tv/driplase" target="_blank" rel="noopener noreferrer">Twitch</NuxtLink>
+        <NuxtLink href="https://www.tiktok.com/@driplase" target="_blank" rel="noopener noreferrer">TikTok</NuxtLink>
       </p>
       <p class="wiggle woosh wg-text wsh-text flash links">
-        <NuxtLink href="https://www.tiktok.com/@driplase" target="_blank" rel="noopener noreferrer">TikTok</NuxtLink>
+        <NuxtLink href="https://driplase.tumblr.com" target="_blank" rel="noopener noreferrer">Tumblr</NuxtLink>
+      </p>
+      <p class="wiggle woosh wg-text wsh-text flash links">
+        <NuxtLink href="https://www.twitch.tv/driplase" target="_blank" rel="noopener noreferrer">Twitch</NuxtLink>
       </p>
       <p class="wiggle woosh wg-text wsh-text flash links">
         <NuxtLink href="https://soundcloud.com/driplase" target="_blank" rel="noopener noreferrer">SoundCloud</NuxtLink>
@@ -167,6 +182,56 @@ useSeoMeta({
       <p class="wiggle woosh wg-text wsh-text flash links">
         <NuxtLink href="https://laselxt.vercel.app" target="_blank" rel="noopener noreferrer">
           Laselxt
+          <Icon
+            name="tabler:external-link" 
+            class="icon"
+            />
+          </NuxtLink>
+      </p>
+      
+      <p class="wiggle woosh wg-text wsh-text flash links">
+        <NuxtLink href="https://0800300.xyz" target="_blank" rel="noopener noreferrer">
+          0800300.xyz
+          <Icon
+            name="tabler:external-link" 
+            class="icon"
+            />
+          </NuxtLink>
+      </p>
+      
+      <p class="wiggle woosh wg-text wsh-text flash links">
+        <NuxtLink href="https://ljsa.win" target="_blank" rel="noopener noreferrer">
+          ljsa.win
+          <Icon
+            name="tabler:external-link" 
+            class="icon"
+            />
+          </NuxtLink>
+      </p>
+      
+      <p class="wiggle woosh wg-text wsh-text flash links">
+        <NuxtLink href="https://3x.f5.si" target="_blank" rel="noopener noreferrer">
+          3x.f5.si
+          <Icon
+            name="tabler:external-link" 
+            class="icon"
+            />
+          </NuxtLink>
+      </p>
+      
+      <p class="wiggle woosh wg-text wsh-text flash links">
+        <NuxtLink href="https://driplase.github.io" target="_blank" rel="noopener noreferrer">
+          driplase.github.io
+          <Icon
+            name="tabler:external-link" 
+            class="icon"
+            />
+          </NuxtLink>
+      </p>
+      
+      <p class="wiggle woosh wg-text wsh-text flash links">
+        <NuxtLink href="https://jli.pages.dev" target="_blank" rel="noopener noreferrer">
+          jli.pages.dev
           <Icon
             name="tabler:external-link" 
             class="icon"
