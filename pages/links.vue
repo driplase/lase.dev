@@ -85,7 +85,6 @@ useSeoMeta({
           <NuxtImg
             class="link-header"
             src="https://spacer4719.f5.si/images/NSH.png" 
-            format="webp"
             alt="spacer4719's site"
             decoding="async"
             draggable="false"
@@ -114,6 +113,18 @@ useSeoMeta({
         </NuxtLink>
       </p>
 
+      <p class="wiggle woosh wg-text wsh-text flash links">
+        <NuxtLink href="https://hamusata.f5.si" target="_blank" rel="noopener noreferrer">
+          <NuxtImg
+            class="link-header"
+            src="https://hamusata.f5.si/banner_icon_hamusata.png"
+            alt="HAMUSATA homepage"
+            decoding="async"
+            draggable="false"
+          />
+        </NuxtLink>
+      </p>
+      
       <small class="opacity-72 whitespace-pre-wrap text-xs mb-1">{{ $t('links.mutual.desc') }}</small>
     </div>
 
