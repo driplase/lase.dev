@@ -18,7 +18,7 @@ useSeoMeta({
         </NuxtLink>
       </p>
       <p class="wiggle woosh wg-text wsh-text flash links">
-        <NuxtLink href="https://bsky.app/profile/driplase.bsky.social" target="_blank" rel="noopener noreferrer">Bluesky</NuxtLink>
+        <NuxtLink href="https://bsky.app/profile/lase.dev" target="_blank" rel="noopener noreferrer">Bluesky</NuxtLink>
       </p>
       <p class="wiggle woosh wg-text wsh-text flash links">
         <NuxtLink href="https://misskey.04.si/@driplase" target="_blank" rel="noopener noreferrer">Misskey</NuxtLink>
@@ -124,7 +124,7 @@ useSeoMeta({
           />
         </NuxtLink>
       </p>
-      
+
       <small class="opacity-72 whitespace-pre-wrap text-xs mb-1">{{ $t('links.mutual.desc') }}</small>
     </div>
 
