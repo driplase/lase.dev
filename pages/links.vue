@@ -105,10 +105,19 @@ useSeoMeta({
       
       <p class="wiggle woosh wg-text wsh-text flash links zen-maru-gothic">
         <NuxtLink href="https://9a.si/" target="_blank" rel="noopener noreferrer">
-          9a.si
-          <Icon
-            name="tabler:external-link" 
-            class="icon"
+          <!-- 
+            9a.si
+            <Icon
+              name="tabler:external-link" 
+              class="icon"
+            />
+          -->
+          <NuxtImg
+            class="link-header"
+            src="https://9a.si/9a.si.webp"
+            alt="9a.si"
+            decoding="async"
+            draggable="false"
           />
         </NuxtLink>
       </p>
