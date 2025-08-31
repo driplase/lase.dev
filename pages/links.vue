@@ -84,7 +84,7 @@ useSeoMeta({
         <NuxtLink href="https://spacer4719.f5.si" target="_blank" rel="noopener noreferrer">
           <NuxtImg
             class="link-header"
-            src="https://spacer4719.f5.si/images/NSH.png" 
+            src="https://spacer4719.f5.si/images/NSH.webp" 
             alt="spacer4719's site"
             decoding="async"
             draggable="false"
@@ -126,7 +126,7 @@ useSeoMeta({
         <NuxtLink href="https://hamusata.f5.si" target="_blank" rel="noopener noreferrer">
           <NuxtImg
             class="link-header"
-            src="https://hamusata.f5.si/banner_icon_hamusata.png"
+            src="https://hamusata.f5.si/banner_icon_hamusata.webp"
             alt="HAMUSATA homepage"
             decoding="async"
             draggable="false"
