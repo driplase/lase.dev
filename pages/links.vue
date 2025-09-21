@@ -14,57 +14,90 @@ useSeoMeta({
       <h2 class="flash woosh font-bold origin-left" id="socials">{{ $t('socials') }}</h2>
       <div class="socials grid grid-cols-2 max-[320px]:grid-cols-1 min-[480px]:grid-cols-3 sm:grid-cols-4">
         <p class="wiggle woosh wg-text wsh-text flash links">
-          <NuxtLink href="https://youtube.com/@driplase" target="_blank" rel="noopener noreferrer">YouTube</NuxtLink>
-        </p>
-        <p class="wiggle woosh wg-text wsh-text flash links">
-          <NuxtLink href="https://x.com/driplase" target="_blank" rel="noopener noreferrer">
-            <i class="eclyera inline-block icon">&#x1d54f;</i> {{ $t('socials.x') }}
+          <NuxtLink href="https://youtube.com/@driplase" target="_blank" rel="noopener noreferrer">
+            YouTube
           </NuxtLink>
         </p>
         <p class="wiggle woosh wg-text wsh-text flash links">
-          <NuxtLink href="https://bsky.app/profile/lase.dev" target="_blank" rel="noopener noreferrer">Bluesky</NuxtLink>
+          <NuxtLink href="https://x.com/driplase" target="_blank" rel="noopener noreferrer">
+            <i class="eclyera inline-block icon">
+              &#x1d54f;</i> {{ $t('socials.x') }}
+          </NuxtLink>
         </p>
         <p class="wiggle woosh wg-text wsh-text flash links">
-          <NuxtLink href="https://misskey.04.si/@driplase" target="_blank" rel="noopener noreferrer">Misskey</NuxtLink>
+          <NuxtLink href="https://bsky.app/profile/lase.dev" target="_blank" rel="noopener noreferrer">
+            Bluesky
+          </NuxtLink>
         </p>
         <p class="wiggle woosh wg-text wsh-text flash links">
-          <NuxtLink href="https://duolingo.com/profile/driplase" target="_blank" rel="noopener noreferrer">Duolingo</NuxtLink>
+          <NuxtLink href="https://misskey.04.si/@driplase" target="_blank" rel="noopener noreferrer">
+            Misskey
+          </NuxtLink>
         </p>
         <p class="wiggle woosh wg-text wsh-text flash links">
-          <NuxtLink href="https://github.com/driplase" target="_blank" rel="noopener noreferrer">GitHub</NuxtLink>
+          <NuxtLink href="https://duolingo.com/profile/driplase" target="_blank" rel="noopener noreferrer">
+            Duolingo
+          </NuxtLink>
         </p>
         <p class="wiggle woosh wg-text wsh-text flash links">
-          <NuxtLink href="https://www.instagram.com/driplase" target="_blank" rel="me noopener noreferrer">Instagram</NuxtLink>
+          <NuxtLink href="https://github.com/driplase" target="_blank" rel="noopener noreferrer">
+            GitHub
+          </NuxtLink>
         </p>
         <p class="wiggle woosh wg-text wsh-text flash links">
-          <NuxtLink href="https://driplase.newgrounds.com/" target="_blank" rel="noopener noreferrer">Newgrounds</NuxtLink>
+          <NuxtLink href="https://www.instagram.com/driplase" target="_blank" rel="me noopener noreferrer">
+            Instagram
+          </NuxtLink>
         </p>
         <p class="wiggle woosh wg-text wsh-text flash links">
-          <NuxtLink href="https://driplase.newgrounds.com/" target="_blank" rel="noopener noreferrer">pixiv</NuxtLink>
+          <NuxtLink href="https://driplase.newgrounds.com/" target="_blank" rel="noopener noreferrer">
+            Newgrounds
+          </NuxtLink>
         </p>
         <p class="wiggle woosh wg-text wsh-text flash links">
-          <NuxtLink href="https://www.reddit.com/user/Driplase/" target="_blank" rel="noopener noreferrer">Reddit</NuxtLink>
+          <NuxtLink href="https://www.pixiv.net/users/95047153" target="_blank" rel="noopener noreferrer">
+            pixiv
+          </NuxtLink>
         </p>
         <p class="wiggle woosh wg-text wsh-text flash links">
-          <NuxtLink href="https://www.threads.com/@driplase" target="_blank" rel="me noopener noreferrer">Threads</NuxtLink>
+          <NuxtLink href="https://www.reddit.com/user/Driplase/" target="_blank" rel="noopener noreferrer">
+            Reddit
+          </NuxtLink>
         </p>
         <p class="wiggle woosh wg-text wsh-text flash links">
-          <NuxtLink href="https://www.tiktok.com/@driplase" target="_blank" rel="noopener noreferrer">TikTok</NuxtLink>
+          <NuxtLink href="https://www.threads.com/@driplase" target="_blank" rel="me noopener noreferrer">
+            Threads
+          </NuxtLink>
         </p>
         <p class="wiggle woosh wg-text wsh-text flash links">
-          <NuxtLink href="https://driplase.tumblr.com" target="_blank" rel="noopener noreferrer">Tumblr</NuxtLink>
+          <NuxtLink href="https://www.tiktok.com/@driplase" target="_blank" rel="noopener noreferrer">
+            TikTok
+          </NuxtLink>
         </p>
         <p class="wiggle woosh wg-text wsh-text flash links">
-          <NuxtLink href="https://www.twitch.tv/driplase" target="_blank" rel="noopener noreferrer">Twitch</NuxtLink>
+          <NuxtLink href="https://driplase.tumblr.com" target="_blank" rel="noopener noreferrer">
+            Tumblr
+          </NuxtLink>
         </p>
         <p class="wiggle woosh wg-text wsh-text flash links">
-          <NuxtLink href="https://soundcloud.com/driplase" target="_blank" rel="noopener noreferrer">SoundCloud</NuxtLink>
+          <NuxtLink href="https://www.twitch.tv/driplase" target="_blank" rel="noopener noreferrer">
+            Twitch
+          </NuxtLink>
         </p>
         <p class="wiggle woosh wg-text wsh-text flash links">
-          <NuxtLink href="https://steamcommunity.com/id/driplase/" target="_blank" rel="noopener noreferrer">Steam</NuxtLink>
+          <NuxtLink href="https://soundcloud.com/driplase" target="_blank" rel="noopener noreferrer">
+            SoundCloud
+          </NuxtLink>
         </p>
         <p class="wiggle woosh wg-text wsh-text flash links">
-          <NuxtLink href="http://discord.com/users/959034815766728714" target="_blank" rel="noopener noreferrer">Discord <small class="monospace opacity-64">@driplase</small></NuxtLink>
+          <NuxtLink href="https://steamcommunity.com/id/driplase/" target="_blank" rel="noopener noreferrer">
+            Steam
+          </NuxtLink>
+        </p>
+        <p class="wiggle woosh wg-text wsh-text flash links">
+          <NuxtLink href="http://discord.com/users/959034815766728714" target="_blank" rel="noopener noreferrer">
+            Discord <small class="monospace opacity-64">@driplase</small>
+          </NuxtLink>
         </p>
       </div>
       
@@ -102,10 +135,11 @@ useSeoMeta({
         <small class="opacity-72 whitespace-pre text-xs mb-1">{{ $t('links.others.desc') }}</small>
         
         <p 
-          v-for="link in linksData.others"
+          v-for="(link, idx) in linksData.others"
           class="wiggle woosh wg-text wsh-text flash links"
+          :key="idx"
         >
-          <NuxtLink class="" :href="link.url" target="_blank" rel="noopener noreferrer">
+          <NuxtLink :href="link.url" target="_blank" rel="noopener noreferrer">
             <!-- <i class="eclyera icon">&#xf806;</i> -->
             <NuxtImg
               v-if="link.imageURL"
@@ -115,6 +149,7 @@ useSeoMeta({
               decoding="async"
               draggable="false"
             />
+
             <span v-else>
               {{ link.title }}
               <Icon
@@ -122,7 +157,12 @@ useSeoMeta({
                 class="icon"
               />
             </span>
-            <p class="text-gray-400 text-sm">{{ link.id ? $t(`links.items.${link.id}.description`) : null }}{{ link.description }}</p>
+
+            <p v-if="link.id && $t(`links.items.${link.id}.description`) !== `links.items.${link.id}.description` || link.description">
+              <small class="text-gray-400 text-sm">
+                {{ link.id && $t(`links.items.${link.id}.description`) !== `links.items.${link.id}.description` ? $t(`links.items.${link.id}.description`) : link.description }}
+              </small>
+            </p>
           </NuxtLink>
         </p>
       </div>
