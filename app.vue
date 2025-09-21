@@ -12,7 +12,8 @@ useHead(() => ({
   link: [
     {
       rel: "icon",
-      href: "/favicon.ico",
+      //href: "/favicon.ico",
+      href: "/assets/logo/d_64x64.webp",
     },
     {
       rel: "sitemap",
@@ -49,7 +50,7 @@ useHead(() => ({
     },
     {
       property: "og:image",
-      content: "https://lase.dev/assets/d_128x128.png",
+      content: "https://lase.dev/assets/logo/d_128x128.webp",
     },
     {
       name: "format-detection",

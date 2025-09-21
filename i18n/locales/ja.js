@@ -50,4 +50,6 @@ export default {
   "misc.rcp.role_color": "ロールカラー",
   
   show_more: 'もっと表示',
+  
+  "footer.source_code": "ソースコード"
 }

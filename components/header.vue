@@ -22,11 +22,15 @@ function toggleBurger(which, onlyWhenBurgerExists, disableTransition) {
       right: 0,
       opacity: 1,
       filter: 'blur(0px)',
+      userSelect: "auto",
+      pointerEvents: "auto",
     }
     const hide = {
       right: "-45vw",
       opacity: 0,
       filter: 'blur(8px)',
+      userSelect: "none",
+      pointerevents: "none",
     }
   
     // prevent buggy transition when spam clicked
@@ -194,6 +198,8 @@ nav {
     box-shadow: 0 0 8px rgba(13, 16, 39, 1);
     backdrop-filter: blur(8px);
     filter: blur(8px);
+    pointer-events: none;
+    user-select: none;
   }
   .nav-link {
     padding: 6px 12px;
@@ -205,6 +211,8 @@ nav {
 @media screen and (min-width: 1024px) {
   .burger-mode {
     display: none;
+    user-select: none;
+    pointer-events: none;
   }
 }
 </style>

@@ -49,4 +49,6 @@ export default {
   "misc.rcp.role_color": "Role Color",
 
   show_more: 'Show more',
+
+  "footer.source_code": "Source Code"
 }

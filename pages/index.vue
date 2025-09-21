@@ -3,29 +3,39 @@
 <template>
   <NuxtLayout name="default" :title="$t('home')" :description="$t('home.description')" align="center">
 
-    <section class="beginning grid justify-center">
+    <section class="default beginning flex flex-row justify-center items-center gap-12 h-96">
 
       <div class="logo">
         <NuxtImg 
           class="invert logo-img" 
-          src="/assets/d_256x256.png" 
+          src="/assets/logo/d_256x256.webp" 
           draggable="false" 
           alt="driplase logo"
           fetchpriority="high"
         />
         <NuxtImg 
           class="logo-img logo-shadow" 
-          src="/assets/d_256x256.png" 
+          src="/assets/logo/d_256x256.webp" 
           draggable="false" 
           alt="driplase logo"
         />
       </div>
 
+      <div class="flex h-full items-center">
+        <div class="block text-left">
+  
+          <h2 class="mb-2"><span class="text-5xl text-glow">driplase</span></h2>
+          <p class="text-gray-400 text-sm italic font-mono">hobbyist, </p>
+        
+        </div>
+      </div>
+
     </section>
 
-    <section>
+    <hr class="text-gray-400 shadow-gray-400 glow-line" />
 
-      <h2>Hi! I'm driplase.</h2>
+    <section class="default">
+
       <p class="text-gray-400 text-sm font-mono">{{ $t('blog.description.wip') }}</p>
 
     </section>
@@ -54,6 +64,8 @@ section {
 
   /* 6px */
   filter: invert(1) blur(1vmin);
+  user-select: none;
+  pointer-events: none;
 }
 
 </style>

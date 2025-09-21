@@ -17,31 +17,35 @@ const blogs = data.value.filter(item => item.path.startsWith('/blog'))
     :description="$t('blog.description')"
     align="center"
   >
+    <section class="default">
 
-    <div class="shade"></div>
-
-    <section class="top-field">
-      <h1>{{ $t('blog') }}</h1>
-      <p class="text-gray-300">
-        {{ $t('blog.description') }}
-        
-        <br />
-        
-        <span class="text-gray-500 text-sm font-mono">
-          {{ $t('blog.description.wip') }}
-        </span>
-      </p>
+      <div class="shade"></div>
+  
+      <section class="top-field">
+        <h1>{{ $t('blog') }}</h1>
+        <p class="text-gray-300">
+          {{ $t('blog.description') }}
+          
+          <br />
+          
+          <span class="text-gray-500 text-sm font-mono">
+            {{ $t('blog.description.wip') }}
+          </span>
+        </p>
+      </section>
+  
+      <section>
+        <WorksCards
+          v-for="post in blogs" 
+          :title="post.title"
+          :url="post.path"
+        >
+          {{ post.description }}
+        </WorksCards>
+      </section>
+      
     </section>
-
-    <section>
-      <WorksCards
-        v-for="post in blogs" 
-        :title="post.title"
-        :url="post.path"
-      >
-        {{ post.description }}
-      </WorksCards>
-    </section>
+    
 
   </NuxtLayout>
 </template>

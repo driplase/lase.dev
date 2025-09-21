@@ -52,7 +52,7 @@ body {
   font-family: var(--font-monospace);
 }
 
-:where(:any-link) {
+:where(:any-link):not(.no-link-blue) {
   color: var(--color-text-link);
 }
 
@@ -150,7 +150,7 @@ input {
 }
 .eclyera.icon {
   width: unset;
-  margin-top: -.6em;
+  margin-top: -0.6em;
 }
 
 .fw-normal {
@@ -201,12 +201,6 @@ a.no-ul {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.flex-row {
-  display: flex;
-  flex-direction: row;
-  align-items: end;
-}
-
 .hidden {
   display: none;
 }
@@ -227,4 +221,22 @@ article.blog {
     margin: .25rem 0;
   }
 
+}
+
+section.default, .default-section {
+  padding: var(--main-padding);
+  width: 100%;
+}
+
+hr {
+  width: 100%;
+}
+
+hr.glow-line {
+  box-shadow: 0 0 8px 0.5px var(--tw-shadow-color),
+    0 0 4px 0px color-mix(in srgb, var(--tw-shadow-color), white 50%);
+}
+
+.text-glow {
+  text-shadow: 0 0 8px;
 }

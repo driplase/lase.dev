@@ -1,5 +1,9 @@
+:root {
+  --main-pad: 16px 6rem;
+  --main-padding: var(--main-pad);  
+}
+
 main {
-  padding: 16px 6rem;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -29,14 +33,14 @@ h3, h4, h5, h6 {
 }
 
 @media screen and (max-width: 1023px) {
-  main {
-    padding: 16px 3rem;
+  :root {
+    --main-pad: 16px 3rem;
   }
 }
 
 @media screen and (max-width: 720px) {
-  main {
-    padding: 12px 2rem;
+  :root {
+    --main-pad: 12px 2rem;
   }
 
   h1 {
@@ -54,7 +58,7 @@ h3, h4, h5, h6 {
 }
 
 @media screen and (max-width: 480px) {
-  main {
-    padding: 12px 1.5rem;
+  :root {
+    --main-pad: 12px 1.5rem;
   }
 }
