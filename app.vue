@@ -1,5 +1,6 @@
 <script setup>
 import './styles/global.css';
+import LoadAnimation from '@/components/loadAmination/main.vue'
 
 const { locale } = useI18n()
 
@@ -16,15 +17,6 @@ useHead(() => ({
     {
       rel: "sitemap",
       href: "/sitemap.xml"
-    },
-    {
-      rel: "preconnect",
-      href: "https://fonts.googleapis.com"
-    },
-    {
-      rel: "preconnect",
-      href: "https://fonts.gstatic.com",
-      crossorigin: true,
     },
   ],
   meta: [
@@ -68,4 +60,6 @@ useHead(() => ({
 </script>
 <template>
   <NuxtPage />
+  
+  <LoadAnimation />
 </template>

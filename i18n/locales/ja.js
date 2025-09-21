@@ -23,11 +23,16 @@ export default {
   "miscellaneous": "いろいろ",
   
   select_language: "言語を選択",
+
+  "works.web": "Web",
+  "works.designs": "デザイン",
+  "works.music": "音楽",
+  "works.fonts": "フォント",
   
   "works.eclyera.description": "私がはじめて作ったフォントであり、作った中でいちばんひどいものでもあります。",
   "works.j0si.description": "シンプルなURL短縮ツール。新バージョン開発中...",
   "works.lixeld.description": "Mojangles (マイクラのフォント)にインスパイアされたピクセルフォント。もともとは ",
-  "works.lixeld.description.extend": "のために作られました",
+  "works.lixeld.description.extend": "のために作りました",
   "works.treron_icons.description": "アイコンパック。気まぐれで更新します",
   
   "misc.list.rcp.description": "Discordのロールカラーをプレビューできるシンプルなツール。ロールのスタイル（強化）にも対応！",
@@ -37,7 +42,7 @@ export default {
   "misc.domains.expire.2": "で期限が切れます。",
   "misc.domains.expire.3": "このドメインを保持する理由がないので、更新するつもりはありません。",
   
-  "misc.rcp.title": "Discordのロールカラーをプレビューするやつ",
+  "misc.rcp.title": "Discordのロールカラーをプレビューするツール",
   "misc.rcp.role_style": "ロールスタイル",
   "misc.rcp.role_style.solid": "ソリッド",
   "misc.rcp.role_style.gradient": "グラデーション",

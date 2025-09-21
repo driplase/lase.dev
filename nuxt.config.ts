@@ -31,7 +31,6 @@ export default defineNuxtConfig({
         'vietnamese', 
         'latin-ext', 
         'latin',
-        'japanese',
       ],
     }
   },

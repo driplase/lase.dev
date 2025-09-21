@@ -11,16 +11,26 @@ try {
 } catch {
   isURLvalid = false;
 }
+
+const target = ref("_self");
+target.value = props.external ? '_blank' : '_self';
 </script>
 <template>
   <NuxtLink
     class="root-link"
     :to="props.url" 
-    :target="props.external ? '_blank' : '_self'">
+    :target>
     <div :class="
       `card ${(isURLvalid || !external) ? 'flash' : ''}`
     ">
-      <h3>{{ props.title }}</h3>
+      <h3>
+        {{ props.title }}
+        <Icon
+          v-if="target === '_blank'"
+          name="tabler:external-link" 
+          class="icon"
+        />
+      </h3>
       <slot />
     </div>
   </NuxtLink>

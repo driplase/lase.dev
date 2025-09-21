@@ -12,6 +12,8 @@
   --color-background: #111222;
   --color-text: white;
   --color-text-link: #2862ff;
+
+  --color-bright-primary: #bfd7ff;
 }
 
 @theme {
@@ -140,7 +142,7 @@ input {
   display: inline-block;
   width: 1em;
   height: 1em;
-  margin: 0 .05em 0 .1em;
+  /* margin: 0 .05em 0 .1em; */
   vertical-align: -0.1em;
   user-select: none;
   font-style: normal;
