@@ -14,3 +14,10 @@
 .lixeld {
   font-family: lixeld, sans-serif;
 }
+
+/* EXPERIMENTAL */
+@font-face {
+  font-family: "Lase Sans";
+  src: url('/assets/fonts/LaseSans.otf') format("opentype"),
+      url('/assets/fonts/LaseSans.ttf') format("typeface");
+}

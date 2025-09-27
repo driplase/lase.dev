@@ -21,7 +21,7 @@ function toggle() {
       <li v-for="locale in locales">
         <a href="#" class="link no-ul wiggle wg-text woosh wsh-text" :key="locale.code" @click.prevent.stop="setLocale(locale.code)">
           {{ locale.name }}
-          </a>
+        </a>
       </li>
     </ul>
   </div>
@@ -46,7 +46,7 @@ button {
   list-style: none;
   inset: 36px 0px auto auto;
   width: fit-content;
-  padding-left: 24px;
+  min-width: 108px;
   z-index: 16;
 }
 ul {
@@ -57,5 +57,10 @@ ul {
   display: inline-block;
   transform-origin: right center;
   padding: 2px 0 2px 8px;
+  min-width: 100%;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 </style>

@@ -159,6 +159,10 @@ nav {
   display: inline-block;
   color: var(--color-text);
   text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 .right-container {
   user-select: none;

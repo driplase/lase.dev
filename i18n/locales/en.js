@@ -15,7 +15,7 @@ export default {
   "socials": "socials",
   "socials.x": "(f.k.a Twitter)",
   "mutual_links": "reciprocal links",
-  "links.mutual.desc": "",
+  "links.mutual.desc": "let me know if you want your websites to be included here\nif you include my website in your website, i might include your website in the \"reciprocal category\"\notherwise, i will still include your links to the \"other links\" category\ni can use the banner image if you have it. but, i'd appreciate it if you could avoid making the banner image too big",
   "links.others": "other links",
   "links.others.desc": "may contain links that are not related to this website.",
 

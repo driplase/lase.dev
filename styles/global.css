@@ -4,7 +4,13 @@
 @import './responsive.css';
 
 :root {
-  --font-primary: 'Encode Sans', 'Open Sans', 'M PLUS 2', 'Noto Sans', 'Noto Sans Japanese';
+  --font-primary: /* 'Lase Sans', */
+      'Encode Sans', 
+      'Open Sans', 
+      'M PLUS 2', 
+      'Noto Sans', 
+      'Noto Sans Japanese';
+      
   --font-monospace: 'Ubuntu Sans Mono', 'Noto Sans Mono', 'M PLUS 1 Code', monospace;
   
   --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);

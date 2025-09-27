@@ -31,6 +31,7 @@ export default defineNuxtConfig({
         'vietnamese', 
         'latin-ext', 
         'latin',
+        'japanese',
       ],
     }
   },
@@ -57,7 +58,8 @@ export default defineNuxtConfig({
     defaultLocale: 'en',
     locales: [
       { code: 'en', name: 'english', file: 'en.js' },
-      { code: 'ja', name: '日本語', file: 'ja.js' }
+      { code: 'ja', name: '日本語', file: 'ja.js' },
+      { code: 'xi', name: 'éxlip', file: 'xi.js' },
     ],
     lazy: true,
     strategy: "no_prefix",
