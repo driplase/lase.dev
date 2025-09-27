@@ -107,7 +107,7 @@ useSeoMeta({
           v-for="link in linksData.reciprocal.sort((a, b) => a.title.localeCompare(b.title))"
           class="wiggle woosh wg-text wsh-text flash links"
         >
-          <NuxtLink class="" :href="link.url" target="_blank" rel="noopener noreferrer">
+          <NuxtLink class="" :href="link.url" target="_blank" rel="noopener">
             <!-- <i class="eclyera icon">&#xf806;</i> -->
             <NuxtImg
               v-if="link.imageURL"
