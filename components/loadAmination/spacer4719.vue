@@ -263,13 +263,13 @@ onMounted(() => {
 
           <NuxtImg 
             class="invert logo-img" 
-            src="/assets/d_256x256.png" 
+            src="/assets/logo/d_256x256.webp" 
             draggable="false" 
             alt="driplase logo"
           />
           <NuxtImg 
             class="logo-img logo-shadow" 
-            src="/assets/d_256x256.png" 
+            src="/assets/logo/d_256x256.webp" 
             draggable="false" 
             alt="driplase logo"
           />
