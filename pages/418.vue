@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import Default from '@/layouts/default.vue';
-
 const reqEvent = useRequestEvent();
 if (reqEvent) {
   setResponseStatus(reqEvent, 418)
@@ -37,30 +35,32 @@ for (let i = 0; i < coffeeCount; i++) {
 }
 </script>
 <template>
-  <Default title="418">
-    <div class="error-content">
-      <div class="wiggle woosh flash ">
-        <div class="error-code rainbow-fast">418</div>
-        <div class="error-message">
-          i'm a teapot
-        </div>
-      </div>
-      <div class="coffees">
-        <Icon v-for="c in coffees" :name="coffeeIcons[Math.floor(Math.random() * coffeeIcons.length)]" :size="24 * c.scale" class="woosh" :style="{
-          transform: `translate(${c.x}px, ${c.y}px) rotateZ(${c.rotation}deg)`
-        }"/>
-      </div>
-      <div class="error-data">
-        <details>
-          <summary>show error data</summary>
-          <pre><code>sorry, i can't serve you a cup of coffee.
-because i ran out of cups.
+  <HeadTemplate title="418" />
 
-actually i ain't a teapot</code></pre>
-        </details>
+  <div class="error-content">
+    <div class="wiggle woosh flash ">
+      <div class="error-code rainbow-fast">418</div>
+      <div class="error-message">
+        i'm a teapot
       </div>
     </div>
-  </Default>
+    <div class="coffees">
+      <Icon v-for="c in coffees" :name="coffeeIcons[Math.floor(Math.random() * coffeeIcons.length)]" :size="24 * c.scale" class="woosh" :style="{
+        transform: `translate(${c.x}px, ${c.y}px) rotateZ(${c.rotation}deg)`
+      }"/>
+    </div>
+    <div class="error-data">
+      <details>
+        <summary>show error data</summary>
+        <code>
+          sorry, i can't serve you a cup of coffee.<br />
+          because i ran out of cups.<br />
+          <br />
+          actually i ain't a teapot
+        </code>
+      </details>
+    </div>
+  </div>
 </template>
 <style scoped>
 .error-content {

@@ -93,85 +93,84 @@ async function showColorPicker(event, col) {
 }
 </script>
 <template>
-  <NuxtLayout 
-    name="default" 
+  <HeadTemplate 
     :title="$t('misc.rcp.title')"
     :description="$t('misc.list.rcp.description')"
-    align="center">
-    <h2 class="font-bold">{{ $t('misc.rcp.title') }}</h2>
-    <div class="container">
-      <div class="preview">
-        <div class="bg" v-for="col in backgroundColors" :style="{ background: col.background }">
-          <div class="message">
-            <div class="cozy">
-              <div class="contents">
-                <div class="avatar">
-                  <div class="avatar-placeholder lase-color"></div>
-                </div>
-                <h2 class="name-header" :style="{ color: col.nameColor }">
-                  <div
-                    :data-text="displayName"
-                    :class="`name ${colorStyle !== 'solid' ? 'name-gradient' : ''} ${colorStyle === 'holographic' ? 'name-holographic' : ''}`" 
-                    :style="{
-                      '--color-1': resultColor?.at(0),
-                      '--color-2': resultColor?.at(1),
-                      '--color-3': resultColor?.at(2) || resultColor?.at(0),
-                    }">
-                    {{ displayName }}
-                  </div>
-                  <span class="timestamp">
-                    {{ new Date().toString().match(/\d{2}:\d{2}/)?.at(0) }}
-                  </span>
-                </h2>
-                <div :style="{ color: col.messageColor }">{{ $t('misc.rcp.text') }}</div>
+  />
+
+  <h2 class="font-bold">{{ $t('misc.rcp.title') }}</h2>
+  <div class="container">
+    <div class="preview">
+      <div class="bg" v-for="col in backgroundColors" :style="{ background: col.background }">
+        <div class="message">
+          <div class="cozy">
+            <div class="contents">
+              <div class="avatar">
+                <div class="avatar-placeholder lase-color"></div>
               </div>
+              <h2 class="name-header" :style="{ color: col.nameColor }">
+                <div
+                  :data-text="displayName"
+                  :class="`name ${colorStyle !== 'solid' ? 'name-gradient' : ''} ${colorStyle === 'holographic' ? 'name-holographic' : ''}`" 
+                  :style="{
+                    '--color-1': resultColor?.at(0),
+                    '--color-2': resultColor?.at(1),
+                    '--color-3': resultColor?.at(2) || resultColor?.at(0),
+                  }">
+                  {{ displayName }}
+                </div>
+                <span class="timestamp">
+                  {{ new Date().toString().match(/\d{2}:\d{2}/)?.at(0) }}
+                </span>
+              </h2>
+              <div :style="{ color: col.messageColor }">{{ $t('misc.rcp.text') }}</div>
             </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="setting">
-        <h4>{{ $t('misc.rcp.role_style') }}</h4>
-        <div class="grid grid-cols-3 buttons">
-          <button @click="changeRoleStyle('solid')">{{ $t('misc.rcp.role_style.solid') }}</button>
-          <button @click="changeRoleStyle('gradient')">{{ $t('misc.rcp.role_style.gradient') }}</button>
-          <button @click="changeRoleStyle('holographic')">{{ $t('misc.rcp.role_style.holographic') }}</button>
-        </div>
-        <h4>{{ $t('misc.rcp.role_color') }}</h4>
-        <div
-          :class="`color-preview prev-${colorStyle}`" 
-          :style="{
-            '--color-1': resultColor?.at(0) || '#99aab5',
-            '--color-2': resultColor?.at(1),
-            '--color-3': resultColor?.at(2) || resultColor?.at(0),
-          }">
-          <div class="pickers">
-            <div 
-              v-for="col in customizableColors[colorStyle]"
-              class="color-pick" 
-              v-if="colorStyle !== 'holographic'"
-              @click="e => showColorPicker(e, col)">
-              <Icon 
-                class="color-pick-icon" 
-                name="tabler:color-picker" 
-                size="22"/>
-              </div>
+    <div class="setting">
+      <h4>{{ $t('misc.rcp.role_style') }}</h4>
+      <div class="grid grid-cols-3 buttons">
+        <button @click="changeRoleStyle('solid')">{{ $t('misc.rcp.role_style.solid') }}</button>
+        <button @click="changeRoleStyle('gradient')">{{ $t('misc.rcp.role_style.gradient') }}</button>
+        <button @click="changeRoleStyle('holographic')">{{ $t('misc.rcp.role_style.holographic') }}</button>
+      </div>
+      <h4>{{ $t('misc.rcp.role_color') }}</h4>
+      <div
+        :class="`color-preview prev-${colorStyle}`" 
+        :style="{
+          '--color-1': resultColor?.at(0) || '#99aab5',
+          '--color-2': resultColor?.at(1),
+          '--color-3': resultColor?.at(2) || resultColor?.at(0),
+        }">
+        <div class="pickers">
+          <div 
+            v-for="col in customizableColors[colorStyle]"
+            class="color-pick" 
+            v-if="colorStyle !== 'holographic'"
+            @click="e => showColorPicker(e, col)">
+            <Icon 
+              class="color-pick-icon" 
+              name="tabler:color-picker" 
+              size="22"/>
             </div>
-            <div 
-              class="picker-menu"
-              ref="picker"
-              :style="{
-                display: activeColorPickerMenu >= 0 ? 'block' : 'none',
-              }"
-              tabindex="0">
-              <ColorPicker
-                @update="changeColor"
-                v-model="pickerDefaultValue" />
-            </div>
-        </div>
+          </div>
+          <div 
+            class="picker-menu"
+            ref="picker"
+            :style="{
+              display: activeColorPickerMenu >= 0 ? 'block' : 'none',
+            }"
+            tabindex="0">
+            <ColorPicker
+              @update="changeColor"
+              v-model="pickerDefaultValue" />
+          </div>
       </div>
     </div>
-  </NuxtLayout>
+  </div>
 </template>
 <style scoped>
 .container {

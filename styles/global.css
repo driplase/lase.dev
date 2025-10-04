@@ -10,7 +10,7 @@
       'M PLUS 2', 
       'Noto Sans', 
       'Noto Sans Japanese';
-      
+
   --font-monospace: 'Ubuntu Sans Mono', 'Noto Sans Mono', 'M PLUS 1 Code', monospace;
   
   --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
@@ -245,4 +245,8 @@ hr.glow-line {
 
 .text-glow {
   text-shadow: 0 0 8px;
+}
+
+.lshw1 {
+  font-family: 'Lase Handwriting 1', cursive;
 }

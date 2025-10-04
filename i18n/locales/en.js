@@ -33,6 +33,9 @@ export default {
   "works.lixeld.description": "A pixel font that is inspired by Mojangles (Minecraft font). originally made for",
   "works.lixeld.description.extend": "",
   "works.treron_icons.description": "An icon pack. will update on a whim",
+  "works.laselxt.description": "A website that attempted to make a modern website without the help of AI. The informations on this website are fictional.",
+  "works.pfj0si.title": "prime factorization tool (pf.j0.si)",
+  "works.pfj0si.description": "Works with bigger numbers, but it might take a while because I'm not a math expert.",
 
   "misc.list.rcp.description": "A simple tool that lets you preview Discord role colors. Enhanced Role Styles are supported!",
   

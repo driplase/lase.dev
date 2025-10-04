@@ -1,7 +1,9 @@
 <script setup>
 </script>
 <template>
-  <NuxtLayout name="default" :title="$t('miscellaneous')" align="start">
+  <HeadTemplate :title="$t('miscellaneous')" />
+
+  <div class="items-start text-start w-full">
     <section class="default">
       
       <div class="container">
@@ -14,7 +16,7 @@
       </div>
 
     </section>
-  </NuxtLayout>
+  </div>
 </template>
 <style scoped>
 .container {

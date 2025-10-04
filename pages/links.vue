@@ -1,12 +1,15 @@
 <script setup>
 import linksData from '@/data/links'
+import HeadTemplate from '~/components/headTemplate.vue';
 
 useSeoMeta({
   robots: "noindex, nofollow"
 })
 </script>
 <template>
-  <NuxtLayout name="default" :title="$t('links')" align="start">
+  <HeadTemplate :title="$t('links')" />
+
+  <div class="items-start text-start w-full">
     <section class="default">
       
       <h1 class="flash woosh font-bold origin-left">{{ $t('links') }}</h1>
@@ -166,10 +169,9 @@ useSeoMeta({
           </NuxtLink>
         </p>
       </div>
-
       
     </section>
-  </NuxtLayout>
+  </div>
 </template>
 <style scoped>
 .socials {

@@ -34,6 +34,9 @@ export default {
   "works.lixeld.description": "Mojangles (マイクラのフォント)にインスパイアされたピクセルフォント。もともとは ",
   "works.lixeld.description.extend": "のために作りました",
   "works.treron_icons.description": "アイコンパック。気まぐれで更新します",
+  "works.laselxt.description": "AIに任せずにモダンサイトを作ろうとしたもの。このサイトにある情報はフィクションです",
+  "works.pfj0si.title": "素因数分解ツール (pf.j0.si)",
+  "works.pfj0si.description": "大きめな数字でも動くけど、私は数学の専門家ではないので、結果がでるまで時間がかかることもあるよ。",
   
   "misc.list.rcp.description": "Discordのロールカラーをプレビューできるシンプルなツール。ロールのスタイル（強化）にも対応！",
   "misc.rcp.text": "岩はかなり古い",

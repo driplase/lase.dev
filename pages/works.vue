@@ -3,7 +3,9 @@ import WorksCards from '~/components/worksCards.vue';
 
 </script>
 <template>
-  <NuxtLayout name="default" :title="$t('works')" align="start">
+  <HeadTemplate :title="$t('works')" />
+
+  <div class="text-start items-start w-full">
     <section class="default">
     
       <div class="container">
@@ -14,6 +16,12 @@ import WorksCards from '~/components/worksCards.vue';
         </h2>
         <WorksCards title="j0.si" url="https://j0.si" external>
           {{ $t('works.j0si.description') }}
+        </WorksCards>
+        <WorksCards title="Laselxt" url="https://laselxt.vercel.app" external>
+          {{ $t('works.laselxt.description') }}
+        </WorksCards>
+        <WorksCards :title="$t('works.pfj0si.title')" url="https://pf.j0.si" external>
+          {{ $t('works.pfj0si.description') }}
         </WorksCards>
         
         <h2 class="woosh font-semibold origin-left">
@@ -43,7 +51,7 @@ import WorksCards from '~/components/worksCards.vue';
       </div>
 
     </section>
-  </NuxtLayout>
+  </div>
 </template>
 <style scoped>
 .container {

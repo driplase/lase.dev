@@ -60,7 +60,11 @@ useHead(() => ({
 }));
 </script>
 <template>
-  <NuxtPage />
+  <NuxtLayout name="default">
+
+    <NuxtPage />
+  
+  </NuxtLayout>
   
   <LoadAnimation />
 </template>

@@ -1,6 +1,7 @@
 <script setup>
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import HeadTemplate from '~/components/headTemplate.vue';
 import ToggleSwitch from '~/components/toggleSwitch.vue';
 
 const isSlim = ref(true)
@@ -200,31 +201,27 @@ onMounted(() => {
 });
 </script>
 <template>
-  <NuxtLayout
-    name="default" 
+  <HeadTemplate
     title="Embedding Minecraft Skin with Three.js"
-    align="center"
-  >
+  />
 
-    <div class="mcskin-embed cursor-move" ref="mcskinEmbed"></div>
+  <div class="mcskin-embed cursor-move" ref="mcskinEmbed"></div>
 
-    <div class="mt-2">
-      <div class="my-2">
-        <label>
-          <ToggleSwitch v-model="isSlim" />
-          Slim
-        </label>
-      </div>
-      
-      <div class="my-2">
-        <label>
-          Skin URL:
-          <input type="url" v-model="skinURL" />
-        </label>
-      </div>
+  <div class="mt-2">
+    <div class="my-2">
+      <label>
+        <ToggleSwitch v-model="isSlim" />
+        Slim
+      </label>
     </div>
-
-  </NuxtLayout>
+    
+    <div class="my-2">
+      <label>
+        Skin URL:
+        <input type="url" v-model="skinURL" />
+      </label>
+    </div>
+  </div>
 </template>
 <style scoped>
 .mcskin-embed > canvas {

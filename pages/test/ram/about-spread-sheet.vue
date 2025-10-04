@@ -17,14 +17,13 @@ const profile = await getCsvFromSpreadSheet("https://docs.google.com/spreadsheet
 
 </script>
 <template>
-  <NuxtLayout name="default" title="/test/ram/aboutSpreadSheet" align="center">
+  <HeadTemplate title="/test/ram/aboutSpreadSheet" />
     
-    <table>
-      <tr v-for="column in profile">
-        <td v-for="row in column" v-html="row">
-        </td>
-      </tr>
-    </table>
-
-  </NuxtLayout>
+  <table>
+    <tr v-for="column in profile">
+      <td v-for="row in column" v-html="row">
+      </td>
+    </tr>
+  </table>
+  
 </template>

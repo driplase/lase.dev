@@ -21,3 +21,9 @@
   src: url('/assets/fonts/LaseSans.otf') format("opentype"),
       url('/assets/fonts/LaseSans.ttf') format("typeface");
 }
+
+@font-face {
+  font-family: "Lase Sans";
+  src: url('/assets/fonts/LaseHandwriting_1.woff2') format("woff2"),
+      url('/assets/fonts/LaseHandwriting_1.woff') format("woff");
+}

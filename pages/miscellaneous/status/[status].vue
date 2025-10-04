@@ -86,29 +86,29 @@ if (reqEvent) {
 }
 </script>
 <template>
-  <NuxtLayout name="default" :title="statusCode.toString()" :description="statusMessage">
-    <div class="error-content">
-      <div class="wiggle woosh flash ">
-        <div class="error-code rainbow-fast">{{ statusCode }}</div>
-        <div class="error-message">
-          {{ statusMessage }}
-        </div>
+  <HeadTemplate :title="statusCode.toString()" :description="statusMessage" />
+
+  <div class="error-content">
+    <div class="wiggle woosh flash ">
+      <div class="error-code rainbow-fast">{{ statusCode }}</div>
+      <div class="error-message">
+        {{ statusMessage }}
       </div>
-      <div class="error-data">
-        <details v-if="/^1\d{2}$/.test(statusCode.toString())">
-          <summary>show error data</summary>
-          <pre><code>i'm actually returning 200, xd</code></pre>
-        </details>
-        <details v-if="statusCode === 999">
-          <summary>show error data</summary>
-          <pre><code>Code: `INTERNAL_FUNCTION_SERVICE_UNAVAILABLE`
+    </div>
+    <div class="error-data">
+      <details v-if="/^1\d{2}$/.test(statusCode.toString())">
+        <summary>show error data</summary>
+        <pre><code>i'm actually returning 200, xd</code></pre>
+      </details>
+      <details v-if="statusCode === 999">
+        <summary>show error data</summary>
+        <pre><code>Code: `INTERNAL_FUNCTION_SERVICE_UNAVAILABLE`
 
 this error message is not real, but Vercel actually returned this error
 when my website was returning real 999 status code.</code></pre>
-        </details>
-      </div>
+      </details>
     </div>
-  </NuxtLayout>
+  </div>
 </template>
 <style scoped>
   .error-content {

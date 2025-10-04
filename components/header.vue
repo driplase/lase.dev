@@ -54,11 +54,11 @@ function toggleBurger(which, onlyWhenBurgerExists, disableTransition) {
   }
 }
 
-const currentPath = !error.value ? route.path.replace(/\/$/, '') : null;
-const navbarLinks = links.map(i => ({
-  ...i,
-  current: currentPath && i.url === currentPath
-}));
+const currentPath = ref(!error.value ? route.path.replace(/\/$/, '') : null);
+
+watch(route, (newRoute) => {
+  currentPath.value = !error.value ? newRoute.path.replace(/\/$/, '') : null
+})
 
 onMounted(() => {
   let previousWindowWidth = window.innerWidth;
@@ -98,9 +98,9 @@ onMounted(() => {
           </div>
         </button>
         <div class="menu-contents">
-          <NuxtLink v-for="item in navbarLinks"
+          <NuxtLink v-for="(item, idx) in links"
             :class="'nav-link wiggle woosh wg-text wsh-text glow ' +
-              (item.current ? 'bold ' : '')
+              (item.url === currentPath ? 'bold ' : '')
             "
             :href="item.url"
             @click="toggleBurger(false, true)"
@@ -109,6 +109,7 @@ onMounted(() => {
               touchAction: burgerMenu ? 'manipulation' : 'none',
             }"
             :tabindex="burgerMenu - 1"
+            :key="idx"
           >{{ $t(item.title) }}</NuxtLink>
         </div>
       </div>
@@ -159,6 +160,7 @@ nav {
   display: inline-block;
   color: var(--color-text);
   text-decoration: none;
+  transition: font-weight .16s cubic-bezier(0.34, 1.56, 0.64, 1);
 
   &:hover {
     text-decoration: underline;
@@ -198,8 +200,9 @@ nav {
     align-items: end;
     padding: 16px 24px;
     z-index: 8;
-    background: rgba(13, 16, 39, 0.749);
-    box-shadow: 0 0 8px rgba(13, 16, 39, 1);
+    background: rgba(27, 29, 44, 0.9);
+    box-shadow: 0 0 8px color-mix(in srgb, var(--color-gray-500), transparent 50%);
+    border-left: 1px solid color-mix(in srgb, var(--color-gray-500), transparent 36%);
     backdrop-filter: blur(8px);
     filter: blur(8px);
     pointer-events: none;

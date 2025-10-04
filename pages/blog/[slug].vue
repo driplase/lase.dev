@@ -19,29 +19,25 @@ const description = page.value?.description;
 </script>
 
 <template>
-  <NuxtLayout 
-    name="default" 
+  <HeadTemplate  
     :title="title"
     :description="description"
-    align="center"
-  >
+  />
 
-    <article class="blog" v-if="page">
+  <article class="blog" v-if="page">
 
-      <section class="title-section">
-        <h1 class="title">{{ title }}</h1>
-        <small class="text-sm text-gray-400">{{ description }}</small>
-      </section>
+    <section class="title-section">
+      <h1 class="title">{{ title }}</h1>
+      <small class="text-sm text-gray-400">{{ description }}</small>
+    </section>
 
-      <hr />
+    <hr />
 
-      <section class="main-section">
-        <ContentRenderer :value="page" />
-      </section>
+    <section class="main-section">
+      <ContentRenderer :value="page" />
+    </section>
 
-    </article>
-
-  </NuxtLayout>
+  </article>
 </template>
 <style scoped>
 .title {
