@@ -2,6 +2,7 @@
 title: "The test and first blog in this website"
 description: "AAAAAAAAAAAHHHHH---- ehm, this is description."
 createdAt: "2025-08-12"
+lang: en
 ---
 
 

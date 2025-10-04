@@ -2,6 +2,7 @@
 description: Test blog, from Nuxt Studio.
 createdAt: 2025-08-19
 title: Another Test Blog.
+lang: en
 ---
 
 I tried using [Nuxt Studio](https://nuxt.studio).
