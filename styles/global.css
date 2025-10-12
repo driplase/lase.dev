@@ -17,7 +17,8 @@
 
   --color-background: #111222;
   --color-text: white;
-  --color-text-link: #2862ff;
+  --color-text-link: #7987ff;
+  --color-text-link-secondary: #2862ff;
 
   --color-bright-primary: #bfd7ff;
 }
@@ -58,10 +59,6 @@ body {
   font-family: var(--font-monospace);
 }
 
-:where(:any-link):not(.no-link-blue) {
-  color: var(--color-text-link);
-}
-
 button {
   background: rgb(106, 121, 148);
   border-radius: 8px;
@@ -75,6 +72,10 @@ button {
   &:active {
     background: rgb(94, 103, 122);
   }
+}
+
+:where(:any-link):not(.no-link-blue) {
+  color: var(--color-text-link);
 }
 
 .tooltip {
@@ -181,9 +182,16 @@ a.no-ul {
 .lase-color {
   background: #0072de;
   background: linear-gradient(170deg, rgba(17, 18, 34, 1) 0%, rgba(0, 114, 222, 1) 100%);
+  --effect-shadow-color: #0072de;
 }
 
-.bg-text-clip {
+.lase-color-secondary {
+  background: var(--color-text-link-secondary);
+  background: linear-gradient(170deg, #111222 0%, var(--color-text-link-secondary) 100%);
+  --effect-shadow-color: var(--color-text-link-secondary);
+}
+
+.bg-clip-text {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -220,11 +228,18 @@ article.blog {
 
   h1, h2, h3, h4, h5, h6 {
     & > a { color: white; }
+    scroll-margin-top: calc(54px + .5rem);
+    margin-top: 1.5rem;
   }
 
   p {
     color: rgb(245, 245, 245);
-    margin: .25rem 0;
+    margin-top: 1rem;
+    margin-bottom: .25rem;
+  }
+
+  hr {
+    margin: 1rem 0;
   }
 
 }

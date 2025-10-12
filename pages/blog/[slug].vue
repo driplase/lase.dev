@@ -40,6 +40,11 @@ const description = page.value?.description;
   </article>
 </template>
 <style scoped>
+.blog {
+  display: grid;
+  justify-items: center;
+}
+
 .title {
   text-shadow: 0 0 8px rgba(255, 255, 255, 0.72);
 }

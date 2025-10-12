@@ -5,7 +5,7 @@
 
     <div class="footer-container">
       <div class="nav-brand">
-        <NuxtLink class="inline-block wiggle woosh flash lase-color bg-text-clip no-ul" href="/">lase.dev</NuxtLink>
+        <NuxtLink class="inline-block wiggle woosh flash no-ul no-link-blue lase-color-secondary bg-clip-text text-transparent" href="/">lase.dev</NuxtLink>
       </div>
       <span class="small-text">&copy; 2025 driplase</span>
     </div>

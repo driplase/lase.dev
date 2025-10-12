@@ -18,6 +18,7 @@ export default {
       url: "https://kntnkmr.f5.si",
       title: "Kntnkmr",
       description: "",
+      imageURL: "https://kntnkmr.f5.si/header.webp",
       id: "kntnkmr",
     },
     {

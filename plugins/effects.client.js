@@ -85,12 +85,12 @@ export default defineNuxtPlugin((nuxtApp) => {
       let tl = gsap.timeline({ paused: true });
       
       tl.set(element, {
-        textShadow: "0 0 16px",
+        textShadow: "0 0 16px var(--effect-shadow-color)",
         filter: "brightness(1.5)"
       })
       tl.to(element, {
         ease: "expo.out",
-        textShadow: "0 0 5px",
+        textShadow: "0 0 5px var(--effect-shadow-color)",
         filter: "brightness(1)",
         duration: .64
       })

@@ -80,7 +80,7 @@ onMounted(() => {
 <template>
   <header>
     <div class="nav-brand">
-      <NuxtLink class="inline-block wiggle woosh flash no-ul lase-color bg-text-clip" href="/">lase.dev</NuxtLink>
+      <NuxtLink class="inline-block wiggle woosh flash no-ul no-link-blue lase-color-secondary bg-clip-text text-transparent" href="/">lase.dev</NuxtLink>
     </div>
     <nav class="nav-container">
       <!-- prefetch x icon -->
