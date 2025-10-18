@@ -54,7 +54,7 @@ const description = page.value?.description;
 }
 
 .main-section {
-  text-align: start;
+  text-align: justify;
   max-width: 48rem;
 }
 </style>
