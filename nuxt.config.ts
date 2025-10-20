@@ -18,6 +18,9 @@ export default defineNuxtConfig({
     experimental: {
       sqliteConnector: 'native' 
     },
+    preview: {
+      api: 'https://api.nuxt.studio'
+    },
   },
   fonts: {
     defaults: {
