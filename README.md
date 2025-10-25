@@ -1,2 +1,4 @@
 # lase.dev
-personal website with multi-language support (not many)
+code of my personal website.
+
+Made with [Nuxt](https://nuxt.com)
