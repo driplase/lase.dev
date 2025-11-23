@@ -69,10 +69,12 @@ export default defineNuxtConfig({
   },
   routeRules: {
     '/test/**': { robots: false },
+    '/chores/**': { robots: false },
   },
   robots: {
     disallow: [
-      '/test/**'
+      '/test/**',
+      '/chores/**',
     ]
   },
   site: {
