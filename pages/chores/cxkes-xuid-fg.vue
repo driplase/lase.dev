@@ -1,7 +1,7 @@
 <template>
   <div class="w-full m-4">
     <p>
-      use this in <NuxtLink to="https://cxkes.me/xbox/xuid">cakes &mdash; XUID Lookup</NuxtLink>
+      use this in <NuxtLink to="https://cxkes.me/xbox/xuid" target="_blank">cakes &mdash; XUID Lookup</NuxtLink>
     </p>
 
     <p>
@@ -15,7 +15,7 @@
 
     
     <p>
-      <NuxtLink to="https://cxkes.me/xbox/xuid">cakes &mdash; XUID Lookup</NuxtLink> でつかってね
+      <NuxtLink to="https://cxkes.me/xbox/xuid" target="_blank">cakes &mdash; XUID Lookup</NuxtLink> でつかってね
     </p>
 
     <p>
