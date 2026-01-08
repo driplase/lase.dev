@@ -7,7 +7,7 @@
       <div class="nav-brand">
         <NuxtLink class="inline-block wiggle woosh flash no-ul no-link-blue lase-color-secondary bg-clip-text text-transparent" href="/">lase.dev</NuxtLink>
       </div>
-      <span class="small-text">&copy; 2025 driplase</span>
+      <span class="small-text">&copy; {{ new Date().getFullYear() }} driplase</span>
     </div>
 
     <div class="text-sm mt-2">
