@@ -82,6 +82,15 @@ export default defineNuxtConfig({
     url: 'https://lase.dev',
     name: 'lase.dev',
   },
+  studio: {
+    // https://nuxt.studio/setup#git-provider
+    repository: {
+      provider: 'github',
+      owner: 'driplase',
+      repo: 'lase.dev',
+      branch: 'master'
+    }
+  },
   vite: {
     plugins: [
       tailwindcss(),
