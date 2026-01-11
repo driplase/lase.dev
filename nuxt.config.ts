@@ -13,6 +13,7 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@nuxt/fonts',
     '@nuxt/image',
+    'nuxt-studio',
   ],
   content: {
     experimental: {
