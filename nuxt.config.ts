@@ -89,7 +89,8 @@ export default defineNuxtConfig({
       owner: 'driplase',
       repo: 'lase.dev',
       branch: 'master'
-    }
+    },
+    dev: false,
   },
   vite: {
     plugins: [

@@ -121,7 +121,7 @@ onMounted(() => {
 </template>
 <style scoped>
 header {
-  width: 100dvw;
+  width: 100%;
   font-size: 18px;
   background: #06060fbf;
   border-bottom: 1px solid #8080809f;

@@ -15,10 +15,10 @@ export default {
       id: "spacer4719",
     },
     {
-      url: "https://kntnkmr.f5.si",
+      url: "https://kntnkmr.jp",
       title: "Kntnkmr",
       description: "",
-      imageURL: "https://kntnkmr.f5.si/header.webp",
+      imageURL: "https://kntnkmr.jp/header.webp",
       id: "kntnkmr",
     },
     {
