@@ -90,7 +90,6 @@ export default defineNuxtConfig({
       repo: 'lase.dev',
       branch: 'master'
     },
-    dev: false,
   },
   vite: {
     plugins: [
