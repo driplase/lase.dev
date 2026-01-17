@@ -10,6 +10,8 @@ useSeoMeta({
 })
 
 async function initializeRickRoll() {
+	if (rickrolled.value) return;
+
   const playRickRoll = setInterval(async () => {
     if (!rrPlayer.value?.player) return;
     
@@ -92,6 +94,7 @@ function onReady() {
 
 onMounted(() => {
   window.addEventListener("touchstart", () => initializeRickRoll());
+   window.addEventListener("click", () => initializeRickRoll());
 })
 </script>
 
