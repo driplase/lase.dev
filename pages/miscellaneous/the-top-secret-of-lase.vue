@@ -10,9 +10,6 @@ useSeoMeta({
 })
 
 async function initializeRickRoll() {
-  // Add a small delay to ensure YouTube API is fully loaded
-  await new Promise(resolve => setTimeout(resolve, 500));
-  
   const playRickRoll = setInterval(async () => {
     if (!rrPlayer.value?.player) return;
     
@@ -26,7 +23,7 @@ async function initializeRickRoll() {
       clearInterval(playRickRoll);
       releaseRickRollJumpscare();
     }
-  }, 100);
+  }, 50);
 
 }
 
@@ -82,8 +79,16 @@ async function releaseRickRollJumpscare() {
 }
 
 function stateChange(event: any) {
-  isPlaying.value = event.data === 1
+  isPlaying.value = event.data === 1;
+
+  if (!rickrolled.value) {
+		releaseRickRollJumpscare()
+  }
 }
+
+onMounted(() => {
+  window.addEventListener("touchstart", () => initializeRickRoll());
+})
 </script>
 
 <template>
