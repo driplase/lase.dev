@@ -81,9 +81,13 @@ async function releaseRickRollJumpscare() {
 function stateChange(event: any) {
   isPlaying.value = event.data === 1;
 
-  if (!rickrolled.value) {
+  if (!rickrolled.value && event.data === 1) {
 		releaseRickRollJumpscare()
   }
+}
+
+function onReady() {
+	initializeRickRoll();
 }
 
 onMounted(() => {
@@ -125,7 +129,7 @@ onMounted(() => {
             modestbranding: 1,
           } 
         }"
-        @ready="initializeRickRoll"
+        @ready="onPlayerReady"
         @state-change="stateChange"
       />
 
