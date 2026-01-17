@@ -13,7 +13,7 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@nuxt/fonts',
     '@nuxt/image',
-    'nuxt-studio',
+    '@nuxt/scripts',
   ],
   content: {
     experimental: {
@@ -95,5 +95,13 @@ export default defineNuxtConfig({
     plugins: [
       tailwindcss(),
     ],
+  },
+  nitro: {
+    prerender: {
+      // Pre-render the homepage
+      routes: ['/'],
+      // Then crawl all the links on the page
+      crawlLinks: true
+    }
   },
 })

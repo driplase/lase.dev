@@ -15,23 +15,25 @@
     "@nuxt/fonts": "^0.11.4",
     "@nuxt/icon": "1.13.0",
     "@nuxt/image": "1.11.0",
+    "@nuxt/scripts": "0.13.2",
     "@nuxtjs/i18n": "^9.5.6",
     "@nuxtjs/mdc": "^0.17.4",
     "@nuxtjs/robots": "5.2.10",
     "@nuxtjs/sitemap": "7.4.3",
     "@tailwindcss/vite": "^4.1.18",
+    "@unhead/vue": "^2.1.2",
     "better-sqlite3": "^12.6.0",
     "color": "^5.0.3",
     "dayjs": "^1.11.19",
     "dayjs-nuxt": "2.1.11",
     "gsap": "^3.14.2",
     "nuxt": "^4.2.2",
-    "nuxt-studio": "1.0.0",
     "sharp": "^0.34.5",
     "tailwindcss": "^4.1.18",
     "three": "^0.179.1",
     "vue": "^3.5.26",
-    "vue-router": "^4.6.4"
+    "vue-router": "^4.6.4",
+    "zod": "^4.3.5"
   },
   "onlyBuiltDependencies": [
     "@parcel/watcher",
@@ -40,5 +42,8 @@
     "esbuild",
     "sharp"
   ],
-  "packageManager": "pnpm@10.14.0+sha512.ad27a79641b49c3e481a16a805baa71817a04bbe06a38d17e60e2eaee83f6a146c6a688125f5792e48dd5ba30e7da52a5cda4c3992b9ccf333f9ce223af84748"
+  "packageManager": "pnpm@10.14.0+sha512.ad27a79641b49c3e481a16a805baa71817a04bbe06a38d17e60e2eaee83f6a146c6a688125f5792e48dd5ba30e7da52a5cda4c3992b9ccf333f9ce223af84748",
+  "devDependencies": {
+    "@types/youtube": "^0.1.2"
+  }
 }
