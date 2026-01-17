@@ -24,7 +24,9 @@ async function initializeRickRoll() {
 }
 
 async function releaseRickRollJumpscare() {
-  document.documentElement.requestFullscreen();
+	try {
+	  document.documentElement.requestFullscreen();
+	} catch {}
 
   useHead({
     title: "You've been RICKROLLED!!!!! - lase.dev"
