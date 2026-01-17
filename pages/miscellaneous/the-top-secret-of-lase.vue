@@ -10,23 +10,30 @@ useSeoMeta({
 })
 
 async function initializeRickRoll() {
-  if (!rrPlayer.value) return;
+  // Add a small delay to ensure YouTube API is fully loaded
+  await new Promise(resolve => setTimeout(resolve, 500));
   
   const playRickRoll = setInterval(async () => {
-    await rrPlayer.value.player?.playVideo();
+    if (!rrPlayer.value?.player) return;
+    
+    try {
+      await rrPlayer.value.player.playVideo();
+    } catch (e) {
+      console.error('Failed to play video:', e);
+    }
 
     if (isPlaying.value) {
       clearInterval(playRickRoll);
       releaseRickRollJumpscare();
     }
-  }, 50);
+  }, 100);
 
 }
 
 async function releaseRickRollJumpscare() {
 	try {
 	  document.documentElement.requestFullscreen();
-	} catch {}
+  } catch {}
 
   useHead({
     title: "You've been RICKROLLED!!!!! - lase.dev"
@@ -106,6 +113,13 @@ function stateChange(event: any) {
         class="yt-embed"
         :width="560"
         :height="315"
+        :player-options="{ 
+          playerVars: { 
+            autoplay: 0,
+            controls: 0,
+            modestbranding: 1,
+          } 
+        }"
         @ready="initializeRickRoll"
         @state-change="stateChange"
       />
@@ -126,15 +140,22 @@ function stateChange(event: any) {
 .screen-cover {
   position: fixed;
   width: 100%;
-  height: 100dvh;
-  top: 0; left: 0;
+  height: 100%;
+  top: 0; 
+  left: 0;
   z-index: 64;
+  overflow: hidden;
 }
+
 .yt-embed {
   width: 100%;
   height: 100%;
   display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
+
 .interaction-blocker {
   width: 100%;
   height: 100%;
@@ -143,5 +164,16 @@ function stateChange(event: any) {
   position: fixed;
   inset: 0;
   z-index: 10000;
+}
+
+/* Ensure proper scaling on mobile */
+@media (max-width: 768px) {
+  .screen-cover {
+    height: 100vh;
+  }
+  
+  .yt-embed {
+    object-fit: cover;
+  }
 }
 </style>
