@@ -132,7 +132,7 @@ onMounted(() => {
             modestbranding: 1,
           } 
         }"
-        @ready="onPlayerReady"
+        @ready="onReady"
         @state-change="stateChange"
       />
 
