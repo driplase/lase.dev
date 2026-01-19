@@ -9,6 +9,7 @@ export default {
   "blog": "ブログ",
   "blog.description": "思ったことを書いていくところ。",
   "blog.description.wip": "(このページはまだ開発中です。)",
+  "blog.broken.description": "",
 
   "links": "リンク集",
   

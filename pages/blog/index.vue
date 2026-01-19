@@ -41,6 +41,10 @@ const blogs = data.value.filter(item => item.path.startsWith('/blog'))
       >
         {{ post.description }}
       </WorksCards>
+
+      <WorksCards>
+        {{ $t('blog.broken.description') }}
+      </WorksCards>
     </section>
     
   </section>
