@@ -5,12 +5,11 @@ export default defineContentConfig({
   collections: {
     content: defineCollection({
       type: 'page',
-      source: 'content/**.md',
-      schema: z.object({
-        createdAt: z.date(),
-        description: z.string(),
-        title: z.string(),
-      }),
-    })
+      source: '**',
+    }),
+    blog: defineCollection({
+      type: 'page',
+      source: 'blog/**',
+    }),
   },
-})
+});

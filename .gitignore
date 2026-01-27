@@ -23,9 +23,6 @@ logs
 .env.*
 !.env.example
 
-# temporary ignores
-ignore.*
-
-
 # experimental | temporary ignore
 public/assets/fonts/LaseSans.*
+content/blog/i-bought-a-domain-for-my-friends-website.md

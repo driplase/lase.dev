@@ -1,13 +1,12 @@
 <script setup>
 const route = useRoute()
 const { data } = await useAsyncData('blog', () => {
-  return queryCollection('content').all()
+  return queryCollection('blog').all()
 })
 
-const blogs = data.value.filter(item => item.path.startsWith('/blog'))
-  .sort((a, b) => {
-    new Date(b.createdAt)?.getTime() - new Date(a.createdAt)?.getTime()
-  })
+const blogs = data.value.sort((a, b) => {
+  new Date(b.createdAt)?.getTime() - new Date(a.createdAt)?.getTime()
+});
 </script>
 
 <template>
@@ -42,9 +41,11 @@ const blogs = data.value.filter(item => item.path.startsWith('/blog'))
         {{ post.description }}
       </WorksCards>
 
+      <!--
       <WorksCards>
         {{ $t('blog.broken.description') }}
       </WorksCards>
+      -->
     </section>
     
   </section>
