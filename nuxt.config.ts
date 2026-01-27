@@ -14,13 +14,11 @@ export default defineNuxtConfig({
     '@nuxt/fonts',
     '@nuxt/image',
     '@nuxt/scripts',
+    ...(process.env.NODE_ENV === 'production' ? ['nuxt-studio'] : []),
   ],
   content: {
     experimental: {
       sqliteConnector: 'native' 
-    },
-    preview: {
-      api: 'https://api.nuxt.studio'
     },
   },
   fonts: {
@@ -68,6 +66,14 @@ export default defineNuxtConfig({
     lazy: true,
     strategy: "no_prefix",
   },
+  nitro: {
+    prerender: {
+      // Pre-render the homepage
+      routes: ['/'],
+      // Then crawl all the links on the page
+      crawlLinks: true
+    }
+  },
   routeRules: {
     '/test/**': { robots: false },
     '/chores/**': { robots: false },
@@ -88,7 +94,8 @@ export default defineNuxtConfig({
       provider: 'github',
       owner: 'driplase',
       repo: 'lase.dev',
-      branch: 'master'
+      branch: 'master',
+      private: false
     },
   },
   vite: {
