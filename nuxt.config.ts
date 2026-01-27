@@ -66,14 +66,6 @@ export default defineNuxtConfig({
     lazy: true,
     strategy: "no_prefix",
   },
-  nitro: {
-    prerender: {
-      // Pre-render the homepage
-      routes: ['/'],
-      // Then crawl all the links on the page
-      crawlLinks: true
-    }
-  },
   routeRules: {
     '/test/**': { robots: false },
     '/chores/**': { robots: false },
