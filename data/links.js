@@ -16,7 +16,7 @@ export default {
     },
     {
       url: "https://kntnkmr.jp",
-      title: "Kntnkmr",
+      title: "kntnkmr",
       description: "",
       imageURL: "https://kntnkmr.jp/header.webp",
       id: "kntnkmr",

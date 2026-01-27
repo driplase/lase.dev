@@ -33,11 +33,6 @@ useSeoMeta({
           </NuxtLink>
         </p>
         <p class="wiggle woosh wg-text wsh-text flash links">
-          <NuxtLink href="https://misskey.04.si/@driplase" target="_blank" rel="noopener noreferrer">
-            Misskey
-          </NuxtLink>
-        </p>
-        <p class="wiggle woosh wg-text wsh-text flash links">
           <NuxtLink href="https://duolingo.com/profile/driplase" target="_blank" rel="noopener noreferrer">
             Duolingo
           </NuxtLink>
@@ -103,6 +98,29 @@ useSeoMeta({
           </NuxtLink>
         </p>
       </div>
+      <h3 id="fediverse" class="flash woosh font-bold origin-left">Fediverse</h3>
+      <div class="socials grid grid-cols-2 max-[320px]:grid-cols-1 min-[480px]:grid-cols-3 sm:grid-cols-4">
+        <p class="wiggle woosh wg-text wsh-text flash links">
+          <NuxtLink href="https://misskey.04.si/@Driplase" target="_blank" rel="noopener noreferrer">
+            りんごぱい (misskey.04.si)
+          </NuxtLink>
+        </p>
+        <p class="wiggle woosh wg-text wsh-text flash links">
+          <NuxtLink href="https://misskey.io/@Driplase" target="_blank" rel="noopener noreferrer">
+            Misskey.io
+          </NuxtLink>
+        </p>
+        <p class="wiggle woosh wg-text wsh-text flash links">
+          <NuxtLink href="https://misskey.gg/@driplase" target="_blank" rel="noopener noreferrer">
+            Misskey.gg
+          </NuxtLink>
+        </p>
+        <p class="wiggle woosh wg-text wsh-text flash links">
+          <NuxtLink href="https://calc.04.si/@driplase" target="_blank" rel="noopener noreferrer">
+            みかんぱい (calc.04.si)
+          </NuxtLink>
+        </p>
+      </div>
       
       <h2 class="flash woosh font-bold origin-left" id="reciprocal">{{ $t('mutual_links') }}</h2>
       <div class="socials">
@@ -127,6 +145,11 @@ useSeoMeta({
                 class="icon"
               />
             </span>
+            <p v-if="link.id && $t(`links.items.${link.id}.description`) !== `links.items.${link.id}.description` || link.description">
+              <small class="text-gray-400 text-sm">
+                {{ link.id && $t(`links.items.${link.id}.description`) !== `links.items.${link.id}.description` ? $t(`links.items.${link.id}.description`) : link.description }}
+              </small>
+            </p>
           </NuxtLink>
         </p>
 

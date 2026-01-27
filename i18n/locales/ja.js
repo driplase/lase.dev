@@ -9,7 +9,7 @@ export default {
   "blog": "ブログ",
   "blog.description": "思ったことを書いていくところ。",
   "blog.description.wip": "(このページはまだ開発中です。)",
-  "blog.broken.description": "",
+  "blog.broken.description": "現在このページはこわれてます。",
 
   "links": "リンク集",
   
@@ -19,6 +19,8 @@ export default {
   "links.mutual.desc": "載せてほしかったらおしえてください\nそっちの方でも載せてくれたら相互リンクとしてたぶん載せますし、載せてくれないのであればその他枠に載せておきます\nバナー画像があればつけてもいいですが、大きすぎないようにしてもらえると助かります",
   "links.others": "その他",
   "links.others.desc": "このサイトに無関係なリンクがあるかもしれません。",
+
+  "links.items.furamen.description": "",
 
 
   "miscellaneous": "いろいろ",

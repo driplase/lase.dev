@@ -9,6 +9,7 @@ export default {
   "blog": "blog",
   "blog.description": "where I write what I think.",
   "blog.description.wip": "(this page is still under development.)",
+  "blog.broken.description": "This page is broken now.",
 
   "links": "links",
   
