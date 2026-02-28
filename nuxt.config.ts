@@ -14,7 +14,6 @@ export default defineNuxtConfig({
     '@nuxt/fonts',
     '@nuxt/image',
     '@nuxt/scripts',
-    ...(process.env.NODE_ENV === 'production' ? ['nuxt-studio'] : []),
   ],
   content: {
     experimental: {
@@ -67,12 +66,7 @@ export default defineNuxtConfig({
     strategy: "no_prefix",
   },
   nitro: {
-    prerender: {
-      // Pre-render the homepage
-      routes: ['/'],
-      // Then crawl all the links on the page
-      crawlLinks: true
-    }
+    preset: 'node-server',
   },
   routeRules: {
     '/test/**': { robots: false },

@@ -1,4 +1,2 @@
 # lase.dev
-code of my personal website.
-
-Made with [Nuxt](https://nuxt.com)
+the source code of my personal website. Made with [Nuxt](https://nuxt.com)
