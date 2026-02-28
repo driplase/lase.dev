@@ -2,7 +2,7 @@
 const route = useRoute()
 
 const { data: page } = await useAsyncData(route.path, () => {
-  return queryCollection('blog').path(route.path).first()
+  return queryCollection('blog').path(route.params.slug).first()
 })
 
 if (!page.value) {
