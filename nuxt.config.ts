@@ -16,6 +16,7 @@ export default defineNuxtConfig({
     '@nuxt/scripts',
   ],
   content: {
+    experimental: { nativeSqlite: true },
   },
   fonts: {
     defaults: {
