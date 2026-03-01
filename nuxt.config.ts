@@ -65,9 +65,6 @@ export default defineNuxtConfig({
     lazy: true,
     strategy: "no_prefix",
   },
-  nitro: {
-    preset: 'node-server',
-  },
   routeRules: {
     '/test/**': { robots: false },
     '/chores/**': { robots: false },
