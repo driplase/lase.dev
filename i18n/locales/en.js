@@ -54,7 +54,7 @@ export default {
 
   "misc.ttsol.title": "I've been hiding this for so long...",
   "misc.ttsol.description": "this wasn't the thing i wanted to expose to the internet...",
-  "misc.ttsol.please_click": "you'll be able to see the contents after you click or tap...",
+  "misc.ttsol.please_click": "you'll be able to see the contents after you click or tap.",
 
   show_more: 'Show more',
 

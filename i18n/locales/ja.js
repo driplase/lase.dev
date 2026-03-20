@@ -55,9 +55,9 @@ export default {
   "misc.rcp.role_style.holographic": "ホログラフィック",
   "misc.rcp.role_color": "ロールカラー",
 
-  "misc.ttsol.title": "これはずっと隠してたことなんだけど...",
+  "misc.ttsol.title": "これはずっと隠してたことで...",
   "misc.ttsol.description": "ネット上に晒しあげたくことじゃないんだけど...",
-  "misc.ttsol.please_click": "クリックかタップすると内容が見れるようになります...",
+  "misc.ttsol.please_click": "クリックかタップすると内容が見れるよ。",
   
   show_more: 'もっと表示',
   
