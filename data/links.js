@@ -146,5 +146,11 @@ export default {
       description: "",
       id: "treron.jp",
     },
+    {
+      url: "https://pird.uk/",
+      title: "pird.uk",
+      description: "",
+      id: "esalpird",
+    },
   ],
 }
