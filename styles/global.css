@@ -21,6 +21,8 @@
   --color-text-link-secondary: #2862ff;
 
   --color-bright-primary: #bfd7ff;
+
+  --color-blockquote-border: #34333f;
 }
 
 @theme {
@@ -234,14 +236,32 @@ article.blog {
 
   p {
     color: rgb(245, 245, 245);
-    margin-top: 1rem;
-    margin-bottom: .25rem;
+    margin-top: .675rem;
+    margin-bottom: .675rem;
   }
 
   hr {
     margin: 1rem 0;
   }
 
+}
+
+blockquote {
+  border-left: .25rem solid var(--color-blockquote-border);
+  border-left-width: 0;
+  padding: .125rem 1.25rem;
+  position: relative;
+
+  &::before {
+    content: '';
+    width: .25rem;
+    height: 100%;
+    background: var(--color-blockquote-border);
+    display: inline-block;
+    border-radius: .125rem;
+    position: absolute;
+    inset: 0;
+  }
 }
 
 section.default, .default-section {
