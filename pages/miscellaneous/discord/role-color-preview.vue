@@ -100,36 +100,7 @@ async function showColorPicker(event, col) {
 
   <h2 class="font-bold">{{ $t('misc.rcp.title') }}</h2>
   <div class="container">
-    <div class="preview">
-      <div class="bg" v-for="col in backgroundColors" :style="{ background: col.background }">
-        <div class="message">
-          <div class="cozy">
-            <div class="contents">
-              <div class="avatar">
-                <div class="avatar-placeholder lase-color"></div>
-              </div>
-              <h2 class="name-header" :style="{ color: col.nameColor }">
-                <div
-                  :data-text="displayName"
-                  :class="`name ${colorStyle !== 'solid' ? 'name-gradient' : ''} ${colorStyle === 'holographic' ? 'name-holographic' : ''}`" 
-                  :style="{
-                    '--color-1': resultColor?.at(0),
-                    '--color-2': resultColor?.at(1),
-                    '--color-3': resultColor?.at(2) || resultColor?.at(0),
-                  }">
-                  {{ displayName }}
-                </div>
-                <span class="timestamp">
-                  {{ new Date().toString().match(/\d{2}:\d{2}/)?.at(0) }}
-                </span>
-              </h2>
-              <div :style="{ color: col.messageColor }">{{ $t('misc.rcp.text') }}</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
+    
     <div class="setting">
       <h4>{{ $t('misc.rcp.role_style') }}</h4>
       <div class="grid grid-cols-3 buttons">
@@ -170,6 +141,37 @@ async function showColorPicker(event, col) {
           </div>
       </div>
     </div>
+
+    <div class="preview">
+      <div class="bg" v-for="col in backgroundColors" :style="{ background: col.background }">
+        <div class="message">
+          <div class="cozy">
+            <div class="contents">
+              <div class="avatar">
+                <div class="avatar-placeholder lase-color"></div>
+              </div>
+              <h2 class="name-header" :style="{ color: col.nameColor }">
+                <div
+                  :data-text="displayName"
+                  :class="`name ${colorStyle !== 'solid' ? 'name-gradient' : ''} ${colorStyle === 'holographic' ? 'name-holographic' : ''}`" 
+                  :style="{
+                    '--color-1': resultColor?.at(0),
+                    '--color-2': resultColor?.at(1),
+                    '--color-3': resultColor?.at(2) || resultColor?.at(0),
+                  }">
+                  {{ displayName }}
+                </div>
+                <span class="timestamp">
+                  {{ new Date().toString().match(/\d{2}:\d{2}/)?.at(0) }}
+                </span>
+              </h2>
+              <div :style="{ color: col.messageColor }">{{ $t('misc.rcp.text') }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </template>
 <style scoped>
