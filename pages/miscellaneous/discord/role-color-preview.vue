@@ -1,24 +1,28 @@
 <script setup lang="js">
 const backgroundColors = [
   { 
+    name: "ash", 
     background: "#36373e", 
     nameColor: "#ffffff", 
-    messageColor: "#dfe0e2" 
+    messageColor: "#dfe0e2",
   }, 
   { 
+    name: "dark", 
     background: "#202024", 
     nameColor: "#fbfbfb", 
-    messageColor: "#efeff0" 
+    messageColor: "#efeff0",
   }, 
   { 
+    name: "onyx", 
     background: "#0c0c0e", 
     nameColor: "#e3e3e6", 
-    messageColor: "#dbdcdf" 
+    messageColor: "#dbdcdf",
   }, 
   { 
+    name: "light", 
     background: "#fbfbfb", 
     nameColor: "#2f3035", 
-    messageColor: "#323339" 
+    messageColor: "#323339",
   }
 ]
 
@@ -153,7 +157,7 @@ async function showColorPicker(event, col) {
 
       <div class="preview">
         <div class="bg" v-for="col in backgroundColors" :style="{ background: col.background }">
-          <div class="message">
+          <div :class="`message theme-${col.name}`">
             <div class="cozy">
               <div class="contents">
                 <div class="avatar">
@@ -286,6 +290,7 @@ async function showColorPicker(event, col) {
   animation: gradientUsernameAnimation 1.5s linear infinite;
   font-weight: 600;
   position: relative;
+
   &::after {
     background: inherit;
     background-size: 100px auto;
@@ -298,6 +303,10 @@ async function showColorPicker(event, col) {
     inset: 0;
     opacity: .7;
     filter: blur(4px);
+  }
+
+  .theme-light & {
+    filter: brightness(.85);
   }
 }
 @keyframes gradientUsernameAnimation {
