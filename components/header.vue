@@ -26,7 +26,7 @@ function toggleBurger(which, onlyWhenBurgerExists, disableTransition) {
       pointerEvents: "auto",
     }
     const hide = {
-      right: "-45vw",
+      right: "-15rem",
       opacity: 0,
       filter: 'blur(8px)',
       userSelect: "none",
@@ -190,10 +190,10 @@ nav {
   }
   .menu-contents {
     position: fixed;
-    inset: 54px -45vw 0 auto;
+    inset: 54px -15rem 0 auto;
     opacity: 0;
     height: 100vh;
-    min-width: 240px;
+    min-width: 15rem;
     width: 32vw;
     display: flex;
     flex-direction: column;
