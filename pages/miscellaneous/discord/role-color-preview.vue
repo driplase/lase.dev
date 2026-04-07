@@ -369,7 +369,6 @@ async function showColorPicker(event, col) {
 @media screen and (max-width: 810px) {
   .container {
     grid-template-columns: unset;
-    grid-template-rows: 1fr 1fr;
   }
 }
 </style>
