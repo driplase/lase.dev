@@ -153,6 +153,16 @@ async function showColorPicker(event, col) {
                 v-model="pickerDefaultValue" />
             </div>
         </div>
+
+        <Alert
+          v-if="colorStyle !== 'solid' || !0" 
+          class="mx-1"
+          icon="tabler-info-circle"
+        >
+          <template #description>
+            {{ $t('misc.rcp.gradient_alert') }}
+          </template>
+        </Alert>
       </div>
 
       <div class="preview">
@@ -335,14 +345,14 @@ async function showColorPicker(event, col) {
   );
 }
 .color-preview {
-  margin: 4px;
+  margin: .25rem;
   border-radius: 8px;
   border: 1px solid gray;
-  box-shadow: 0 0 5px gray;
-  height: 48px;
+  box-shadow: 0 0 .3125rem gray;
+  height: 3rem;
   display: grid;
   align-items: center;
-  padding: 7px;
+  padding: .4375rem;
 }
 .color-pick {
   display: flex;

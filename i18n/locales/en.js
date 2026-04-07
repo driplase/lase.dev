@@ -51,6 +51,7 @@ export default {
   "misc.rcp.role_style.gradient": "Gradient",
   "misc.rcp.role_style.holographic": "Holographic",
   "misc.rcp.role_color": "Role Color",
+  "misc.rcp.gradient_alert": "In light mode, Discord automatically darkens gradient role colors for accessibility.",
 
   "misc.ttsol.title": "I've been hiding this for so long...",
   "misc.ttsol.description": "this wasn't the thing i wanted to expose to the internet...",

@@ -54,6 +54,7 @@ export default {
   "misc.rcp.role_style.gradient": "グラデーション",
   "misc.rcp.role_style.holographic": "ホログラフィック",
   "misc.rcp.role_color": "ロールカラー",
+  "misc.rcp.gradient_alert": "ライトモードではアクセシビリティのため、Discordが自動的にグラデーションロールカラーを暗くします。",
 
   "misc.ttsol.title": "これはずっと隠してたことで...",
   "misc.ttsol.description": "ネット上に晒しあげたくことじゃないんだけど...",
