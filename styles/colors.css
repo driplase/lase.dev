@@ -1,0 +1,11 @@
+:root {
+  --color-background: #111222;
+  --color-text: white;
+  --color-text-link: #7987ff;
+  --color-text-link-secondary: #2862ff;
+
+  --color-bright-primary: #bfd7ff;
+
+  --color-blockquote-border: #34333f;
+  --color-blockquote-background: #201f2570;
+}

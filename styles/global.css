@@ -2,6 +2,7 @@
 @import './fonts.css';
 @import './effects.css';
 @import './responsive.css';
+@import './colors.css';
 
 :root {
   --font-primary: /* 'Lase Sans', */
@@ -14,16 +15,6 @@
   --font-monospace: 'Ubuntu Sans Mono', 'Noto Sans Mono', 'M PLUS 1 Code', monospace;
   
   --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
-
-  --color-background: #111222;
-  --color-text: white;
-  --color-text-link: #7987ff;
-  --color-text-link-secondary: #2862ff;
-
-  --color-bright-primary: #bfd7ff;
-
-  --color-blockquote-border: #34333f;
-  --color-blockquote-background: #201f2570;
 }
 
 @theme {
