@@ -155,7 +155,7 @@ async function showColorPicker(event, col) {
         </div>
 
         <Alert
-          v-if="colorStyle !== 'solid' || !0" 
+          v-if="colorStyle !== 'solid'" 
           class="mx-1"
           icon="tabler-info-circle"
         >
