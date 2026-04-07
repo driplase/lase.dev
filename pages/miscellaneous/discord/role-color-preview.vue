@@ -97,16 +97,25 @@ async function showColorPicker(event, col) {
     :title="$t('misc.rcp.title')"
     :description="$t('misc.list.rcp.description')"
   />
-  <div class="my-4">
+  <div class="my-4 justify-items-center">
     <h2 class="font-bold">{{ $t('misc.rcp.title') }}</h2>
     <div class="container">
 
       <div class="setting">
         <h4>{{ $t('misc.rcp.role_style') }}</h4>
         <div class="grid grid-cols-3 buttons">
-          <button @click="changeRoleStyle('solid')">{{ $t('misc.rcp.role_style.solid') }}</button>
-          <button @click="changeRoleStyle('gradient')">{{ $t('misc.rcp.role_style.gradient') }}</button>
-          <button @click="changeRoleStyle('holographic')">{{ $t('misc.rcp.role_style.holographic') }}</button>
+          <button 
+            class="style-button" 
+            @click="changeRoleStyle('solid')"
+          >{{ $t('misc.rcp.role_style.solid') }}</button>
+          <button 
+            class="style-button" 
+            @click="changeRoleStyle('gradient')"
+          >{{ $t('misc.rcp.role_style.gradient') }}</button>
+          <button 
+            class="style-button" 
+            @click="changeRoleStyle('holographic')"
+          >{{ $t('misc.rcp.role_style.holographic') }}</button>
         </div>
         <h4>{{ $t('misc.rcp.role_color') }}</h4>
         <div
@@ -364,6 +373,10 @@ async function showColorPicker(event, col) {
   z-index: 5;
   display: none;
   outline: 0;
+}
+
+.style-button {
+  padding: 0 1rem;
 }
 
 @media screen and (max-width: 810px) {
