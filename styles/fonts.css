@@ -1,6 +1,23 @@
-@import url('https://fontsapi.lase.dev/Eclyera/css');
-@import url('https://fontsapi.lase.dev/lixeld/css');
-@import url('https://fontsapi.lase.dev/Nixymd/css');
+/* https://fontsapi.lase.dev/Eclyera/css */
+@font-face {
+  font-family: 'Eclyera';
+  src: url('https://cdn.jsdelivr.net/gh/ixbw/Eclyera@latest/eclyera.woff2') format('woff2'),
+    url('https://cdn.jsdelivr.net/gh/ixbw/Eclyera@latest/eclyera.woff') format('woff');
+}
+
+/* https://fontsapi.lase.dev/Lixeld/css */
+@font-face {
+  font-family: 'Lixeld';
+  src: url('https://cdn.jsdelivr.net/gh/ixbw/Lixeld@latest/lixeld.woff2') format('woff2'),
+    url('https://cdn.jsdelivr.net/gh/ixbw/Lixeld@latest/lixeld.woff') format('woff');
+}
+
+/* https://fontsapi.lase.dev/Nixymd/css */
+@font-face {
+  font-family: 'Nixymd';
+  src: url('https://cdn.jsdelivr.net/gh/ixbw/Nixymd@latest/nixymd.woff2') format('woff2'),
+    url('https://cdn.jsdelivr.net/gh/ixbw/Nixymd@latest/nixymd.woff') format('woff');
+}
 
 .eclyera {
   font-family: Eclyera;
