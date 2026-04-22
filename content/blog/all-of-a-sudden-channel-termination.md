@@ -101,7 +101,8 @@ thanks, i won't appreciate it. i became unhappier than before.
 
 ---
 
-alright, that's it for now. thanks for reading this...long weird trash blog. i will still try to make more videos, especially for [Scratch JP community](https://scratchjp.org) and [KokkoSoft](https://kokkosoft.com). so don't worry about it.\
+alright, that's it for now. thanks for reading this...long weird trash blog. i'm terrible at writing articles/blogs.
+i will still try to make more videos, especially for [Scratch JP community](https://scratchjp.org) and [KokkoSoft](https://kokkosoft.com). so don't worry about it.\
 i'll appreciate if you help me reviving my youtube channels. i think it's pretty much impossible though...
 
 huge thanks to my friends who cared about this, and you who's been reading this.
