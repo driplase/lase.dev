@@ -27,7 +27,7 @@
     "dayjs": "^1.11.20",
     "dayjs-nuxt": "2.1.11",
     "gsap": "^3.14.2",
-    "nuxt": "^4.4.2",
+    "nuxt": "^4.4.6",
     "nuxt-studio": "1.2.0",
     "sharp": "^0.34.5",
     "tailwindcss": "^4.2.2",
