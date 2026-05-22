@@ -289,3 +289,8 @@ hr.glow-line {
 .lshw1 {
   font-family: 'Lase Handwriting 1', cursive;
 }
+
+.no-cursor-page,
+.no-cursor-page * {
+  cursor: none !important;
+}
