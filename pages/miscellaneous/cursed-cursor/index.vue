@@ -14,17 +14,18 @@ const cursorPos = ref<{
   x: number,
   y: number,
   rotation: number,
-}>({
-  x: 0, y: 0, rotation: 0,
-})
+} | null>(null)
 
 onMounted(() => {
   mousePos.value = {
     x: window.innerWidth / 2,
     y: window.innerHeight / 2,
   }
-  cursorPos.value.x = window.innerWidth / 2
-  cursorPos.value.y = window.innerHeight / 2
+  cursorPos.value = {
+    x: window.innerWidth / 2,
+    y: window.innerHeight / 2,
+    rotation: 0,
+  }
 
   window.addEventListener('mousemove', event => {
     mousePos.value = {
@@ -42,6 +43,11 @@ onMounted(() => {
   const velocity = { x: 0, y: 0 }
 
   const animateCursor = (timestamp: number) => {
+    if (!cursorPos.value) {
+      window.requestAnimationFrame(animateCursor);
+      return;
+    }
+
     const delta = timestamp - currentTime;
     const baseTime = 30; // wtf is baseTime bruh
 
@@ -70,8 +76,9 @@ onMounted(() => {
 <template>
   <!-- cursor element -->
   <div class="cursor" :style="{
-    top: `${cursorPos.y}px`, left: `${cursorPos.x}px`,
-    transform: `rotate(${cursorPos.rotation}deg)`
+    top: cursorPos ? `${cursorPos.y}px` : '50dvh',
+    left: cursorPos ? `${cursorPos.x}px` : '50dvw',
+    transform: `rotate(${cursorPos?.rotation || 0}deg)`
   }">
     <img class="cursor-image" src="https://driplase.github.io/cursor/cursor.svg" />
   </div>
