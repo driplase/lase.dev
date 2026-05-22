@@ -19,6 +19,13 @@ const cursorPos = ref<{
 })
 
 onMounted(() => {
+  mousePos.value = {
+    x: window.innerWidth / 2,
+    y: window.innerHeight / 2,
+  }
+  cursorPos.value.x = window.innerWidth / 2
+  cursorPos.value.y = window.innerHeight / 2
+
   window.addEventListener('mousemove', event => {
     mousePos.value = {
       x: event.clientX,
@@ -43,15 +50,15 @@ onMounted(() => {
     
     previousCursorState = { ...cursorPos.value };
 
-    velocity.x = (mousePos.value.x - cursorPos.value.x) / 3.5 * delta / baseTime
-    velocity.y = (mousePos.value.y - cursorPos.value.y) / 3.5 * delta / baseTime
+    velocity.x = (mousePos.value.x - cursorPos.value.x) / 3 * delta / baseTime
+    velocity.y = (mousePos.value.y - cursorPos.value.y) / 3 * delta / baseTime
 
     cursorPos.value.x += velocity.x
     cursorPos.value.y += velocity.y
     cursorPos.value.rotation = (cursorMovement.x + cursorMovement.y)
 
-    cursorMovement.x -= cursorMovement.x / 2 * delta / baseTime;
-    cursorMovement.y -= cursorMovement.y / 1 * delta / baseTime;
+    cursorMovement.x -= cursorMovement.x / 2.5 * delta / baseTime;
+    cursorMovement.y -= cursorMovement.y / 1.25 * delta / baseTime;
     
     currentTime = timestamp;
     window.requestAnimationFrame(animateCursor)
@@ -68,6 +75,10 @@ onMounted(() => {
   }">
     <img class="cursor-image" src="https://driplase.github.io/cursor/cursor.svg" />
   </div>
+
+  <p>
+
+  </p>
 </template>
 
 <style scoped>

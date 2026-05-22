@@ -57,6 +57,8 @@ export default {
   "misc.ttsol.description": "this wasn't the thing i wanted to expose to the internet...",
   "misc.ttsol.please_click": "you'll be able to see the contents after you click or tap.",
 
+  "misc.cursedCursor.description1": "",
+
   show_more: 'Show more',
 
   "footer.source_code": "Source Code"
