@@ -1,11 +1,14 @@
 <script setup lang="ts">
+import { onMounted, onBeforeUnmount, ref } from 'vue'
+
 useHead({
   bodyAttrs: {
     class: 'no-cursor-page'
   }
 })
 
-import { onMounted, onBeforeUnmount, ref } from 'vue'
+const route = useRoute();
+const speedMultiplier = route.query.speedMultiplier &&  parseFloat(route.query.speedMultiplier.toString()) || 1
 
 const mousePos = ref<{ x: number, y: number }>({ x: 0, y: 0 })
 const cursorPos = ref<{
@@ -124,7 +127,7 @@ onMounted(() => {
     }
 
     const delta = timestamp - currentTime
-    const baseTime = 30
+    const baseTime = 30 / speedMultiplier
 
     cursorMovement.x += cursorPos.value.x - previousCursorState.x
     cursorMovement.y += cursorPos.value.y - previousCursorState.y
@@ -136,9 +139,9 @@ onMounted(() => {
 
     cursorPos.value.x += velocity.x
     cursorPos.value.y += velocity.y
-    cursorPos.value.rotation = (cursorMovement.x + cursorMovement.y)
+    cursorPos.value.rotation = (cursorMovement.x + cursorMovement.y) * .7
 
-    cursorMovement.x -= cursorMovement.x / 2,5 * delta / baseTime
+    cursorMovement.x -= cursorMovement.x / 2.5 * delta / baseTime
     cursorMovement.y -= cursorMovement.y / 1.25 * delta / baseTime
 
     currentTime = timestamp

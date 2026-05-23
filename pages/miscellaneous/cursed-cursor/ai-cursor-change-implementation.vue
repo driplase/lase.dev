@@ -1,11 +1,14 @@
 <script setup lang="ts">
+import ToggleSwitch from '~/components/toggleSwitch.vue'
+
 useHead({
   bodyAttrs: {
     class: 'no-cursor-page'
   }
 })
 
-import ToggleSwitch from '~/components/toggleSwitch.vue'
+const route = useRoute();
+const speedMultiplier = route.query.speedMultiplier &&  parseFloat(route.query.speedMultiplier.toString()) || 1
 
 const mousePos = ref<{
   x: number, y: number,
@@ -206,7 +209,7 @@ onMounted(() => {
     }
 
     const delta = timestamp - currentTime;
-    const baseTime = 30; // wtf is baseTime bruh
+    const baseTime = 30 / speedMultiplier; // wtf is baseTime bruh
 
     cursorMovement.x += cursorPos.value.x - previousCursorState.x;
     cursorMovement.y += cursorPos.value.y - previousCursorState.y;
@@ -218,7 +221,7 @@ onMounted(() => {
 
     cursorPos.value.x += velocity.x
     cursorPos.value.y += velocity.y
-    cursorPos.value.rotation = (cursorMovement.x + cursorMovement.y)
+    cursorPos.value.rotation = (cursorMovement.x + cursorMovement.y) * .7
 
     cursorMovement.x -= cursorMovement.x / 2.5 * delta / baseTime;
     cursorMovement.y -= cursorMovement.y / 1.25 * delta / baseTime;
