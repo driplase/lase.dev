@@ -58,6 +58,11 @@ useHead(() => ({
     },
   ]
 }));
+
+const route = useRoute();
+const router = useRouter()
+
+const useCursedCursor = computed(() => route.query.cursedCursor !== undefined)
 </script>
 <template>
   <NuxtLayout name="default">
@@ -67,4 +72,5 @@ useHead(() => ({
   </NuxtLayout>
   
   <LoadAnimation />
+  <CursedCursor v-if="useCursedCursor" />
 </template>

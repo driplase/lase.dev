@@ -76,9 +76,8 @@ onMounted(() => {
 <template>
   <!-- cursor element -->
   <div class="cursor" :style="{
-    top: cursorPos ? `${cursorPos.y}px` : '50dvh',
-    left: cursorPos ? `${cursorPos.x}px` : '50dvw',
-    transform: `rotate(${cursorPos?.rotation || 0}deg)`
+    top: 0, left: 0,
+    transform: `translate(${cursorPos ? `${cursorPos.x}px` : '50dvw'}, ${cursorPos ? `${cursorPos.y}px` : '50dvh'}) rotate(${cursorPos?.rotation || 0}deg)`
   }">
     <img class="cursor-image" src="https://driplase.github.io/cursor/cursor.svg" />
   </div>
@@ -95,5 +94,6 @@ onMounted(() => {
   user-select: none;
   pointer-events: none;
   transform-origin: top left;
+  filter: drop-shadow(3px 3px 2px #0000007d);
 }
 </style>

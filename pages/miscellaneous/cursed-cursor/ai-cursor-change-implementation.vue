@@ -1,7 +1,7 @@
 <script setup lang="ts">
 useHead({
   bodyAttrs: {
-    //class: 'no-cursor-page'
+    class: 'no-cursor-page'
   }
 })
 
@@ -16,9 +16,7 @@ const cursorPos = ref<{
   x: number,
   y: number,
   rotation: number,
-}>({
-  x: 0, y: 0, rotation: 0,
-})
+} | null>(null)
 
 const cursorImages = {
   default: '/assets/images/cursed-cursors/v2/default.png',
@@ -72,7 +70,7 @@ const getSemanticCursor = (element: Element): CursorKey | undefined => {
   if (htmlElement.matches('textarea, input[type=text], input[type=search], input[type=url], input[type=tel], input[type=email], input[type=password], [role="textbox"]')) return 'text'
   if (htmlElement.matches('a[href], button, [role="button"], [role="link"]')) return 'pointer'
   if (htmlElement.matches('input[type=range]')) return 'grab'
-  if (htmlElement.matches('input, select, option, label')) return 'pointer'
+  if (htmlElement.matches('input, select, option')) return 'pointer'
   if (htmlElement.matches('svg, canvas')) return 'default'
   return undefined
 }
@@ -175,6 +173,16 @@ const updateHoverCursor = (x: number, y: number) => {
 }
 
 onMounted(() => {
+  mousePos.value = {
+    x: window.innerWidth / 2,
+    y: window.innerHeight / 2,
+  }
+  cursorPos.value = {
+    x: window.innerWidth / 2,
+    y: window.innerHeight / 2,
+    rotation: 0,
+  }
+
   window.addEventListener('mousemove', event => {
     mousePos.value = {
       x: event.clientX,
@@ -192,6 +200,11 @@ onMounted(() => {
   const velocity = { x: 0, y: 0 }
 
   const animateCursor = (timestamp: number) => {
+    if (!cursorPos.value) {
+      window.requestAnimationFrame(animateCursor);
+      return;
+    }
+
     const delta = timestamp - currentTime;
     const baseTime = 30; // wtf is baseTime bruh
 
@@ -200,15 +213,15 @@ onMounted(() => {
     
     previousCursorState = { ...cursorPos.value };
 
-    velocity.x = (mousePos.value.x - cursorPos.value.x) / 3.5 * delta / baseTime
-    velocity.y = (mousePos.value.y - cursorPos.value.y) / 3.5 * delta / baseTime
+    velocity.x = (mousePos.value.x - cursorPos.value.x) / 3 * delta / baseTime
+    velocity.y = (mousePos.value.y - cursorPos.value.y) / 3 * delta / baseTime
 
     cursorPos.value.x += velocity.x
     cursorPos.value.y += velocity.y
     cursorPos.value.rotation = (cursorMovement.x + cursorMovement.y)
 
-    cursorMovement.x -= cursorMovement.x / 2 * delta / baseTime;
-    cursorMovement.y -= cursorMovement.y / 1 * delta / baseTime;
+    cursorMovement.x -= cursorMovement.x / 2.5 * delta / baseTime;
+    cursorMovement.y -= cursorMovement.y / 1.25 * delta / baseTime;
     
     currentTime = timestamp;
     window.requestAnimationFrame(animateCursor)
@@ -227,7 +240,8 @@ onMounted(() => {
 
   <!-- cursor element -->
   <div class="cursor" :style="{
-    transform: `translate(${cursorPos.x}px, ${cursorPos.y}px) rotate(${cursorPos.rotation}deg)`,
+    top: 0, left: 0,
+    transform: `translate(${cursorPos ? `${cursorPos.x}px` : '50dvw'}, ${cursorPos ? `${cursorPos.y}px` : '50dvh'}) rotate(${cursorPos?.rotation || 0}deg)`
   }">
     <img class="cursor-image" :src="cursorImage" :style="{
       transform: `translate(${-getOffsetForKey(currentCursorKey).x}px, ${-getOffsetForKey(currentCursorKey).y}px)`
@@ -251,6 +265,7 @@ onMounted(() => {
   user-select: none;
   pointer-events: none;
   transform-origin: top left;
+  filter: drop-shadow(3px 3px 2px #0000007d);
 }
 
 .cursed-cursor-controls {
@@ -269,5 +284,12 @@ onMounted(() => {
 .cursed-cursor-controls .control-label {
   color: white;
   font-size: .9rem;
+}
+</style>
+
+<style>
+body.no-cursor-page,
+body.no-cursor-page * {
+  cursor: none !important;
 }
 </style>

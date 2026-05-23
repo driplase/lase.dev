@@ -12,6 +12,10 @@ onMounted(() => {
     filter: "blur(4vmin)",
   }, 0)
 
+  tl.set('.from-spacer.logo', {
+    display: 'block',
+  }, 0)
+
   tl.set('.from-spacer-bg', {
     filter: "brightness(1)",
   })
@@ -292,6 +296,8 @@ onMounted(() => {
   position: relative;
 
   width: 32vmin;
+
+  display: none;
 }
 
 .logo-img {
