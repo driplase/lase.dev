@@ -8,13 +8,14 @@ useHead({
 })
 
 const route = useRoute();
-const speedMultiplier = route.query.speedMultiplier &&  parseFloat(route.query.speedMultiplier.toString()) || 1
+const speedMultiplier = route.query.speedMultiplier && parseFloat(route.query.speedMultiplier.toString()) || 1
 
 const mousePos = ref<{ x: number, y: number }>({ x: 0, y: 0 })
 const cursorPos = ref<{
   x: number,
   y: number,
   rotation: number,
+  show: boolean,
 } | null>(null)
 
 const cursorImages = {
@@ -97,7 +98,9 @@ const updateHoverCursor = (x: number, y: number) => {
 }
 
 let rafId = 0
-let mouseListener: ((e: MouseEvent) => void) | null = null
+let mouseMoveListener: ((e: MouseEvent) => void) | null = null
+let mouseEnterListener: ((e: MouseEvent) => void) | null = null
+let mouseLeaveListener: ((e: MouseEvent) => void) | null = null
 onMounted(() => {
   mousePos.value = {
     x: window.innerWidth / 2,
@@ -107,13 +110,32 @@ onMounted(() => {
     x: window.innerWidth / 2,
     y: window.innerHeight / 2,
     rotation: 0,
+    show: true,
   }
 
-  mouseListener = (event: MouseEvent) => {
+  mouseMoveListener = (event: MouseEvent) => {
     mousePos.value = { x: event.clientX, y: event.clientY }
     updateHoverCursor(event.clientX, event.clientY)
   }
-  window.addEventListener('mousemove', mouseListener)
+  window.addEventListener('mousemove', mouseMoveListener)
+  mouseEnterListener = (event: MouseEvent) => {
+    if (!cursorPos.value) return;
+    
+    cursorPos.value = {
+      x: event.clientX,
+      y: event.clientY,
+      rotation: 0,
+      show: true,
+    }
+    previousCursorState = { ...cursorPos.value }
+  }
+  document.addEventListener('mouseenter', mouseEnterListener)
+  mouseLeaveListener = (event: MouseEvent) => {
+    if (!cursorPos.value) return;
+
+    cursorPos.value.show = false;
+  }
+  document.addEventListener('mouseleave', mouseLeaveListener)
 
   let currentTime = 0
   let previousCursorState = { ...cursorPos.value }
@@ -151,26 +173,36 @@ onMounted(() => {
 })
 
 onBeforeUnmount(() => {
-  if (mouseListener) window.removeEventListener('mousemove', mouseListener)
+  if (mouseMoveListener) window.removeEventListener('mousemove', mouseMoveListener)
   if (rafId) window.cancelAnimationFrame(rafId)
 })
 </script>
 
 <template>
   <div class="cursor" :style="{
-    top: 0, left: 0,
-    transform: `translate(${cursorPos ? `${cursorPos.x}px` : '50dvw'}, ${cursorPos ? `${cursorPos.y}px` : '50dvh'}) rotate(${cursorPos?.rotation || 0}deg)`
+    transform: `translate(${cursorPos ? `${cursorPos.x}px` : '50dvw'}, ${cursorPos ? `${cursorPos.y}px` : '50dvh'}) rotate(${cursorPos?.rotation || 0}deg)`,
+    opacity: cursorPos?.show ? 1 : 0,
   }">
     <img class="cursor-image" :src="cursorImage" :style="{
       transform: `translate(${-getOffsetForKey(currentCursorKey).x}px, ${-getOffsetForKey(currentCursorKey).y}px)`
     }" />
+
+    <!--
+    <div class="cursor-debug font-mono" :style="{
+      transform: `rotate(${-(cursorPos?.rotation || 0)}deg)`,
+      transformOrigin: 'top left'
+    }">
+      <div>{{ mousePos }}</div>
+      <div>{{ cursorPos }}</div>
+    </div>
+    -->
   </div>
 </template>
 
 <style scoped>
 .cursor {
   position: fixed;
-  z-index: 2147483648;
+  z-index: 2147483647;
   top: 0;
   left: 0;
   user-select: none;

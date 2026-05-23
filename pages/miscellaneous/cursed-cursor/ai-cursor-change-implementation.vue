@@ -8,7 +8,7 @@ useHead({
 })
 
 const route = useRoute();
-const speedMultiplier = route.query.speedMultiplier &&  parseFloat(route.query.speedMultiplier.toString()) || 1
+const speedMultiplier = route.query.speedMultiplier && parseFloat(route.query.speedMultiplier.toString()) || 1
 
 const mousePos = ref<{
   x: number, y: number,
@@ -19,6 +19,7 @@ const cursorPos = ref<{
   x: number,
   y: number,
   rotation: number,
+  show: boolean,
 } | null>(null)
 
 const cursorImages = {
@@ -184,6 +185,7 @@ onMounted(() => {
     x: window.innerWidth / 2,
     y: window.innerHeight / 2,
     rotation: 0,
+    show: true
   }
 
   window.addEventListener('mousemove', event => {
@@ -192,6 +194,22 @@ onMounted(() => {
       y: event.clientY,
     };
     updateHoverCursor(event.clientX, event.clientY)
+  })
+  document.addEventListener('mouseenter', event => {
+    if (!cursorPos.value) return;
+    
+    cursorPos.value = {
+      x: event.clientX,
+      y: event.clientY,
+      rotation: 0,
+      show: true,
+    }
+    previousCursorState = { ...cursorPos.value }
+  })
+  document.addEventListener('mouseleave', event => {
+    if (!cursorPos.value) return;
+
+    cursorPos.value.show = false;
   })
 
   let currentTime: number = 0;
@@ -243,8 +261,8 @@ onMounted(() => {
 
   <!-- cursor element -->
   <div class="cursor" :style="{
-    top: 0, left: 0,
-    transform: `translate(${cursorPos ? `${cursorPos.x}px` : '50dvw'}, ${cursorPos ? `${cursorPos.y}px` : '50dvh'}) rotate(${cursorPos?.rotation || 0}deg)`
+    transform: `translate(${cursorPos ? `${cursorPos.x}px` : '50dvw'}, ${cursorPos ? `${cursorPos.y}px` : '50dvh'}) rotate(${cursorPos?.rotation || 0}deg)`,
+    opacity: cursorPos?.show ? 1 : 0,
   }">
     <img class="cursor-image" :src="cursorImage" :style="{
       transform: `translate(${-getOffsetForKey(currentCursorKey).x}px, ${-getOffsetForKey(currentCursorKey).y}px)`
@@ -262,7 +280,7 @@ onMounted(() => {
 <style scoped>
 .cursor {
   position: fixed;
-  z-index: 2147483648;
+  z-index: 2147483647;
   top: 0;
   left: 0;
   user-select: none;
