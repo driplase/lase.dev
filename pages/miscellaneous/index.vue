@@ -14,7 +14,9 @@
           {{ $t('misc.list.rcp.description') }}
         </WorksCards>
 
-        <h2 class="woosh origin-left">others</h2>
+        <h2 class="woosh origin-left">
+          {{ $t('misc.list.others') }}
+        </h2>
         <WorksCards title="Cursed Cursor" url="/miscellaneous/cursed-cursor">
           {{ $t('misc.list.cursedCursor.description') }}
         </WorksCards>

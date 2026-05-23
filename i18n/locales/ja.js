@@ -42,6 +42,8 @@ export default {
   "works.pfj0si.description": "大きめな数字でも動くけど、私は数学の専門家ではないので、結果がでるまで時間がかかることもあるよ。",
   
   "misc.list.rcp.description": "Discordのロールカラーをプレビューできるシンプルなツール。ロールのスタイル（強化）にも対応！",
+
+  "misc.list.others": "その他",
   "misc.list.cursedCursor.description": "2023年のいつかに作ってみたかった変なカーソル",
   
   "misc.domains.expire.1": "はあと",
