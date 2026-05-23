@@ -39,6 +39,7 @@ export default {
   "works.pfj0si.description": "Works with bigger numbers, but it might take a while because I'm not a math expert.",
 
   "misc.list.rcp.description": "A simple tool that lets you preview Discord role colors. Enhanced Role Styles are supported!",
+  "misc.list.cursedCursor.description": "The weird cursor I wanted to make somewhen in 2023",
   
   "misc.domains.expire.1": "is going to expire in",
   "misc.domains.expire.2": ".",
