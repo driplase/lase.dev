@@ -39,6 +39,7 @@ button {
   height: 32px;
   margin: 0;
   box-shadow: none;
+  padding: 0;
 }
 .dropmenu {
   position: absolute;

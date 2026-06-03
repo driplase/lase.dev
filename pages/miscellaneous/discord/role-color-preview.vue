@@ -49,7 +49,7 @@ function changeRoleStyle(style) {
   if (colorStyle.value !== "gradient" && style === 'gradient') {
     if (roleColor.value[0] === null) roleColor.value[0] = "#000000";
     
-    roleColor.value[1] = roleColor.value[0];
+    if (roleColor.value[1] === null) roleColor.value[1] = roleColor.value[0];
   }
   
   colorStyle.value = style;
@@ -57,7 +57,7 @@ function changeRoleStyle(style) {
   if (roleColor.value[0] === "#000000" && colorStyle.value === 'solid') roleColor.value[0] = null;
 
   resultColor.value = roleColor.value;
-  if (colorStyle.value === 'holographic') resultColor.value = holographic.slice();
+  if (colorStyle.value === 'holographic') resultColor.value = [...holographic];
 }
 
 function changeColor(value) {
@@ -66,7 +66,9 @@ function changeColor(value) {
 
   roleColor.value[activeColorPickerMenu.value] = value
   if (value === "#000000" && colorStyle.value === "solid") roleColor.value[activeColorPickerMenu.value] = null;
-  resultColor.value = roleColor.value;
+  
+  resultColor.value[0] = roleColor.value[0];
+  if (colorStyle.value === "gradient") resultColor.value[1] = roleColor.value[1];
 }
 async function showColorPicker(event, col) {
   activeColorPickerMenu.value = col;
@@ -101,9 +103,9 @@ async function showColorPicker(event, col) {
     :title="$t('misc.rcp.title')"
     :description="$t('misc.list.rcp.description')"
   />
-  <div class="my-4 justify-items-center w-full">
+  <div class="my-4 justify-items-center w-full max-w-6xl">
     <h2 class="font-bold">{{ $t('misc.rcp.title') }}</h2>
-    <div class="container">
+    <div class="container gap-4 [max-810px]:gap-0">
 
       <div class="setting">
         <h4>{{ $t('misc.rcp.role_style') }}</h4>

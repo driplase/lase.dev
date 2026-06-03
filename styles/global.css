@@ -59,7 +59,7 @@ button {
   margin: 4px;
   border: 1px solid rgb(190, 190, 190);
   box-shadow: 0 0 5px rgb(190, 190, 190);
-  padding: .375rem 1rem;
+  padding: .375rem .5rem;
 
   &:hover {
     background: rgb(135, 151, 182);
