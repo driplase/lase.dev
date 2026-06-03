@@ -32,7 +32,7 @@ const holographic = ["#A9C9FF", "#FFBBEC", "#FFC3A0"];
 const displayName = ref('John Doe');
 
 const colorStyle = ref('solid');
-const roleColor = ref([null, null, null]);
+const roleColor = ref([null, "#0072de", holographic[2]]);
 const resultColor = ref([null, null, null]);
 
 const activeColorPickerMenu = ref(-1);
@@ -47,14 +47,14 @@ const pickerDefaultValue = ref('');
 
 function changeRoleStyle(style) {
   if (colorStyle.value !== "gradient" && style === 'gradient') {
-    if (roleColor.value[0] === null) roleColor.value[0] =　"#000000";
+    if (roleColor.value[0] === null) roleColor.value[0] = "#000000";
     
     roleColor.value[1] = roleColor.value[0];
   }
   
   colorStyle.value = style;
   
-  if (roleColor.value[0] === "#000000" && colorStyle.value === 'solid') roleColor.value[0] =　null;
+  if (roleColor.value[0] === "#000000" && colorStyle.value === 'solid') roleColor.value[0] = null;
 
   resultColor.value = roleColor.value;
   if (colorStyle.value === 'holographic') resultColor.value = holographic.slice();
@@ -101,7 +101,7 @@ async function showColorPicker(event, col) {
     :title="$t('misc.rcp.title')"
     :description="$t('misc.list.rcp.description')"
   />
-  <div class="my-4 justify-items-center">
+  <div class="my-4 justify-items-center w-full">
     <h2 class="font-bold">{{ $t('misc.rcp.title') }}</h2>
     <div class="container">
 
@@ -392,10 +392,6 @@ async function showColorPicker(event, col) {
   z-index: 5;
   display: none;
   outline: 0;
-}
-
-.style-button {
-  padding: 0 1rem;
 }
 
 @media screen and (max-width: 810px) {

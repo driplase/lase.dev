@@ -55,10 +55,11 @@ body {
 
 button {
   background: rgb(106, 121, 148);
-  border-radius: 8px;
+  border-radius: 12px;
   margin: 4px;
   border: 1px solid rgb(190, 190, 190);
   box-shadow: 0 0 5px rgb(190, 190, 190);
+  padding: .375rem 1rem;
 
   &:hover {
     background: rgb(135, 151, 182);
