@@ -1,4 +1,8 @@
 <script setup>
+useSeoMeta({
+  robots: "noindex, nofollow"
+})
+
 const { locale } = useI18n()
 const dayjs = useDayjs()
 

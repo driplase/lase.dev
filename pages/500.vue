@@ -1,4 +1,8 @@
 <script setup lang="ts">
+useSeoMeta({
+  robots: "noindex, nofollow"
+})
+
 import http from 'node:http';
 
 const route = useRoute()

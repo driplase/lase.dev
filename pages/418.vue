@@ -1,4 +1,8 @@
 <script setup lang="ts">
+useSeoMeta({
+  robots: "noindex, nofollow"
+})
+
 const reqEvent = useRequestEvent();
 if (reqEvent) {
   setResponseStatus(reqEvent, 418)
@@ -45,7 +49,7 @@ for (let i = 0; i < coffeeCount; i++) {
       </div>
     </div>
     <div class="coffees">
-      <Icon v-for="c in coffees" :name="coffeeIcons[Math.floor(Math.random() * coffeeIcons.length)]" :size="24 * c.scale" class="woosh" :style="{
+      <Icon v-for="c in coffees" :name="coffeeIcons[Math.floor(Math.random() * coffeeIcons.length)]!" :size="24 * c.scale" class="woosh" :style="{
         transform: `translate(${c.x}px, ${c.y}px) rotateZ(${c.rotation}deg)`
       }"/>
     </div>
