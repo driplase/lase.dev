@@ -16,8 +16,9 @@ import HeadTemplate from '~/components/headTemplate.vue';
 
       <h2 class="flash woosh font-bold origin-left" id="socials">{{ $t('socials') }}</h2>
       <div class="socials grid grid-cols-2 max-[320px]:grid-cols-1 min-[480px]:grid-cols-3 sm:grid-cols-4">
-        <p class="wiggle woosh wg-text wsh-text flash links">
-          <NuxtLink href="https://youtube.com/@driplase" target="_blank" rel="noopener noreferrer">
+        <p class="wiggle woosh wg-text wsh-text flash links / pointer-events-none cursor-not-allowed text-gray-400! line-through">
+          <!-- <NuxtLink href="https://youtube.com/@driplase" target="_blank" rel="noopener noreferrer"> -->
+          <NuxtLink href="#" target="_blank" rel="noopener noreferrer" class="text-gray-400! line-through">
             YouTube
           </NuxtLink>
         </p>
