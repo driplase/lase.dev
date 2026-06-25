@@ -32,6 +32,13 @@ h3, h4, h5, h6 {
   font-weight: 500;
 }
 
+.link-header {
+  pointer-events: none;
+  width: 290px;
+  /* height: 96px; */
+  border-radius: 8px;
+}
+
 @media screen and (max-width: 1023px) {
   :root {
     --main-pad: 16px 3rem;
@@ -60,5 +67,11 @@ h3, h4, h5, h6 {
 @media screen and (max-width: 480px) {
   :root {
     --main-pad: 12px 1.5rem;
+  }
+}
+
+@media screen and (mim-width: 720px) {
+  .link-header {
+    width: 32rem;
   }
 }

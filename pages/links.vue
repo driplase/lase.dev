@@ -16,21 +16,24 @@ import HeadTemplate from '~/components/headTemplate.vue';
 
       <h2 class="flash woosh font-bold origin-left" id="socials">{{ $t('socials') }}</h2>
       <div class="socials grid grid-cols-2 max-[320px]:grid-cols-1 min-[480px]:grid-cols-3 sm:grid-cols-4">
-        <p class="wiggle woosh wg-text wsh-text flash links / pointer-events-none cursor-not-allowed text-gray-400! line-through">
-          <!-- <NuxtLink href="https://youtube.com/@driplase" target="_blank" rel="noopener noreferrer"> -->
-          <NuxtLink href="#" target="_blank" rel="noopener noreferrer" class="text-gray-400! line-through">
-            YouTube
-          </NuxtLink>
-        </p>
-        <p class="wiggle woosh wg-text wsh-text flash links">
-          <NuxtLink href="https://x.com/driplase" target="_blank" rel="noopener noreferrer">
-            <i class="eclyera inline-block icon">
-              &#x1d54f;</i> {{ $t('socials.x') }}
-          </NuxtLink>
-        </p>
         <p class="wiggle woosh wg-text wsh-text flash links">
           <NuxtLink href="https://bsky.app/profile/lase.dev" target="_blank" rel="noopener noreferrer">
             Bluesky
+          </NuxtLink>
+        </p>
+        <p class="wiggle woosh wg-text wsh-text flash links">
+          <NuxtLink href="https://driplase.booth.pm" target="_blank" rel="noopener noreferrer">
+            BOOTH
+          </NuxtLink>
+        </p>
+        <p class="wiggle woosh wg-text wsh-text flash links">
+          <NuxtLink href="https://www.chess.com/member/driplase" target="_blank" rel="noopener noreferrer">
+            Chess.com
+          </NuxtLink>
+        </p>
+        <p class="wiggle woosh wg-text wsh-text flash links">
+          <NuxtLink href="http://discord.com/users/959034815766728714" target="_blank" rel="noopener noreferrer">
+            Discord <small class="monospace opacity-64">@driplase</small>
           </NuxtLink>
         </p>
         <p class="wiggle woosh wg-text wsh-text flash links">
@@ -64,6 +67,26 @@ import HeadTemplate from '~/components/headTemplate.vue';
           </NuxtLink>
         </p>
         <p class="wiggle woosh wg-text wsh-text flash links">
+          <NuxtLink href="https://scratch.mit.edu/users/Driplase" target="_blank" rel="noopener noreferrer">
+            Scratch
+          </NuxtLink>
+        </p>
+        <p class="wiggle woosh wg-text wsh-text flash links">
+          <NuxtLink href="http://scratchjp.org/user/959034815766728714" target="_blank" rel="noopener noreferrer">
+            Scratch JP
+          </NuxtLink>
+        </p>
+        <p class="wiggle woosh wg-text wsh-text flash links">
+          <NuxtLink href="https://soundcloud.com/driplase" target="_blank" rel="noopener noreferrer">
+            SoundCloud
+          </NuxtLink>
+        </p>
+        <p class="wiggle woosh wg-text wsh-text flash links">
+          <NuxtLink href="https://steamcommunity.com/id/driplase/" target="_blank" rel="noopener noreferrer">
+            Steam
+          </NuxtLink>
+        </p>
+        <p class="wiggle woosh wg-text wsh-text flash links">
           <NuxtLink href="https://www.threads.com/@driplase" target="_blank" rel="me noopener noreferrer">
             Threads
           </NuxtLink>
@@ -84,18 +107,15 @@ import HeadTemplate from '~/components/headTemplate.vue';
           </NuxtLink>
         </p>
         <p class="wiggle woosh wg-text wsh-text flash links">
-          <NuxtLink href="https://soundcloud.com/driplase" target="_blank" rel="noopener noreferrer">
-            SoundCloud
+          <NuxtLink href="https://x.com/driplase" target="_blank" rel="noopener noreferrer">
+            <i class="eclyera inline-block icon">
+              &#x1d54f;</i> {{ $t('socials.x') }}
           </NuxtLink>
         </p>
-        <p class="wiggle woosh wg-text wsh-text flash links">
-          <NuxtLink href="https://steamcommunity.com/id/driplase/" target="_blank" rel="noopener noreferrer">
-            Steam
-          </NuxtLink>
-        </p>
-        <p class="wiggle woosh wg-text wsh-text flash links">
-          <NuxtLink href="http://discord.com/users/959034815766728714" target="_blank" rel="noopener noreferrer">
-            Discord <small class="monospace opacity-64">@driplase</small>
+        <p class="wiggle woosh wg-text wsh-text flash links / pointer-events-none cursor-not-allowed text-gray-400! line-through">
+          <!-- <NuxtLink href="https://youtube.com/@driplase" target="_blank" rel="noopener noreferrer"> -->
+          <NuxtLink href="#" target="_blank" rel="noopener noreferrer" class="text-gray-400! line-through">
+            YouTube
           </NuxtLink>
         </p>
       </div>
@@ -126,9 +146,11 @@ import HeadTemplate from '~/components/headTemplate.vue';
       <h2 class="flash woosh font-bold origin-left" id="reciprocal">{{ $t('mutual_links') }}</h2>
       <div class="socials">
         <p 
-          v-for="link in linksData.reciprocal.sort((a, b) => a.title.localeCompare(b.title))"
+          v-for="(link, idx) in linksData.reciprocal.sort((a, b) => a.title.localeCompare(b.title))"
           class="wiggle woosh wg-text wsh-text flash links"
+          :key="link.id || idx"
         >
+        <!-- {{ link.id }}, {{ idx }} -->
           <NuxtLink class="" :href="link.url" target="_blank" rel="noopener">
             <!-- <i class="eclyera icon">&#xf806;</i> -->
             <NuxtImg
@@ -164,7 +186,7 @@ import HeadTemplate from '~/components/headTemplate.vue';
         <p 
           v-for="(link, idx) in linksData.others"
           class="wiggle woosh wg-text wsh-text flash links"
-          :key="idx"
+          :key="link.id || idx"
         >
           <NuxtLink :href="link.url" target="_blank" rel="noopener noreferrer">
             <!-- <i class="eclyera icon">&#xf806;</i> -->
@@ -216,13 +238,6 @@ import HeadTemplate from '~/components/headTemplate.vue';
 
 a {
   text-decoration: none;
-}
-
-.link-header {
-  pointer-events: none;
-  width: 290px;
-  /* height: 96px; */
-  border-radius: 8px;
 }
 
 .zen-maru-gothic {
