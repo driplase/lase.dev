@@ -34,9 +34,9 @@ _"what the f--- did i even do????"\
 after thinking so much about it, i remembered that my sister has a YouTube channel.\
 *"maybe she did something..."*
 
-since i have the login credentials of her account, i've made a decision to login her account and check, in edge InPrivate tab.
+so i checked her channel.
 
-when i logged in YouTube with her account, i confirmed that **her channel was terminated**.\
+when i looked up her channel name, and visited videos that might be hers, looked like **her channel was terminated**.\
 it's obviously the reason why my channels were also involved in termination, i thought. 
 
 we live in the same house. and we use the same network. so the IP addresses are also same.\
@@ -107,4 +107,4 @@ i'll appreciate if you help me reviving my youtube channels. i think it's pretty
 
 huge thanks to my friends who cared about this, and you who's been reading this.
 
-see you later, i guess...? bye~! i love you all...❤️
+see you later, i guess...? bye! i love you all...❤️

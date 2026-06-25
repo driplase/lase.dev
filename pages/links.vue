@@ -2,9 +2,9 @@
 import linksData from '@/data/links'
 import HeadTemplate from '~/components/headTemplate.vue';
 
-useSeoMeta({
-  robots: "noindex, nofollow"
-})
+// useSeoMeta({
+//   robots: "noindex, nofollow"
+// })
 </script>
 <template>
   <HeadTemplate :title="$t('links')" />
