@@ -20,6 +20,10 @@
         <WorksCards title="Cursed Cursor" url="/miscellaneous/cursed-cursor">
           {{ $t('misc.list.cursedCursor.description') }}
         </WorksCards>
+
+        <WorksCards title="center" url="/miscellaneous/center">
+          press f11 (i mean turn on fullscreen) and you just look at the center. that's what the dot is about.
+        </WorksCards>
       </div>
 
     </section>
