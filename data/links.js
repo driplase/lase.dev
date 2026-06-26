@@ -42,6 +42,13 @@ export default {
       imageURL: "https://rampotchi.com/img/logo.webp",
       id: "rampotchi",
     },
+    {
+      url: "https://aspou.2413.choume.net/",
+      title: "aspou2413",
+      description: "",
+      imageURL: "https://7xf.j0.si/banners/aspou2413.webp",
+      id: "aspou2413",
+    },
   ],
   others: [
     {
@@ -151,12 +158,6 @@ export default {
       title: "pird.uk",
       description: "",
       id: "esalpird",
-    },
-    {
-      url: "https://aspou.2413.choume.net/",
-      title: "aspou2413",
-      description: "",
-      id: "aspou2413",
     },
   ],
 }
