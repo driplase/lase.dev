@@ -62,6 +62,10 @@ export default {
 
   "misc.cursedCursor.description1": "",
 
+  "misc.tanabata.title": "tanabata wish",
+  "misc.tanabata.description": "realized today was tanabata. so i wrote a tanabata wish.",
+  "misc.tanabata.im_not_late": "July 7th, 2026 11:20pm (JST). IT'S STILL TANABATA, I'M NOT LATE!!!!!!!!!!!!",
+
   show_more: 'Show more',
 
   "footer.source_code": "Source Code"

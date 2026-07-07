@@ -62,6 +62,10 @@ export default {
   "misc.ttsol.title": "これはずっと隠してたことで...",
   "misc.ttsol.description": "ネット上に晒しあげたくことじゃないんだけど...",
   "misc.ttsol.please_click": "クリックかタップすると内容が見れるよ。",
+
+  "misc.tanabata.title": "たなばたのねがいごと",
+  "misc.tanabata.description": "今日は七夕だったことに気がづいた。だから、たなばたのねがいごとを書いてみた。",
+  "misc.tanabata.im_not_late": "2026年7月7日 23時20分 (JST)。まだたなばたや！！！！！！！！！！！！",
   
   show_more: 'もっと表示',
   
