@@ -24,6 +24,10 @@
         <WorksCards title="center" url="/miscellaneous/center">
           press f11 (i mean turn on fullscreen) and you just look at the center. that's what the dot is about.
         </WorksCards>
+
+        <WorksCards :title="$t('misc.tanabata.title')" url="/miscellaneous/tanabata">
+          {{ $t('misc.tanabata.description') }}
+        </WorksCards>
       </div>
 
     </section>

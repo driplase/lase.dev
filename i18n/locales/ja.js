@@ -65,7 +65,7 @@ export default {
 
   "misc.tanabata.title": "たなばたのねがいごと",
   "misc.tanabata.description": "今日は七夕だったことに気がづいた。だから、たなばたのねがいごとを書いてみた。",
-  "misc.tanabata.im_not_late": "2026年7月7日 23時20分 (JST)。まだたなばたや！！！！！！！！！！！！",
+  "misc.tanabata.im_not_late": "2026年7月7日 23時25分 (JST)。まだたなばたや！！！！！！！！！！！！",
   
   show_more: 'もっと表示',
   
