@@ -5,6 +5,7 @@ import { gsap } from 'gsap';
 
 const route = useRoute();
 const error = useError(); // Nuxt 3 composable
+const localePath = useLocalePath();
 
 const burgerMenu = ref(false);
 
@@ -100,7 +101,7 @@ onMounted(() => {
         <div class="menu-contents">
           <NuxtLink v-for="(item, idx) in links"
             :class="'nav-link wiggle woosh wg-text wsh-text glow ' +
-              (item.url === currentPath ? 'bold ' : '')
+              (localePath(item.url) === currentPath ? 'bold ' : '')
             "
             :href="item.external ? item.url : $localePath(item.url)"
             @click="toggleBurger(false, true)"
