@@ -61,7 +61,7 @@ export default defineNuxtConfig({
       { code: 'xi', name: 'éxlip', file: 'xi.js' },
     ],
     lazy: true,
-    strategy: "no_prefix",
+    strategy: 'prefix_except_default',
   },
   routeRules: {
     '/test/**': { robots: false },

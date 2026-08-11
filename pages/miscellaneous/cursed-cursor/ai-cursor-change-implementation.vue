@@ -270,7 +270,7 @@ onMounted(() => {
   </div>
   
   <p>
-    The simplest implementation I only wanted to implement can be found at <NuxtLink to="/miscellaneous/cursed-cursor" class="wiggle woosh flash">https://lase.dev/miscellaneous/cursed-cursor</NuxtLink>
+    The simplest implementation I only wanted to implement can be found at <NuxtLink :to="$localePath('/miscellaneous/cursed-cursor')" class="wiggle woosh flash">https://lase.dev/miscellaneous/cursed-cursor</NuxtLink>
   </p>
   <p>
     this subpage is an expansion of my implementation. mostly used ai.

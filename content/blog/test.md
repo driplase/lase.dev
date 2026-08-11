@@ -5,7 +5,6 @@ createdAt: "2025-08-12"
 lang: en
 ---
 
-
 Do you see this? I'm messing around with blog content.
 
 I don't know do I even write blogs, but I just made the link in navbar, I probably have to write even a single blog.

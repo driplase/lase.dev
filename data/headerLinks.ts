@@ -1,4 +1,8 @@
-export const links = [
+export const links: {
+  url: string,
+  title: string,
+  external?: Boolean,
+}[] = [
   {
     "url": "/works",
     "title": "works"

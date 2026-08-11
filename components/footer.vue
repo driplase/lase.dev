@@ -5,12 +5,12 @@
 
     <div class="footer-container">
       <div class="nav-brand">
-        <NuxtLink class="inline-block wiggle woosh flash no-ul no-link-blue lase-color-secondary bg-clip-text text-transparent" href="/">lase.dev</NuxtLink>
+        <NuxtLink class="inline-block wiggle woosh flash no-ul no-link-blue lase-color-secondary bg-clip-text text-transparent" :href="$localePath('/')">lase.dev</NuxtLink>
       </div>
       <span class="small-text">&copy; {{ new Date().getFullYear() }} driplase</span>
     </div>
 
-    <div class="text-sm mt-2">
+    <!-- <div class="text-sm mt-2">
       <NuxtLink
         class="wiggle wg-text inline-block no-link-blue text-gray-400 hover:text-gray-300"
         to="https://github.com/driplase/lase.dev"
@@ -22,7 +22,7 @@
           class="icon"
         />
       </NuxtLink>
-    </div>
+    </div> -->
 
   </footer>
 </template>

@@ -1,5 +1,5 @@
 <script setup>
-const props = defineProps({
+const { title, url, external: isExternal } = defineProps({
   title: String,
   url: String,
   external: Boolean,
@@ -7,24 +7,24 @@ const props = defineProps({
 
 let isURLvalid = true;
 try {
-  new URL(props.url);
+  new URL(url);
 } catch {
   isURLvalid = false;
 }
 
 const target = ref("_self");
-target.value = props.external ? '_blank' : '_self';
+target.value = isExternal ? '_blank' : '_self';
 </script>
 <template>
   <NuxtLink
     class="root-link"
-    :to="props.url" 
+    :to="isExternal ? url : $localePath(url)" 
     :target>
     <div :class="
-      `card ${(isURLvalid || !external) ? 'flash' : ''}`
+      `card ${(isURLvalid || !isExternal) ? 'flash' : ''}`
     ">
       <h3>
-        {{ props.title }}
+        {{ title }}
         <Icon
           v-if="target === '_blank'"
           name="tabler:external-link" 

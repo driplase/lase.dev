@@ -80,7 +80,7 @@ onMounted(() => {
 <template>
   <header>
     <div class="nav-brand">
-      <NuxtLink class="inline-block wiggle woosh flash no-ul no-link-blue lase-color-secondary bg-clip-text text-transparent" href="/">lase.dev</NuxtLink>
+      <NuxtLink class="inline-block wiggle woosh flash no-ul no-link-blue lase-color-secondary bg-clip-text text-transparent" :href="$localePath('/')">lase.dev</NuxtLink>
     </div>
     <nav class="nav-container">
       <!-- prefetch x icon -->
@@ -102,7 +102,7 @@ onMounted(() => {
             :class="'nav-link wiggle woosh wg-text wsh-text glow ' +
               (item.url === currentPath ? 'bold ' : '')
             "
-            :href="item.url"
+            :href="item.external ? item.url : $localePath(item.url)"
             @click="toggleBurger(false, true)"
             :style="{
               pointerEvents: burgerMenu ? 'auto' : 'none',

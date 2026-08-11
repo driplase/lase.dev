@@ -1,4 +1,18 @@
-export default {
+interface Link {
+  url: string,
+  title: string,
+  description?: string,
+  imageURL?: string,
+  id: string,
+  dead?: boolean,
+}
+
+interface Links {
+  reciprocal: Link[],
+  others: Link[],
+}
+
+const links: Links = {
   reciprocal: [
     {
       url: "https://furamen.kokkosoft.com",
@@ -161,3 +175,5 @@ export default {
     },
   ],
 }
+
+export default links;

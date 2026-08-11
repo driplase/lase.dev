@@ -1,8 +1,12 @@
 <script setup>
 const route = useRoute()
+const { setLocale } = useI18n()
+const localePath = useLocalePath();
+
+console.log(localePath(route.path, 'en'))
 
 const { data: page } = await useAsyncData(() => {
-  return queryCollection('content').path(route.path).first()
+  return queryCollection('content').path(localePath(route.path, 'en')).first()
 })
 
 if (!page.value) {
@@ -16,6 +20,10 @@ console.log(page?.title)
 
 const title = page.value?.title || route.params.slug;
 const description = page.value?.description;
+
+if (page?.lang) {
+  setLocale(page?.lang)
+}
 </script>
 
 <template>
