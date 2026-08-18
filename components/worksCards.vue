@@ -21,16 +21,16 @@ target.value = isExternal ? '_blank' : '_self';
     :to="isExternal ? url : $localePath(url)" 
     :target>
     <div :class="
-      `card ${(isURLvalid || !isExternal) ? 'flash' : ''}`
+      `card` 
     ">
-      <h3>
+      <EffectWrapper as="h3" flash>
         {{ title }}
         <Icon
           v-if="target === '_blank'"
           name="tabler:external-link" 
           class="icon"
         />
-      </h3>
+      </EffectWrapper>
       <slot />
     </div>
   </NuxtLink>

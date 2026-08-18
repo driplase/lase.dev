@@ -7,16 +7,16 @@
     <section class="default">
       
       <div class="container">
-        <h1 class="flash woosh origin-left">{{ $t('miscellaneous') }}</h1>
+        <EffectWrapper as="h1" flash woosh class="origin-left">{{ $t('miscellaneous') }}</EffectWrapper>
   
-        <h2 class="woosh origin-left">Discord</h2>
+        <EffectWrapper as="h2" woosh class="origin-left">Discord</EffectWrapper>
         <WorksCards :title="$t('misc.rcp.title')" url="/miscellaneous/discord/role-color-preview">
           {{ $t('misc.list.rcp.description') }}
         </WorksCards>
 
-        <h2 class="woosh origin-left">
+        <EffectWrapper as="h2" woosh class="origin-left">
           {{ $t('misc.list.others') }}
-        </h2>
+        </EffectWrapper>
         <WorksCards title="Cursed Cursor" url="/miscellaneous/cursed-cursor">
           {{ $t('misc.list.cursedCursor.description') }}
         </WorksCards>

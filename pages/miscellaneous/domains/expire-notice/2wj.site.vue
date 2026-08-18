@@ -46,7 +46,7 @@ onMounted(() => {
     -->
 
     <div class="container">
-      <h2>GGs, the domain name is already expired XD</h2>
+      <EffectWrapper as="h2" woosh flash>GGs, the domain name is already expired XD</EffectWrapper>
     </div>
   </NuxtLayout>
 </template>

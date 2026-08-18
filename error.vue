@@ -15,7 +15,7 @@ useHead({
 <template>
   <Default :title="error?.statusCode.toString()" :description="error?.statusMessage">
     <div class="error-content">
-      <div class="wiggle woosh flash ">
+      <EffectWrapper as="div" wiggle woosh flash>
         <div class="error-code rainbow-fast">{{ error?.statusCode }}</div>
         <div class="error-message" v-if="error?.statusCode === 404">
           Page not found: 
@@ -26,7 +26,7 @@ useHead({
         <div class="error-message" v-else>
           {{ error?.statusMessage }}
         </div>
-      </div>
+      </EffectWrapper>
       <div class="error-data">
         <details v-if="error?.data && error?.statusCode !== 404">
           <summary>show error data</summary>

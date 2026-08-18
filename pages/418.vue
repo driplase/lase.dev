@@ -42,16 +42,18 @@ for (let i = 0; i < coffeeCount; i++) {
   <HeadTemplate title="418" />
 
   <div class="error-content">
-    <div class="wiggle woosh flash ">
+    <EffectWrapper as="div" wiggle woosh flash>
       <div class="error-code rainbow-fast">418</div>
       <div class="error-message">
         i'm a teapot
       </div>
-    </div>
+    </EffectWrapper>
     <div class="coffees">
-      <Icon v-for="c in coffees" :name="coffeeIcons[Math.floor(Math.random() * coffeeIcons.length)]!" :size="24 * c.scale" class="woosh" :style="{
+      <EffectWrapper v-for="(c, index) in coffees" :key="index" as="span" woosh :style="{
         transform: `translate(${c.x}px, ${c.y}px) rotateZ(${c.rotation}deg)`
-      }"/>
+      }">
+        <Icon :name="coffeeIcons[Math.floor(Math.random() * coffeeIcons.length)]!" :size="24 * c.scale" />
+      </EffectWrapper>
     </div>
     <div class="error-data">
       <details>

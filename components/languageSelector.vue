@@ -12,16 +12,16 @@ function toggle() {
 </script>
 <template>
   <div class="root">
-    <button class="wiggle wg-text woosh" @click="toggle">
+    <EffectWrapper as="button" wiggle woosh text @click="toggle">
       <!-- <Icon name="tabler:world" size="24" /> -->
       <TranslatorIcon width="32" height="32"/>
       <span style="opacity: 0; font-size: 0">{{ $t('select_language') }}</span>
-    </button>
+    </EffectWrapper>
     <ul :style="{ display: dropmenu ? 'block' : 'none' }" class="dropmenu">
       <li v-for="locale in locales">
-        <a href="#" class="link no-ul wiggle wg-text woosh wsh-text" :key="locale.code" @click.prevent.stop="setLocale(locale.code)">
+        <EffectWrapper as="a" wiggle woosh text href="#" class="link no-ul" :key="locale.code" @click.prevent.stop="setLocale(locale.code)">
           {{ locale.name }}
-        </a>
+        </EffectWrapper>
       </li>
     </ul>
   </div>

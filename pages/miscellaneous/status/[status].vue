@@ -89,12 +89,12 @@ if (reqEvent) {
   <HeadTemplate :title="statusCode.toString()" :description="statusMessage" />
 
   <div class="error-content">
-    <div class="wiggle woosh flash ">
+    <EffectWrapper as="div" wiggle woosh flash>
       <div class="error-code rainbow-fast">{{ statusCode }}</div>
       <div class="error-message">
         {{ statusMessage }}
       </div>
-    </div>
+    </EffectWrapper>
     <div class="error-data">
       <details v-if="/^1\d{2}$/.test(statusCode.toString())">
         <summary>show error data</summary>

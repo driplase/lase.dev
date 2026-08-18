@@ -9,11 +9,11 @@ import WorksCards from '~/components/worksCards.vue';
     <section class="default">
     
       <div class="container">
-        <h1 class="flash woosh font-bold origin-left">{{ $t('works') }}</h1>
+        <EffectWrapper as="h1" flash woosh class="font-bold origin-left">{{ $t('works') }}</EffectWrapper>
 
-        <h2 class="woosh font-semibold origin-left">
+        <EffectWrapper as="h2" woosh class="font-semibold origin-left">
           {{ $t('works.web') }}
-        </h2>
+        </EffectWrapper>
         <WorksCards title="j0.si" url="https://j0.si" external>
           {{ $t('works.j0si.description') }}
         </WorksCards>
@@ -24,9 +24,9 @@ import WorksCards from '~/components/worksCards.vue';
           {{ $t('works.pfj0si.description') }}
         </WorksCards>
         
-        <h2 class="woosh font-semibold origin-left">
+        <EffectWrapper as="h2" woosh class="font-semibold origin-left">
           {{ $t('works.designs') }}
-        </h2>
+        </EffectWrapper>
         <WorksCards title="treron icons" url="https://www.figma.com/community/file/1462834014192363511/icons" external>
           {{ $t('works.treron_icons.description') }}
         </WorksCards>
@@ -37,15 +37,17 @@ import WorksCards from '~/components/worksCards.vue';
         </h2>
         -->
 
-        <h2 class="woosh font-semibold origin-left">
+        <EffectWrapper as="h2" woosh class="font-semibold origin-left">
           {{ $t('works.fonts') }}
-        </h2>
+        </EffectWrapper>
         <WorksCards title="Eclyera" class="eclyera">
           {{ $t('works.eclyera.description') }}
         </WorksCards>
         <WorksCards title="Lixeld" class="lixeld">
           {{ $t('works.lixeld.description') }}
-          <NuxtLink class="inline-block wiggle wg-text woosh wsh-text flash" target="_blank" to="https://github.com/ScratchJP/MCmap">ScratchJP/MCmap</NuxtLink>
+          <EffectWrapper as="span" wiggle woosh flash text class="inline-block">
+            <NuxtLink class="inline-block" target="_blank" to="https://github.com/ScratchJP/MCmap">ScratchJP/MCmap</NuxtLink>
+          </EffectWrapper>
           {{ $t('works.lixeld.description.extend') }}
         </WorksCards>
       </div>

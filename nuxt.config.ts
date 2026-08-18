@@ -41,7 +41,6 @@ export default defineNuxtConfig({
     ]
   },
   plugins: [
-    '~/plugins/effects.client.js',
   ],
   ssr: true,
   dayjs: {

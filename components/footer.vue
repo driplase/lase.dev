@@ -5,23 +5,26 @@
 
     <div class="footer-container">
       <div class="nav-brand">
-        <NuxtLink class="inline-block wiggle woosh flash no-ul no-link-blue lase-color-secondary bg-clip-text text-transparent" :href="$localePath('/')">lase.dev</NuxtLink>
+        <EffectWrapper as="span" wiggle woosh flash class="inline-block no-ul no-link-blue lase-color-secondary bg-clip-text text-transparent">
+          <NuxtLink :href="$localePath('/')" class="inline-block no-ul no-link-blue lase-color-secondary bg-clip-text text-transparent">lase.dev</NuxtLink>
+        </EffectWrapper>
       </div>
       <span class="small-text">&copy; {{ new Date().getFullYear() }} driplase</span>
     </div>
 
     <!-- <div class="text-sm mt-2">
-      <NuxtLink
-        class="wiggle wg-text inline-block no-link-blue text-gray-400 hover:text-gray-300"
-        to="https://github.com/driplase/lase.dev"
-        target="_blank"
-      >
+      <Wiggle as="span" text class="inline-block no-link-blue text-gray-400 hover:text-gray-300">
+        <NuxtLink
+          to="https://github.com/driplase/lase.dev"
+          target="_blank"
+        >
         {{ $t('footer.source_code') }}
         <Icon
           name="tabler:external-link" 
           class="icon"
         />
-      </NuxtLink>
+        </NuxtLink>
+      </Wiggle>
     </div> -->
 
   </footer>

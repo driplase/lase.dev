@@ -81,37 +81,42 @@ onMounted(() => {
 <template>
   <header>
     <div class="nav-brand">
-      <NuxtLink class="inline-block wiggle woosh flash no-ul no-link-blue lase-color-secondary bg-clip-text text-transparent" :href="$localePath('/')">lase.dev</NuxtLink>
+      <EffectWrapper as="span" wiggle woosh flash class="inline-block no-ul no-link-blue lase-color-secondary bg-clip-text text-transparent">
+        <NuxtLink :href="$localePath('/')" class="inline-block no-ul no-link-blue lase-color-secondary bg-clip-text text-transparent">lase.dev</NuxtLink>
+      </EffectWrapper>
     </div>
     <nav class="nav-container">
       <!-- prefetch x icon -->
       <Icon name="tabler:x" size="24" class="hidden"/>
 
       <div class="nav-burger">
-        <button
-          @click="toggleBurger()" 
-          class="wiggle woosh burger-mode"
-          aria-label="Menu"
-        >
+        <EffectWrapper as="button" wiggle woosh @click="toggleBurger()" class="burger-mode" aria-label="Menu">
           <div style="width: 24px; height: 24px;">
             <Icon name="tabler:x" size="24" v-if="burgerMenu"/>
             <Icon name="tabler:menu-2" size="24" v-else />
           </div>
-        </button>
+        </EffectWrapper>
         <div class="menu-contents">
-          <NuxtLink v-for="(item, idx) in links"
-            :class="'nav-link wiggle woosh wg-text wsh-text glow ' +
-              (localePath(item.url) === currentPath ? 'bold ' : '')
-            "
-            :href="item.external ? item.url : $localePath(item.url)"
-            @click="toggleBurger(false, true)"
-            :style="{
-              pointerEvents: burgerMenu ? 'auto' : 'none',
-              touchAction: burgerMenu ? 'manipulation' : 'none',
-            }"
-            :tabindex="burgerMenu - 1"
+          <EffectWrapper
+            v-for="(item, idx) in links"
             :key="idx"
-          >{{ $t(item.title) }}</NuxtLink>
+            as="span"
+            wiggle
+            woosh
+            text
+            class="inline-block"
+          >
+            <NuxtLink
+              :class="'nav-link glow ' + (localePath(item.url) === currentPath ? 'bold ' : '')"
+              :href="item.external ? item.url : $localePath(item.url)"
+              @click="toggleBurger(false, true)"
+              :style="{
+                pointerEvents: burgerMenu ? 'auto' : 'none',
+                touchAction: burgerMenu ? 'manipulation' : 'none',
+              }"
+              :tabindex="burgerMenu - 1"
+            >{{ $t(item.title) }}</NuxtLink>
+          </EffectWrapper>
         </div>
       </div>
     </nav>

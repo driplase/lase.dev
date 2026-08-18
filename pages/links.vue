@@ -13,148 +13,74 @@ import LinkTomb from '~/components/LinkTomb.vue';
   <div class="items-start text-start w-full">
     <section class="default">
       
-      <h1 class="flash woosh font-bold origin-left">{{ $t('links') }}</h1>
+      <EffectWrapper as="h1" flash woosh class="font-bold origin-left">{{ $t('links') }}</EffectWrapper>
 
-      <h2 class="flash woosh font-bold origin-left" id="socials">{{ $t('socials') }}</h2>
+      <EffectWrapper as="h2" flash woosh class="font-bold origin-left" id="socials">{{ $t('socials') }}</EffectWrapper>
       <div class="socials grid grid-cols-2 max-[320px]:grid-cols-1 min-[480px]:grid-cols-3 sm:grid-cols-4">
-        <p class="wiggle woosh wg-text wsh-text flash links">
-          <NuxtLink href="https://bsky.app/profile/lase.dev" target="_blank" rel="noopener noreferrer">
-            Bluesky
+        <EffectWrapper v-for="(link, idx) in [
+          { label: 'Bluesky', href: 'https://bsky.app/profile/lase.dev' },
+          { label: 'BOOTH', href: 'https://driplase.booth.pm' },
+          { label: 'Chess.com', href: 'https://www.chess.com/member/driplase' },
+          { label: 'Discord', href: 'http://discord.com/users/959034815766728714' },
+          { label: 'Duolingo', href: 'https://duolingo.com/profile/driplase' },
+          { label: 'GitHub', href: 'https://github.com/driplase' },
+          { label: 'Instagram', href: 'https://www.instagram.com/driplase' },
+          { label: 'Newgrounds', href: 'https://driplase.newgrounds.com/' },
+          { label: 'pixiv', href: 'https://www.pixiv.net/users/95047153' },
+          { label: 'Reddit', href: 'https://www.reddit.com/user/Driplase/' },
+          { label: 'Scratch', href: 'https://scratch.mit.edu/users/Driplase' },
+          { label: 'Scratch JP', href: 'http://scratchjp.org/user/959034815766728714' },
+          { label: 'SoundCloud', href: 'https://soundcloud.com/driplase' },
+          { label: 'Steam', href: 'https://steamcommunity.com/id/driplase/' },
+          { label: 'Threads', href: 'https://www.threads.com/@driplase' },
+          { label: 'TikTok', href: 'https://www.tiktok.com/@driplase' },
+          { label: 'Tumblr', href: 'https://driplase.tumblr.com' },
+          { label: 'Twitch', href: 'https://www.twitch.tv/driplase' },
+          { label: $t('socials.x'), href: 'https://x.com/driplase' },
+        ]" :key="idx" as="div" wiggle woosh flash text class="links">
+          <NuxtLink :href="link.href" target="_blank" rel="noopener noreferrer">
+            <template v-if="link.label === $t('socials.x')">
+              <i class="eclyera inline-block icon">&#x1d54f;</i> {{ $t('socials.x') }}
+            </template>
+            <template v-else>
+              {{ link.label }}
+            </template>
           </NuxtLink>
-        </p>
-        <p class="wiggle woosh wg-text wsh-text flash links">
-          <NuxtLink href="https://driplase.booth.pm" target="_blank" rel="noopener noreferrer">
-            BOOTH
-          </NuxtLink>
-        </p>
-        <p class="wiggle woosh wg-text wsh-text flash links">
-          <NuxtLink href="https://www.chess.com/member/driplase" target="_blank" rel="noopener noreferrer">
-            Chess.com
-          </NuxtLink>
-        </p>
-        <p class="wiggle woosh wg-text wsh-text flash links">
-          <NuxtLink href="http://discord.com/users/959034815766728714" target="_blank" rel="noopener noreferrer">
-            Discord <small class="monospace opacity-64">@driplase</small>
-          </NuxtLink>
-        </p>
-        <p class="wiggle woosh wg-text wsh-text flash links">
-          <NuxtLink href="https://duolingo.com/profile/driplase" target="_blank" rel="noopener noreferrer">
-            Duolingo
-          </NuxtLink>
-        </p>
-        <p class="wiggle woosh wg-text wsh-text flash links">
-          <NuxtLink href="https://github.com/driplase" target="_blank" rel="noopener noreferrer">
-            GitHub
-          </NuxtLink>
-        </p>
-        <p class="wiggle woosh wg-text wsh-text flash links">
-          <NuxtLink href="https://www.instagram.com/driplase" target="_blank" rel="me noopener noreferrer">
-            Instagram
-          </NuxtLink>
-        </p>
-        <p class="wiggle woosh wg-text wsh-text flash links">
-          <NuxtLink href="https://driplase.newgrounds.com/" target="_blank" rel="noopener noreferrer">
-            Newgrounds
-          </NuxtLink>
-        </p>
-        <p class="wiggle woosh wg-text wsh-text flash links">
-          <NuxtLink href="https://www.pixiv.net/users/95047153" target="_blank" rel="noopener noreferrer">
-            pixiv
-          </NuxtLink>
-        </p>
-        <p class="wiggle woosh wg-text wsh-text flash links">
-          <NuxtLink href="https://www.reddit.com/user/Driplase/" target="_blank" rel="noopener noreferrer">
-            Reddit
-          </NuxtLink>
-        </p>
-        <p class="wiggle woosh wg-text wsh-text flash links">
-          <NuxtLink href="https://scratch.mit.edu/users/Driplase" target="_blank" rel="noopener noreferrer">
-            Scratch
-          </NuxtLink>
-        </p>
-        <p class="wiggle woosh wg-text wsh-text flash links">
-          <NuxtLink href="http://scratchjp.org/user/959034815766728714" target="_blank" rel="noopener noreferrer">
-            Scratch JP
-          </NuxtLink>
-        </p>
-        <p class="wiggle woosh wg-text wsh-text flash links">
-          <NuxtLink href="https://soundcloud.com/driplase" target="_blank" rel="noopener noreferrer">
-            SoundCloud
-          </NuxtLink>
-        </p>
-        <p class="wiggle woosh wg-text wsh-text flash links">
-          <NuxtLink href="https://steamcommunity.com/id/driplase/" target="_blank" rel="noopener noreferrer">
-            Steam
-          </NuxtLink>
-        </p>
-        <p class="wiggle woosh wg-text wsh-text flash links">
-          <NuxtLink href="https://www.threads.com/@driplase" target="_blank" rel="me noopener noreferrer">
-            Threads
-          </NuxtLink>
-        </p>
-        <p class="wiggle woosh wg-text wsh-text flash links">
-          <NuxtLink href="https://www.tiktok.com/@driplase" target="_blank" rel="noopener noreferrer">
-            TikTok
-          </NuxtLink>
-        </p>
-        <p class="wiggle woosh wg-text wsh-text flash links">
-          <NuxtLink href="https://driplase.tumblr.com" target="_blank" rel="noopener noreferrer">
-            Tumblr
-          </NuxtLink>
-        </p>
-        <p class="wiggle woosh wg-text wsh-text flash links">
-          <NuxtLink href="https://www.twitch.tv/driplase" target="_blank" rel="noopener noreferrer">
-            Twitch
-          </NuxtLink>
-        </p>
-        <p class="wiggle woosh wg-text wsh-text flash links">
-          <NuxtLink href="https://x.com/driplase" target="_blank" rel="noopener noreferrer">
-            <i class="eclyera inline-block icon">
-              &#x1d54f;</i> {{ $t('socials.x') }}
-          </NuxtLink>
-        </p>
-        <p class="wiggle woosh wg-text wsh-text flash links / pointer-events-none cursor-not-allowed text-gray-400! line-through">
-          <!-- <NuxtLink href="https://youtube.com/@driplase" target="_blank" rel="noopener noreferrer"> -->
+        </EffectWrapper>
+        <EffectWrapper as="div" wiggle woosh flash text class="links pointer-events-none cursor-not-allowed text-gray-400! line-through">
           <NuxtLink href="#" target="_blank" rel="noopener noreferrer" class="text-gray-400! line-through">
             YouTube
           </NuxtLink>
-        </p>
+        </EffectWrapper>
       </div>
-      <h3 id="fediverse" class="flash woosh font-bold origin-left">Fediverse</h3>
+      <EffectWrapper as="h3" id="fediverse" flash woosh class="font-bold origin-left">Fediverse</EffectWrapper>
       <div class="socials grid grid-cols-2 max-[320px]:grid-cols-1 min-[480px]:grid-cols-3 sm:grid-cols-4">
-        <p class="wiggle woosh wg-text wsh-text flash links">
-          <NuxtLink href="https://misskey.04.si/@Driplase" target="_blank" rel="noopener noreferrer">
-            りんごぱい (misskey.04.si)
+        <EffectWrapper v-for="(link, idx) in [
+          { label: 'りんごぱい (misskey.04.si)', href: 'https://misskey.04.si/@Driplase' },
+          { label: 'Misskey.io', href: 'https://misskey.io/@Driplase' },
+          { label: 'Misskey.gg', href: 'https://misskey.gg/@driplase' },
+          { label: 'みかんぱい (calc.04.si)', href: 'https://calc.04.si/@driplase' },
+        ]" :key="idx" as="div" wiggle woosh flash text class="links">
+          <NuxtLink :href="link.href" target="_blank" rel="noopener noreferrer">
+            {{ link.label }}
           </NuxtLink>
-        </p>
-        <p class="wiggle woosh wg-text wsh-text flash links">
-          <NuxtLink href="https://misskey.io/@Driplase" target="_blank" rel="noopener noreferrer">
-            Misskey.io
-          </NuxtLink>
-        </p>
-        <p class="wiggle woosh wg-text wsh-text flash links">
-          <NuxtLink href="https://misskey.gg/@driplase" target="_blank" rel="noopener noreferrer">
-            Misskey.gg
-          </NuxtLink>
-        </p>
-        <p class="wiggle woosh wg-text wsh-text flash links">
-          <NuxtLink href="https://calc.04.si/@driplase" target="_blank" rel="noopener noreferrer">
-            みかんぱい (calc.04.si)
-          </NuxtLink>
-        </p>
+        </EffectWrapper>
       </div>
       
-      <h2 class="flash woosh font-bold origin-left" id="reciprocal">{{ $t('mutual_links') }}</h2>
+      <EffectWrapper as="h2" flash woosh class="font-bold origin-left" id="reciprocal">{{ $t('mutual_links') }}</EffectWrapper>
       <div class="socials">
-        <p 
+        <EffectWrapper
           v-for="(link, idx) in linksData.reciprocal.sort((a, b) => a.title.localeCompare(b.title))"
-          class="wiggle woosh wg-text wsh-text flash links"
           :key="link.id || idx"
+          as="div"
+          wiggle
+          woosh
+          flash
+          text
+          class="links"
         >
-        <!-- {{ link.id }}, {{ idx }} -->
           <component :is="link.dead ? LinkTomb : 'div'" :link="link">
             <NuxtLink class="" :href="link.dead ? '#' : link.url" target="_blank" rel="noopener">
-              <!-- <i class="eclyera icon">&#xf806;</i> -->
               <NuxtImg
                 v-if="link.imageURL"
                 class="link-header"
@@ -170,30 +96,35 @@ import LinkTomb from '~/components/LinkTomb.vue';
                   class="icon"
                 />
               </span>
-              <p v-if="link.id && $t(`links.items.${link.id}.description`) !== `links.items.${link.id}.description` || link.description">
-                <small class="text-gray-400 text-sm">
-                  {{ link.id && $t(`links.items.${link.id}.description`) !== `links.items.${link.id}.description` ? $t(`links.items.${link.id}.description`) : link.description }}
-                </small>
-              </p>
+              <small
+                v-if="(link.id && $t(`links.items.${link.id}.description`) !== `links.items.${link.id}.description`) || link.description"
+                class="text-gray-400 text-sm block"
+              >
+                {{ link.id && $t(`links.items.${link.id}.description`) !== `links.items.${link.id}.description` ? $t(`links.items.${link.id}.description`) : link.description }}
+              </small>
             </NuxtLink>
           </component>
-        </p>
+        </EffectWrapper>
 
         <small class="opacity-72 whitespace-pre-wrap text-xs mb-1">{{ $t('links.mutual.desc') }}</small>
       </div>
 
-      <h2 class="flash woosh font-bold origin-left" id="others">{{ $t('links.others') }}</h2>
+      <EffectWrapper as="h2" flash woosh class="font-bold origin-left" id="others">{{ $t('links.others') }}</EffectWrapper>
       <div class="socials">
         <small class="opacity-72 whitespace-pre text-xs mb-1">{{ $t('links.others.desc') }}</small>
         
-        <p 
+        <EffectWrapper
           v-for="(link, idx) in linksData.others"
-          class="wiggle woosh wg-text wsh-text flash links"
           :key="link.id || idx"
+          as="div"
+          wiggle
+          woosh
+          flash
+          text
+          class="links"
         >
           <component :is="link.dead ? LinkTomb : 'div'">
             <NuxtLink class="" :href="link.dead ? '#' : link.url" target="_blank" rel="noopener">
-            <!-- <i class="eclyera icon">&#xf806;</i> -->
             <NuxtImg
               v-if="link.imageURL"
               class="link-header"
@@ -211,14 +142,16 @@ import LinkTomb from '~/components/LinkTomb.vue';
               />
             </span>
 
-              <p v-if="link.id && $t(`links.items.${link.id}.description`) !== `links.items.${link.id}.description` || link.description">
-                <small class="text-gray-400 text-sm">
-                  {{ link.id && $t(`links.items.${link.id}.description`) !== `links.items.${link.id}.description` ? $t(`links.items.${link.id}.description`) : link.description }}
-                </small>
-              </p>
+              <small
+                v-if="(link.id && $t(`links.items.${link.id}.description`) !== `links.items.${link.id}.description`) || link.description"
+                class="text-gray-400 text-sm block"
+              >
+                {{ link.id && $t(`links.items.${link.id}.description`) !== `links.items.${link.id}.description` ? $t(`links.items.${link.id}.description`) : link.description }}
+              </small>
             </NuxtLink>
           </component>
-        </p>
+        </EffectWrapper>
+
       </div>
       
     </section>
