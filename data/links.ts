@@ -1,4 +1,4 @@
-interface Link {
+export interface Link {
   url: string,
   title: string,
   description?: string,
@@ -38,9 +38,10 @@ const links: Links = {
     {
       url: "https://9a.si/",
       title: "9a.si",
-      description: "",
-      imageURL: "https://9a.si/9a.si.webp",
+      description: "2025/8/17 - 2026/8/17",
+      imageURL: "https://9a-si.pages.dev/9a.si.webp",
       id: "9a.si",
+      dead: true,
     },
     {
       url: "https://hamusata.f5.si",

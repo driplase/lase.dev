@@ -1,6 +1,7 @@
 <script setup>
 import linksData from '@/data/links'
 import HeadTemplate from '~/components/headTemplate.vue';
+import LinkTomb from '~/components/LinkTomb.vue';
 
 // useSeoMeta({
 //   robots: "noindex, nofollow"
@@ -151,29 +152,31 @@ import HeadTemplate from '~/components/headTemplate.vue';
           :key="link.id || idx"
         >
         <!-- {{ link.id }}, {{ idx }} -->
-          <NuxtLink class="" :href="link.url" target="_blank" rel="noopener">
-            <!-- <i class="eclyera icon">&#xf806;</i> -->
-            <NuxtImg
-              v-if="link.imageURL"
-              class="link-header"
-              :src="link.imageURL" 
-              :alt="link.title"
-              decoding="async"
-              draggable="false"
-            />
-            <span v-else>
-              {{ link.title }}
-              <Icon
-                name="tabler:external-link" 
-                class="icon"
+          <component :is="link.dead ? LinkTomb : 'div'" :link="link">
+            <NuxtLink class="" :href="link.dead ? '#' : link.url" target="_blank" rel="noopener">
+              <!-- <i class="eclyera icon">&#xf806;</i> -->
+              <NuxtImg
+                v-if="link.imageURL"
+                class="link-header"
+                :src="link.imageURL" 
+                :alt="link.title"
+                decoding="async"
+                draggable="false"
               />
-            </span>
-            <p v-if="link.id && $t(`links.items.${link.id}.description`) !== `links.items.${link.id}.description` || link.description">
-              <small class="text-gray-400 text-sm">
-                {{ link.id && $t(`links.items.${link.id}.description`) !== `links.items.${link.id}.description` ? $t(`links.items.${link.id}.description`) : link.description }}
-              </small>
-            </p>
-          </NuxtLink>
+              <span v-else>
+                {{ link.title }}
+                <Icon
+                  name="tabler:external-link" 
+                  class="icon"
+                />
+              </span>
+              <p v-if="link.id && $t(`links.items.${link.id}.description`) !== `links.items.${link.id}.description` || link.description">
+                <small class="text-gray-400 text-sm">
+                  {{ link.id && $t(`links.items.${link.id}.description`) !== `links.items.${link.id}.description` ? $t(`links.items.${link.id}.description`) : link.description }}
+                </small>
+              </p>
+            </NuxtLink>
+          </component>
         </p>
 
         <small class="opacity-72 whitespace-pre-wrap text-xs mb-1">{{ $t('links.mutual.desc') }}</small>
@@ -188,7 +191,8 @@ import HeadTemplate from '~/components/headTemplate.vue';
           class="wiggle woosh wg-text wsh-text flash links"
           :key="link.id || idx"
         >
-          <NuxtLink :href="link.url" target="_blank" rel="noopener noreferrer">
+          <component :is="link.dead ? LinkTomb : 'div'">
+            <NuxtLink class="" :href="link.dead ? '#' : link.url" target="_blank" rel="noopener">
             <!-- <i class="eclyera icon">&#xf806;</i> -->
             <NuxtImg
               v-if="link.imageURL"
@@ -207,12 +211,13 @@ import HeadTemplate from '~/components/headTemplate.vue';
               />
             </span>
 
-            <p v-if="link.id && $t(`links.items.${link.id}.description`) !== `links.items.${link.id}.description` || link.description">
-              <small class="text-gray-400 text-sm">
-                {{ link.id && $t(`links.items.${link.id}.description`) !== `links.items.${link.id}.description` ? $t(`links.items.${link.id}.description`) : link.description }}
-              </small>
-            </p>
-          </NuxtLink>
+              <p v-if="link.id && $t(`links.items.${link.id}.description`) !== `links.items.${link.id}.description` || link.description">
+                <small class="text-gray-400 text-sm">
+                  {{ link.id && $t(`links.items.${link.id}.description`) !== `links.items.${link.id}.description` ? $t(`links.items.${link.id}.description`) : link.description }}
+                </small>
+              </p>
+            </NuxtLink>
+          </component>
         </p>
       </div>
       
