@@ -64,6 +64,7 @@ defineProps<{
   position: absolute;
   width: max-content;
   transform: translateX(-50%);
+  filter: grayscale(1);
 }
 .tomb-text-url {
   font-size: 16px;
