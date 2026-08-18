@@ -44,6 +44,13 @@ const links: Links = {
       dead: true,
     },
     {
+      url: "https://9a-si.pages.dev/",
+      title: "9a.si (Lunarのホームページ)",
+      description: "(9a-si.pages.dev)",
+      imageURL: "https://9a-si.pages.dev/9a.si.webp",
+      id: "lunarw",
+    },
+    {
       url: "https://hamusata.f5.si",
       title: "HAMUSATA homepage",
       description: "",

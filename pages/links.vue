@@ -39,7 +39,10 @@ import LinkTomb from '~/components/LinkTomb.vue';
           { label: $t('socials.x'), href: 'https://x.com/driplase' },
         ]" :key="idx" as="div" wiggle woosh flash text class="links">
           <NuxtLink :href="link.href" target="_blank" rel="noopener noreferrer">
-            <template v-if="link.label === $t('socials.x')">
+            <template v-if="link.label === 'Discord'">
+              Discord <small class="monospace opacity-64">@driplase</small>
+            </template>
+            <template v-else-if="link.label === $t('socials.x')">
               <i class="eclyera inline-block icon">&#x1d54f;</i> {{ $t('socials.x') }}
             </template>
             <template v-else>

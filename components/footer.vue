@@ -54,7 +54,7 @@
     font-family: var(--font-monospace);
     font-style: italic;
     font-weight: 500;
-    text-shadow: 0 0 8px #e9eeff;
+    text-shadow: 0 0 8px #0072de;
     justify-content: start;
     display: inline-block;
 
