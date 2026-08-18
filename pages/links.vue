@@ -125,22 +125,22 @@ import LinkTomb from '~/components/LinkTomb.vue';
         >
           <component :is="link.dead ? LinkTomb : 'div'">
             <NuxtLink class="" :href="link.dead ? '#' : link.url" target="_blank" rel="noopener">
-            <NuxtImg
-              v-if="link.imageURL"
-              class="link-header"
-              :src="link.imageURL" 
-              :alt="link.title"
-              decoding="async"
-              draggable="false"
-            />
-
-            <span v-else>
-              {{ link.title }}
-              <Icon
-                name="tabler:external-link" 
-                class="icon"
+              <NuxtImg
+                v-if="link.imageURL"
+                class="link-header"
+                :src="link.imageURL" 
+                :alt="link.title"
+                decoding="async"
+                draggable="false"
               />
-            </span>
+
+              <span v-else>
+                {{ link.title }}
+                <Icon
+                  name="tabler:external-link" 
+                  class="icon"
+                />
+              </span>
 
               <small
                 v-if="(link.id && $t(`links.items.${link.id}.description`) !== `links.items.${link.id}.description`) || link.description"
