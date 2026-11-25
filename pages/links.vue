@@ -32,6 +32,7 @@ import LinkTomb from '~/components/LinkTomb.vue';
           { label: 'Scratch JP', href: 'http://scratchjp.org/user/959034815766728714' },
           { label: 'SoundCloud', href: 'https://soundcloud.com/driplase' },
           { label: 'Steam', href: 'https://steamcommunity.com/id/driplase/' },
+					{ label: 'The Universal Forums', href: 'https://tuforums.com/profile/8406' },
           { label: 'Threads', href: 'https://www.threads.com/@driplase' },
           { label: 'TikTok', href: 'https://www.tiktok.com/@driplase' },
           { label: 'Tumblr', href: 'https://driplase.tumblr.com' },
