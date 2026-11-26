@@ -9,7 +9,7 @@ const props = withDefaults(defineProps<{
   text?: boolean
   disabled?: boolean
 }>(), {
-  as: 'span',
+  as: 'div',
   wiggle: false,
   woosh: false,
   flash: false,

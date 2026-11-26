@@ -15,6 +15,8 @@ export default {
   
   "socials": "SNS",
   "socials.x": "(旧Twitter)",
+  "socials.bilibili.url": "https://space.bilibili.com/ja/3747583218420621",
+  
   "mutual_links": "相互リンク",
   "links.mutual.desc": "載せてほしかったらおしえてください\nそっちの方でも載せてくれたら相互リンクとしてたぶん載せますし、載せてくれないのであればその他枠に載せておきます\nバナー画像があればつけてもいいですが、大きすぎないようにしてもらえると助かります",
   "links.others": "その他",

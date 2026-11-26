@@ -6,6 +6,27 @@ import LinkTomb from '~/components/LinkTomb.vue';
 // useSeoMeta({
 //   robots: "noindex, nofollow"
 // })
+
+const chessComRapidRating = ref(null);
+const tufStats = ref({
+  rankedScore: null,
+  generalScore: null,
+  highest: null,
+});
+
+onMounted(async () => {
+  // i don't want to fetch these apis in backend
+
+  const { data: chessComStats } = await useFetch('https://api.chess.com/pub/player/driplase/stats')
+  chessComRapidRating.value = chessComStats.value.chess_rapid.last.rating;
+
+  const { data: tufStatsData } = await useFetch('https://api.tuforums.com/v3/players/8406/')
+  tufStats.value = {
+    highest: tufStatsData.value.topDiff.name,
+    rankedScore: tufStatsData.value.rankedScore,
+    generalScore: tufStatsData.value.generalScore
+  };
+})
 </script>
 <template>
   <HeadTemplate :title="$t('links')" />
@@ -18,33 +39,50 @@ import LinkTomb from '~/components/LinkTomb.vue';
       <EffectWrapper as="h2" flash woosh class="font-bold origin-left" id="socials">{{ $t('socials') }}</EffectWrapper>
       <div class="socials grid grid-cols-2 max-[320px]:grid-cols-1 min-[480px]:grid-cols-3 sm:grid-cols-4">
         <EffectWrapper v-for="(link, idx) in [
+          { label: 'Bilibili', href: $t('socials.bilibili.url') },
           { label: 'Bluesky', href: 'https://bsky.app/profile/lase.dev' },
           { label: 'BOOTH', href: 'https://driplase.booth.pm' },
-          { label: 'Chess.com', href: 'https://www.chess.com/member/driplase' },
+          { label: 'Chess.com', href: 'https://www.chess.com/member/driplase', noEffect: true },
           { label: 'Discord', href: 'http://discord.com/users/959034815766728714' },
           { label: 'Duolingo', href: 'https://duolingo.com/profile/driplase' },
           { label: 'GitHub', href: 'https://github.com/driplase' },
           { label: 'Instagram', href: 'https://www.instagram.com/driplase' },
           { label: 'Newgrounds', href: 'https://driplase.newgrounds.com/' },
+          { label: 'note', href: 'https://note.com/driplase' },
           { label: 'pixiv', href: 'https://www.pixiv.net/users/95047153' },
           { label: 'Reddit', href: 'https://www.reddit.com/user/Driplase/' },
           { label: 'Scratch', href: 'https://scratch.mit.edu/users/Driplase' },
           { label: 'Scratch JP', href: 'http://scratchjp.org/user/959034815766728714' },
           { label: 'SoundCloud', href: 'https://soundcloud.com/driplase' },
           { label: 'Steam', href: 'https://steamcommunity.com/id/driplase/' },
-					{ label: 'The Universal Forums', href: 'https://tuforums.com/profile/8406' },
+					{ label: 'The Universal Forums', href: 'https://tuforums.com/profile/8406', noEffect: true },
           { label: 'Threads', href: 'https://www.threads.com/@driplase' },
           { label: 'TikTok', href: 'https://www.tiktok.com/@driplase' },
           { label: 'Tumblr', href: 'https://driplase.tumblr.com' },
           { label: 'Twitch', href: 'https://www.twitch.tv/driplase' },
           { label: $t('socials.x'), href: 'https://x.com/driplase' },
-        ]" :key="idx" as="div" wiggle woosh flash text class="links">
+          { label: 'Xbox', href: 'https://play.xbox.com/user/ipLase' },
+        ]" :key="idx" as="div" :wiggle="!link.noEffect" :woosh="!link.noEffect" :flash="!link.noEffect" :text="!link.noEffect" class="links">
           <NuxtLink :href="link.href" target="_blank" rel="noopener noreferrer">
             <template v-if="link.label === 'Discord'">
               Discord <small class="monospace opacity-64">@driplase</small>
             </template>
             <template v-else-if="link.label === $t('socials.x')">
               <i class="eclyera inline-block icon">&#x1d54f;</i> {{ $t('socials.x') }}
+            </template>
+            <template v-else-if="link.label === 'Chess.com'">
+              <EffectWrapper wiggle woosh flash text>
+                <div class="inline-block">Chess.com</div>
+              </EffectWrapper>
+              <div class="opacity-72 text-xs text-gray-400">Rapid: {{ chessComRapidRating ?? "..." }}</div>
+            </template>
+            <template v-else-if="link.label === 'The Universal Forums'">
+              <EffectWrapper wiggle woosh flash text>
+                <div class="inline-block">The Universal Forums</div>
+              </EffectWrapper>
+              <div class="opacity-72 text-xs text-gray-400">
+                Highest:&nbsp;{{ tufStats.highest ?? "..." }}, Score:&nbsp;{{ tufStats.rankedScore?.toFixed(2) ?? "..." }} (General&nbsp;{{ tufStats.generalScore?.toFixed(2) ?? "..." }})
+              </div>
             </template>
             <template v-else>
               {{ link.label }}

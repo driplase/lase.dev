@@ -15,6 +15,8 @@ export default {
   
   "socials": "socials",
   "socials.x": "(f.k.a Twitter)",
+  "socials.bilibili.url": "https://space.bilibili.com/en/3747583218420621",
+
   "mutual_links": "reciprocal links",
   "links.mutual.desc": "let me know if you want your websites to be included here\nif you include my website in your website, i might include your website in the \"reciprocal category\"\notherwise, i will still include your links to the \"other links\" category\ni can use the banner image if you have it. but, i'd appreciate it if you could avoid making the banner image too big",
   "links.others": "other links",
