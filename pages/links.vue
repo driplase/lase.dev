@@ -76,14 +76,14 @@ onMounted(async () => {
               </EffectWrapper>
               <div class="opacity-72 text-xs text-gray-400">Rapid: {{ chessComRapidRating ?? "..." }}</div>
             </template>
-            <template v-else-if="link.label === 'The Universal Forums'">
+            <!-- <template v-else-if="link.label === 'The Universal Forums'">
               <EffectWrapper wiggle woosh flash text>
                 <div class="inline-block">The Universal Forums</div>
               </EffectWrapper>
               <div class="opacity-72 text-xs text-gray-400">
                 Highest:&nbsp;{{ tufStats.highest ?? "..." }}, Score:&nbsp;{{ tufStats.rankedScore?.toFixed(2) ?? "..." }} (General&nbsp;{{ tufStats.generalScore?.toFixed(2) ?? "..." }})
               </div>
-            </template>
+            </template> -->
             <template v-else>
               {{ link.label }}
             </template>
