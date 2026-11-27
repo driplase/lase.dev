@@ -20,12 +20,12 @@ onMounted(async () => {
   const { data: chessComStats } = await useFetch('https://api.chess.com/pub/player/driplase/stats')
   chessComRapidRating.value = chessComStats.value.chess_rapid.last.rating;
 
-  const { data: tufStatsData } = await useFetch('https://api.tuforums.com/v3/players/8406/')
-  tufStats.value = {
-    highest: tufStatsData.value.topDiff.name,
-    rankedScore: tufStatsData.value.rankedScore,
-    generalScore: tufStatsData.value.generalScore
-  };
+  // const { data: tufStatsData } = await useFetch('https://api.tuforums.com/v3/players/8406/')
+  // tufStats.value = {
+  //   highest: tufStatsData.value.topDiff.name,
+  //   rankedScore: tufStatsData.value.rankedScore,
+  //   generalScore: tufStatsData.value.generalScore
+  // };
 })
 </script>
 <template>
